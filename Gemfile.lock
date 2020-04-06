@@ -52,8 +52,6 @@ GEM
     arel (9.0.0)
     bcrypt (3.1.13)
     bindex (0.8.1)
-    binding_of_caller (0.8.0)
-      debug_inspector (>= 0.0.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
     builder (3.2.4)
@@ -80,7 +78,6 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
-    debug_inspector (0.0.3)
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.12.2)
@@ -206,7 +203,6 @@ PLATFORMS
 DEPENDENCIES
   annotate
   bcrypt (~> 3.1.7)
-  binding_of_caller
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
