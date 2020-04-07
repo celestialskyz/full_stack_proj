@@ -5,11 +5,10 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
     if @user 
         login!(@user)
-
         render :template => "api/users/show"
     else
         render :json => { :errors => "invalid credentials" }, :status => 422
-      end
+    end
   end
 
   def destroy

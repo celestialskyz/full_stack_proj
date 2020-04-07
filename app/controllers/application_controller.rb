@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  #CELLL
+    #CELLL
+
   helper_method :current_user, :ensure_logged_in, :logged_in?
 
   def current_user
@@ -8,10 +9,6 @@ class ApplicationController < ActionController::Base
 
   def ensure_logged_in
     redirect_to api_session_url unless logged_in?
-  end
-
-  def logged_in?
-    !!current_user
   end
 
   def login!(user)
@@ -23,6 +20,9 @@ class ApplicationController < ActionController::Base
     session[:session_token] = nil
     @current_user = nil
   end
-  
+
+  def logged_in?
+    !!current_user
+  end
  
 end

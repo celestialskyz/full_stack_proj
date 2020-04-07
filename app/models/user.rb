@@ -4,10 +4,9 @@ class User < ApplicationRecord
 
   validates :password_digest, :session_token, presence:true
   validates :password, length:{minimum:6}, allow_nil:true
-
+  attr_reader :password
   after_initialize :ensure_session_token
 
-  
   #FGRIPE
   def self.find_by_credentials(email, password)
     user = User.find_by(email:email)
@@ -21,7 +20,7 @@ class User < ApplicationRecord
     SecureRandom.urlsafe_base64
   end
 
-  def reset_session_token()
+  def reset_session_token!
     token = self.class.generate_session_token
     self.update(session_token: token)
     token
@@ -29,7 +28,7 @@ class User < ApplicationRecord
 
   def is_password?(password) 
    bc_pdig= BCrypt::Password.new(self.password_digest)
-   bc_pdig.is_password(password)
+   bc_pdig.is_password?(password)
   end
   
   def password=(password)
