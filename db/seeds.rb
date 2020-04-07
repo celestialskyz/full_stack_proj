@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-user1 = User.create(email:'greenmachine@shiz.edu', first_name: 'Elphaba', last_name: 'Thropp', country:'USA', password:'defygravity')
-user2 = User.create(email: 'gAlinda@shiz.edu', first_name:"Glinda", last_name:'Upland', country:'USA', password:'popular')
+user1 = User.create(email:'greenmachine@shiz.edu', first_name: 'Elphaba', last_name: 'Thropp', country:'United States', password:'defygravity')
+user2 = User.create(email: 'gAlinda@shiz.edu', first_name:"Glinda", last_name:'Upland', country:'United States', password:'popular')
 
-user3 = User.create(email: 'Nessa@shiz.edu', first_name:"Nessa", last_name:'Thropp', country:'USA', password:'time')
+user3 = User.create(email: 'Nessa@shiz.edu', first_name:"Nessa", last_name:'Thropp', country:'United States', password:'time')
