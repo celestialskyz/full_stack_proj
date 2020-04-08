@@ -5,19 +5,23 @@ one:
   description: MyString
   cost: 1.5
   website: MyString
+  lottery: MyString
   address: MyString
   city: MyString
-  zip: 
+  zip: MyString
   phone_n: 
-  catagory: MyString
+  max_cap: 
+  category: MyString
 
 two:
   name: MyString
   description: MyString
   cost: 1.5
   website: MyString
+  lottery: MyString
   address: MyString
   city: MyString
-  zip: 
+  zip: MyString
   phone_n: 
-  catagory: MyString
+  max_cap: 
+  category: MyString
