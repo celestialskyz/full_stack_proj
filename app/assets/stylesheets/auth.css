@@ -6,12 +6,12 @@ html{
   display: flex;
   padding: 1.875rem 1rem;
   background-color: #FFF;
-  height: 400%;
+  height: 100%;
   border-bottom: 30px;
   border-top:20px;
   flex-direction: column;
   justify-content: space-between;
-  width: 88%;
+  width: 90%;
 }
 .session_form label{
   display: flex;

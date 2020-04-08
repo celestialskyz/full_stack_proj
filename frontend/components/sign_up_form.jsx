@@ -34,16 +34,16 @@ class SignUpForm extends React.Component{
             <form className = 'session_form' onSubmit={this.handleSubmit} >
               <h1 className = "signup_h">Welcome to OpenPlaybill!</h1>
                 <label>
-                <input type="text" name="inputBox" onChange={this.handleInput('first_name')} placeholder='First Name'/>
+                <input type="text" name="inputBox" onChange={this.handleInput('first_name')} placeholder='First Name *'/>
                 </label>
               <label> 
-                <input type="text" name="inputBox" onChange={this.handleInput('last_name')} placeholder='Last Name'/>
+                <input type="text" name="inputBox" onChange={this.handleInput('last_name')} placeholder='Last Name *'/>
               </label>
               <label>
-                <input type="text" name="inputBox" onChange={this.handleInput('email')}placeholder='Enter email'/>
+                <input type="text" name="inputBox" onChange={this.handleInput('email')}placeholder='Enter email *'/>
                 </label>
               <label>
-                <input type="password" name="inputBox" onChange={this.handleInput('password')} placeholder='Enter password'/>
+                <input type="password" name="inputBox" onChange={this.handleInput('password')} placeholder='Enter password *'/>
               </label>
               {/* <label htmlFor="country">Country</label>   */}
                 <select id="country" name="country" className="form-control" defaultValue = 'United States' onChange={this.handleInput('country')}>

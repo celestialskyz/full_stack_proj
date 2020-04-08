@@ -10,7 +10,7 @@ import Modal from './modal.jsx';
 const App = () => (
     <div>
         <Modal />
-        <header class = "header">
+        <header className = "header">
             <Link to="/" className="header-link">
             <h1>OpenPlaybill</h1>
             </Link>
