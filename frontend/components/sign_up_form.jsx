@@ -31,21 +31,21 @@ class SignUpForm extends React.Component{
     render(){
       return(
             <>
-            <h1 className = "signup_h">Welcome to OpenPlaybill!</h1>
             <form className = 'session_form' onSubmit={this.handleSubmit} >
-                <label> First Name
+              <h1 className = "signup_h">Welcome to OpenPlaybill!</h1>
+                <label>
                 <input type="text" name="inputBox" onChange={this.handleInput('first_name')} placeholder='First Name'/>
                 </label>
-              <label> Last Name
+              <label> 
                 <input type="text" name="inputBox" onChange={this.handleInput('last_name')} placeholder='Last Name'/>
               </label>
-              <label> Email
+              <label>
                 <input type="text" name="inputBox" onChange={this.handleInput('email')}placeholder='Enter email'/>
                 </label>
-              <label> Password
+              <label>
                 <input type="password" name="inputBox" onChange={this.handleInput('password')} placeholder='Enter password'/>
               </label>
-              <label htmlFor="country">Country</label>  
+              {/* <label htmlFor="country">Country</label>   */}
                 <select id="country" name="country" className="form-control" defaultValue = 'United States' onChange={this.handleInput('country')}>
                   <option value="Afghanistan">Afghanistan</option>
                   <option value="Åland Islands">Åland Islands</option>

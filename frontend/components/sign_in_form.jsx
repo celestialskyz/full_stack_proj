@@ -28,12 +28,13 @@ class SignInForm extends React.Component{
     render(){
       return (
         <>
-          <h1 className = "signup_h">Welcome to OpenPlaybill!></h1>
+          
           <form className = 'session_form' onSubmit={this.handleSubmit} >
-              <label> Email
+            <h1 className = "signup_h">Welcome to OpenPlaybill!></h1>
+              <label> 
                 <input type="text" name="inputBox" onChange={this.handleInput('email')}placeholder='Enter email'/>
                 </label>
-              <label> Password
+              <label> 
                 <input type="password" name="inputBox" onChange={this.handleInput('password')} placeholder='Enter password'/>
               </label>
               <button onClick={this.handleSubmit}>Sign In</button>
