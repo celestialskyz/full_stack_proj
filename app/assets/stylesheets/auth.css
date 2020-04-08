@@ -1,9 +1,20 @@
 .session_form{
   padding: 1.875rem 1rem;
   background-color: #FFF;
-
+  height: 100%;
+  border-bottom: 30px;
+  border-top:20px;
 }
-
+.session_form label{
+  display: flex;
+ margin: 20px;
+  padding-top:10px;
+  padding-bottom: 10px;
+  border: solid rgb(128, 124, 124);
+}
+.session_form label input{
+  padding-left: 10px;
+}
 .modal-background {
   position: fixed;
   top: 0;
@@ -19,5 +30,35 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: red, solid, thick;
+}
+.header{
+  margin: 20px;
+}
+.header-link h1 {
+  display: flex;
+  font-family: BrandonText;
+  float: left;
+  padding: 1px 6px;
+  font-weight: bolder;
+}
+
+.login-signup{
+  display: flex;
+  justify-content: flex-end;
+}
+.login-signup button{
+  display: flex;
+  font: 14px;
+  font-family: BrandonText,Helvetica Neue,Helvetica,Arial,sans-serif;
+  height: 32px;
+  width: 77px;
+  justify-content: center;
+}
+
+.login-signup button:first-of-type{
+  display: flex;
+  border-radius: 3px;
+  background-color: #237b98;
+  padding: 1px 6px;
+  color: #FFF;
 }

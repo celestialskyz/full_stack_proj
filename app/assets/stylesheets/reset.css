@@ -1,4 +1,3 @@
-/*Reset */
 
 html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
@@ -22,11 +21,6 @@ ul {
   list-style: none;
 }
 
-img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
 
 input[type="password"],
 input[type="email"],
