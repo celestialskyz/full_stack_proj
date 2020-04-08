@@ -23,3 +23,12 @@ export const logout = () => {
     })
   );
 };
+
+export const fetchUsers = () =>{
+  return(
+    $.ajax({
+        url: '/api/session',
+        method: 'GET'
+    })
+  );
+};

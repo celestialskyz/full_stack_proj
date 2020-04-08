@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-const Greeting = ({ currentUser, logoutUser, openModal, closeModal }) => {
-
+const Greeting = ({ currentUser, logoutUser, openModal }) => {
+ 
     const sessionLinks = () => (
       <nav className="login-signup">
        <button onClick={() => openModal('signup')}>Signup</button>
@@ -18,11 +18,17 @@ const Greeting = ({ currentUser, logoutUser, openModal, closeModal }) => {
       </>
     );
   
-    return (
-      currentUser ?
-      personalGreeting(currentUser) :
-      sessionLinks()
-    );
+    if (currentUser != null ||currentUser != undefined){
+       return (personalGreeting(currentUser));
+    }
+    else {
+      return sessionLinks()
+    }
+    // return (
+    //   currentUser ?
+    //   :
+    //   sessionLinks()
+    // );
   };
   
   export default Greeting;
@@ -30,43 +36,3 @@ const Greeting = ({ currentUser, logoutUser, openModal, closeModal }) => {
   
   
   
-  
-  
-  
-  // import { openModal } from '../actions/modal_actions';
-// class Greeting extends React.Component{
-//     constructor(props){
-//       super(props);
-//       this.handleClick = this.handleClick.bind(this);
-//     }
-   
-//     handleClick(e){
-//         e.preventDefault();
-//         this.props.logoutUser();
-//     }
-  
-//     render(){
-//         if (this.props.currentUser === undefined || this.props.currentUser === null){
-//             return(
-//                 <>
-//                    <nav className="login-signup">
-//                       <button onClick={() => this.openModal('login')}>Login</button>
-//                       &nbsp;or&nbsp;
-//                       <button onClick={() => this.openModal('signup')}>Signup</button>
-//                   </nav>
-//                 </>
-//             )
-//         }
-//         else{
-//         return(
-//             <>
-//               <h1> Welcome, {this.props.currentUser.email} </h1>
-//               <button onClick={this.handleClick}>Log Out</button>
-//             </>
-//         )
-//         }
-//     }
-  
-// }
-
-// export default Greeting;

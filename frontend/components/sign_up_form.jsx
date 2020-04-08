@@ -32,7 +32,7 @@ class SignUpForm extends React.Component{
       return(
             <>
             <form className = 'session_form' onSubmit={this.handleSubmit} >
-              <h1 className = "signup_h">Welcome to OpenPlaybill!</h1>
+              <h1 className = "sign_h">Welcome to OpenPlaybill!</h1>
                 <label>
                 <input type="text" name="inputBox" onChange={this.handleInput('first_name')} placeholder='First Name *'/>
                 </label>
@@ -46,7 +46,9 @@ class SignUpForm extends React.Component{
                 <input type="password" name="inputBox" onChange={this.handleInput('password')} placeholder='Enter password *'/>
               </label>
               {/* <label htmlFor="country">Country</label>   */}
-                <select id="country" name="country" className="form-control" defaultValue = 'United States' onChange={this.handleInput('country')}>
+                <select name="country" className="form-control" onChange={this.handleInput('country')}>
+                <option value="" selected disabled>Primary Viewing Location *</option>
+                <option value="United States" >United States</option>
                   <option value="Afghanistan">Afghanistan</option>
                   <option value="Åland Islands">Åland Islands</option>
                   <option value="Albania">Albania</option>
@@ -277,7 +279,6 @@ class SignUpForm extends React.Component{
                   <option value="Ukraine">Ukraine</option>
                   <option value="United Arab Emirates">United Arab Emirates</option>
                   <option value="United Kingdom">United Kingdom</option>
-                  <option value="United States" >United States</option>
                   <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
                   <option value="Uruguay">Uruguay</option>
                   <option value="Uzbekistan">Uzbekistan</option>

@@ -11,7 +11,15 @@ html{
   border-top:20px;
   flex-direction: column;
   justify-content: space-between;
-  width: 90%;
+  width: 96%;
+}
+.session_form fieldset{
+  height: 95%;
+}
+.session_form .sign_h{
+  padding-bottom: 5px;
+  border-bottom: solid rgba(0,0,0,.12);
+  border-bottom-width: 1px;
 }
 .session_form label{
   display: flex;
@@ -32,6 +40,7 @@ html{
   text-overflow: ellipsis;
   overflow: hidden; 
   font-size: medium;
+ 
 }
 
 .session_form button{
@@ -64,6 +73,8 @@ html{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  height: 60%;
+  width: 30%
 }
 .header{
   margin: 20px;
@@ -96,4 +107,38 @@ html{
   background-color: #237b98;
   padding: 1px 6px;
   color: #FFF;
+}
+.form-control{
+  position: relative;
+  font-family: BrandonText,Helvetica Neue,Helvetica,Arial,sans-serif;
+  -webkit-appearance: menulist-button;
+  height: 50px;
+  border-color: rgba(0,0,0,.12);
+  }
+
+  select{
+    background-color: #FFF;
+
+  }
+
+.form-control select{
+  display: none;
+  color: #FFF;
+}
+
+.select-selected{
+ background-color: rgb(252, 248, 248);
+ padding: 8px 16px;
+ height: 10%;
+ 
+}
+.select-selected:after {
+ display: none;
+ }
+ .select-items{
+  position: absolute;
+
+ }
+ .select-hide {
+  display: none;
 }
