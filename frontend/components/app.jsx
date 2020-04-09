@@ -3,8 +3,9 @@ import React from 'react';
 import GreetingContainer from "./greeting_container";
 // import SignupContainer from './sign_up_form_container';
 // import SignInContainer from './sign_in_form_container';
-import {AuthRoute} from "../util/route_util";
+// import {AuthRoute} from "../util/route_util";
 import Modal from './modal.jsx';
+import MusicalIndexController from "./musical_show/musical_index_container";
 //import { AuthRoute, ProtectedRoute } from "../util/route_util";
  
 const App = () => (
@@ -16,7 +17,7 @@ const App = () => (
             </Link>
             <GreetingContainer />
         </header>
-        
+        <Route exact path="/" component={MusicalIndexController}/>
         
     </div>
 );

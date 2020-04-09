@@ -1,12 +1,11 @@
 class Api::MusicalsController < ApplicationController
 
   def index
-    @musicals = Show.all
-    render :index
+    @musicals = Musical.all
   end
 
   def show
-    @musical = Show.find(params[:musical][:id])
+    @musical = Musical.find(params[:musical][:id])
   end
 
   

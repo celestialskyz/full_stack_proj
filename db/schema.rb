@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_08_194741) do
+ActiveRecord::Schema.define(version: 2020_04_09_005716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_04_08_194741) do
     t.string "description"
     t.float "cost"
     t.string "website", null: false
-    t.string "lottery"
+    t.boolean "lottery"
     t.string "address", null: false
     t.string "city", null: false
     t.string "state", null: false
@@ -28,17 +28,18 @@ ActiveRecord::Schema.define(version: 2020_04_08_194741) do
     t.string "country", null: false
     t.integer "phone_n", null: false
     t.integer "max_cap", null: false
-    t.string "category"
+    t.string "category", null: false
+    t.float "lat", null: false
+    t.float "lng", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "lat"
-    t.float "lng"
     t.index ["address"], name: "index_musicals_on_address"
     t.index ["category"], name: "index_musicals_on_category"
+    t.index ["city"], name: "index_musicals_on_city"
     t.index ["cost"], name: "index_musicals_on_cost"
     t.index ["country"], name: "index_musicals_on_country"
     t.index ["name"], name: "index_musicals_on_name"
-    t.index ["state", "city"], name: "index_musicals_on_state_and_city"
+    t.index ["state"], name: "index_musicals_on_state"
     t.index ["zip"], name: "index_musicals_on_zip"
   end
 

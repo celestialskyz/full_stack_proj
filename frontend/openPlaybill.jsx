@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import * as ApiUtil from './util/session_api_util.js';
+import {fetchMusicals} from './actions/musical_actions';
+import * as API from './util/musical_api_util';
 import {loginUser} from './actions/session_actions';
 import configureStore from './store/store';
 import Root from './components/root';
@@ -13,7 +15,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   window.login = ApiUtil.login;
   window.logout = ApiUtil.logout;
   window.signup = ApiUtil.signup;
-
+  window.fetchMusicals = API.fetchMusicals;
   window.loginUser = loginUser;
   
   let store;
@@ -27,7 +29,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   // const store = configureStore();
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-
+  window.fetchMusicals = fetchMusicals;
 
   ReactDOM.render(<Root store={store}/>, root);
 });
