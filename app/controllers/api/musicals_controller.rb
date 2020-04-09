@@ -5,7 +5,7 @@ class Api::MusicalsController < ApplicationController
   end
 
   def show
-    @musical = Musical.find(params[:musical][:id])
+    @musical = Musical.find_by(id: params[:id])
   end
 
   

@@ -17,12 +17,12 @@ class MusicalIndex extends React.Component{
         <ul>
           {
             musicals.map(musical =>(
-              <MusicalItem
-                musical ={musical}
-                key={musical.id}
-              />
+            <MusicalItem 
+            key ={musical.id}
+            musical = {musical}
+             />
             ))
-          }
+        }
         </ul>
       </>
     );

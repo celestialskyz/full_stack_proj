@@ -1,1 +1,1 @@
-json.partial! 'api/musicals/musicals', musical: @musical
+json.partial! 'api/musicals/musical', musical: @musical

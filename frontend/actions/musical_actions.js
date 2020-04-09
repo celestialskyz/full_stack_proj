@@ -1,4 +1,5 @@
 export const RECEIVE_MUSICALS = 'RECEIVE_MUSICALS';
+export const RECEIVE_MUSICAL = 'RECEIVE_MUSICAL';
 import * as API from '../util/musical_api_util';
 const receiveMusicals = (musicals) =>{
   return(
@@ -7,10 +8,23 @@ const receiveMusicals = (musicals) =>{
   );
 };
 
+
+const receiveMusical = (musical) =>{
+  return(
+   {type: RECEIVE_MUSICAL,
+  musical }
+  );
+};
+
+
 export const fetchMusicals = ()=> dispatch =>{
   return(
     API.fetchMusicals().then(musicals =>{dispatch(receiveMusicals(musicals));})
     );
 };
 
-
+export const fetchMusical = (musicalId)=> dispatch =>{
+  return(
+    API.fetchMusicals(musicalId).then(musical =>{dispatch(receiveMusical(musical));})
+    );
+};

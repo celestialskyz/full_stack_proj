@@ -1,1 +1,0 @@
-json.extract! musical, :name, :description, :cost, :website, :lottery, :address, :city, :state, :zip, :country, :zip, :phone_n, :max_cap, :category, :lat, :lng
