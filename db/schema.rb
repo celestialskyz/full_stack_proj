@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_09_153746) do
+ActiveRecord::Schema.define(version: 2020_04_10_154215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2020_04_09_153746) do
     t.string "state", null: false
     t.string "zip", null: false
     t.string "country", null: false
-    t.integer "phone_n", null: false
+    t.bigint "phone_n", null: false
     t.integer "max_cap", null: false
     t.string "category", null: false
     t.float "lat", null: false

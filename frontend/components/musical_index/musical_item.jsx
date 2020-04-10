@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MusicalItem =({musical})=>{
   return(
-    <li key = {musical.id}>
-      /* <Link to ={`/musicals/${musical.id}`} >{musical.name}</Link> */
-      {/* {musical.name} */}
+    <li >
+      <Link to ={`/musicals/${musical.id}`} >{musical.name}</Link>
+     {/* {musical.name}  */}
     </li>
   )
 }

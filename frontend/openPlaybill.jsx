@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import * as ApiUtil from './util/session_api_util.js';
-import {fetchMusicals} from './actions/musical_actions';
+import {fetchMusicals, fetchMusical} from './actions/musical_actions';
 import * as API from './util/musical_api_util';
 import {loginUser} from './actions/session_actions';
 import configureStore from './store/store';
@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
   window.signup = ApiUtil.signup;
   window.fetchMusicals = API.fetchMusicals;
   window.loginUser = loginUser;
-  
+  // //ajax
+
   let store;
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser, currentUserId: window.currentUser.id} };
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.fetchMusicals = fetchMusicals;
-
+  window.fetchMusical = fetchMusical;
+  // testing
   ReactDOM.render(<Root store={store}/>, root);
 });

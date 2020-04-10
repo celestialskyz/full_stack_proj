@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
 import {fetchMusical} from '../../actions/musical_actions';
+import MusicalShow from './musical_show';
 
-
-const msp = (state)=>{
+const msp = (state, ownProps)=>{
   return({
-     musical: state.musical
+     musical: state.entities.musicals[ownProps.match.params.musicalId]
   });
 
 };
 
 const mdp = (dispatch)=>{
   return({
-    fetchMusical: ()=>dispatch(fetchMusical())
+    fetchMusical: (musicalId)=>dispatch(fetchMusical(musicalId))
   });
 };
 

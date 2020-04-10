@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import {fetchMusicals} from '../../actions/musical_actions';
-import MusicalIndex from './musical_index';
+import MusicalIndex from '../musical_index/musical_index';
+// import MusicalMap from '../musical_show/musical_map';
 
 const msp = (state)=>{
   return({

@@ -10,10 +10,10 @@ const receiveMusicals = (musicals) =>{
 
 
 const receiveMusical = (musical) =>{
-  return(
-   {type: RECEIVE_MUSICAL,
-  musical }
-  );
+  return({
+    type: RECEIVE_MUSICAL,
+    musical 
+    });
 };
 
 
@@ -25,6 +25,6 @@ export const fetchMusicals = ()=> dispatch =>{
 
 export const fetchMusical = (musicalId)=> dispatch =>{
   return(
-    API.fetchMusicals(musicalId).then(musical =>{dispatch(receiveMusical(musical));})
+    API.fetchMusical(musicalId).then(musical =>{dispatch(receiveMusical(musical));})
     );
 };

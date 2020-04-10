@@ -5,9 +5,9 @@ import React from 'react';
 const MusicalDetail =({musical})=>{
   return(
    
-    <section className ="musical detail container">
-      <nav>
-        <ul>
+    <section className ="musical_detail">
+      <nav className = "detailNav">
+        <ul className = "little_tabs">
           <li>Overview</li>
           <li>Specials</li>
           <li>Photos</li>

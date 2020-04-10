@@ -18,8 +18,8 @@ class MusicalIndex extends React.Component{
           {
             musicals.map(musical =>(
             <MusicalItem 
-            key ={musical.id}
-            musical = {musical}
+              key = {musical.id}
+               musical = {musical}
              />
             ))
         }

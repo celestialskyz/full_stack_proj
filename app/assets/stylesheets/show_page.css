@@ -1,0 +1,34 @@
+.little_tabs{
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+}
+
+.detailNav {
+  display: flex;
+  flex-direction: column;
+}
+
+.review_stats{
+  display: flex;
+  justify-content: space-between;
+  width: 10%;
+}
+
+.review_stats li{
+  display: flex;
+  flex-direction: column;
+  
+}
+.map{
+  display: flex;
+  height:500px;
+  width: 500px;
+  z-index: 50;
+ }
+.map-container{
+  display: flex;
+  height:500px;
+  width: 500px;
+  z-index: 50;
+}
