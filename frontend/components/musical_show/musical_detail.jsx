@@ -6,6 +6,7 @@ const MusicalDetail =({musical})=>{
   return(
    
     <section className ="musical_detail">
+      {/* <div className="white"> </div>  */}
       <nav className = "detailNav">
         <ul className = "little_tabs">
           <li>Overview</li>
@@ -15,25 +16,26 @@ const MusicalDetail =({musical})=>{
         </ul>
       </nav> 
       <h1>{musical.name}</h1>
-      <ul className = "review_stats">
-        <li>
-          Rating Number
-        </li>
-        <li>
-          300 Reviews
-        </li>
-        <li>
-         {musical.cost}
-        </li>
-        <li>
-            {musical.category}
-        </li>
-      </ul>
+      <div className="horz">
+        <ul className = "review_stats">
+          <li>
+            Rating Number
+          </li>
+          <li>
+          <i className="far fa-comment-alt">
+            300 Reviews
+          </i>
+          </li>
+          <li>
+          ${musical.cost}
+          </li>
+          <li>
+              {musical.category}
+          </li>
+        </ul>
+      </div>
       <div className='description'>
         {musical.description}
-      </div>
-      <div className="photos">
-        <h2>Photos</h2>
       </div>
     </section>
   )

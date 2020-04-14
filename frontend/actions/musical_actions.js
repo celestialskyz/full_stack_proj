@@ -5,6 +5,7 @@ const receiveMusicals = (musicals) =>{
   return(
    {type: RECEIVE_MUSICALS,
   musicals }
+  
   );
 };
 
@@ -17,14 +18,18 @@ const receiveMusical = (musical) =>{
 };
 
 
-export const fetchMusicals = ()=> dispatch =>{
+export const fetchMusicals = (filters)=> dispatch =>{
+  //debugger
   return(
-    API.fetchMusicals().then(musicals =>{dispatch(receiveMusicals(musicals));})
+    API.fetchMusicals(filters).then(musicals =>{dispatch(receiveMusicals(musicals));})
     );
+    //debugger
 };
 
 export const fetchMusical = (musicalId)=> dispatch =>{
+  //debugger
   return(
     API.fetchMusical(musicalId).then(musical =>{dispatch(receiveMusical(musical));})
     );
+  //debugger
 };

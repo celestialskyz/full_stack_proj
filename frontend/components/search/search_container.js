@@ -1,19 +1,23 @@
 import { connect } from 'react-redux';
-import {fetchMusicals} from '../../actions/musical_actions';
-import MusicalIndex from '../musical_index/musical_index';
-// import MusicalMap from '../musical_show/musical_map';
+import {updateFilter} from '../../actions/filter_actions';
+// import MusicalIndex from '../musical_index/musical_index';
+// // import MusicalMap from '../musical_show/musical_map';
+import MusicalSearch from './musical_search';
 
 const msp = (state)=>{
   return({
-     musicals: Object.values(state.entities.musicals)
+     musicals: Object.values(state.entities.musicals),
+     inputQ: state.ui.filters.query,
+     klass: state.ui.filters.query ? "search" : "home"
   });
 
 };
 
 const mdp = (dispatch)=>{
   return({
-    fetchMusicals: ()=>dispatch(fetchMusicals())
+    updateFilter: (query)=>dispatch(updateFilter(query)),
+    fetchMusicals: (filter)=>dispatch(fetchMusical(filter))
   });
 };
 
-export default connect(msp, mdp)(MusicalIndex);
+export default connect(msp, mdp)(MusicalSearch);

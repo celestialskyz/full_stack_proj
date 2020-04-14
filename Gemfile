@@ -32,11 +32,14 @@ gem 'haml'
 gem 'ransack'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'pg_search'
 
 gem 'annotate'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
+gem 'turbolinks'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

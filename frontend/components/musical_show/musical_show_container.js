@@ -4,7 +4,7 @@ import MusicalShow from './musical_show';
 
 const msp = (state, ownProps)=>{
   return({
-     musical: state.entities.musicals[ownProps.match.params.musicalId]
+     musical: state.entities.musicals[ownProps.match.params.musicalId],
   });
 
 };

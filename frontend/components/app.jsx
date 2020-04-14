@@ -5,12 +5,20 @@ import GreetingContainer from "./greeting_container";
 // import SignInContainer from './sign_in_form_container';
 // import {AuthRoute} from "../util/route_util";
 import Modal from './modal.jsx';
-// import MusicalIndexContainer from "./musical_index/musical_index_container";
+import MusicalIndexContainer from "./musical_index/musical_index_container";
 import MusicalShowContainer from "./musical_show/musical_show_container";
-import SeachContainer from './search/search_container';
+// import SeachContainer from './search/search_container';
 //import { AuthRoute, ProtectedRoute } from "../util/route_util";
- 
-const App = () => (
+//  import MusicalSearch from './search/musical_search';
+import MusicalSearchContainer from './search/search_container';
+import MusicalIndex from "./musical_index/musical_index";
+import MainComponent from './main_component';
+
+
+const App = () =>{
+    // const additionalClass = state.ui.filters.query ? "search" : "home";
+
+    return(
     <div>
         <Modal />
         <header className = "header">
@@ -19,10 +27,10 @@ const App = () => (
             </Link>
             <GreetingContainer />
         </header>
-        <Route exact path="/" component={SeachContainer}/>
-        {/* index container when searching */}
+        {/* <MainComponent/> */}
+        <Route exact path="/" component={MainComponent} />
         <Route exact path="/musicals/:musicalId" component={MusicalShowContainer} />
-    </div>
-);
+    </div>)
+}
 
 export default App;

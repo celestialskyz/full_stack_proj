@@ -9,10 +9,10 @@ const msp = (state)=>{
 
 };
 
-const mdp = (dispatch)=>{
-  return({
-    fetchMusicals: ()=>dispatch(fetchMusicals())
-  });
-};
+// const mdp = (dispatch)=>{
+//   return({
+//     fetchMusicals: (filters)=>dispatch(fetchMusicals(filters))
+//   });
+// };
 
-export default connect(msp, mdp)(MusicalIndex);
+export default connect(msp)(MusicalIndex);

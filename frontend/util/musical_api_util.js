@@ -1,9 +1,15 @@
-export const fetchMusicals = () => (
-  $.ajax({
+export const fetchMusicals = (data) => {
+  // debugger
+  return(
+    $.ajax({
     method: "GET",
-    url: '/api/musicals'
+    url: '/api/musicals',
+    data
   })
-);
+  );
+
+};
+  
 
 export const fetchMusical = (musicalId) => (
   $.ajax({

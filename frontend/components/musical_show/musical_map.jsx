@@ -19,19 +19,6 @@ class MusicalMap extends React.Component{
 			});
   }
   
-  
-  // componentDidMount() {
-  //   // set the map to show SF
-  //   const mapOptions = {
-  //     center: { lat:40.758839, lng:-73.987091 }, // this is ny specific
-  //     zoom: 13
-  //   };
-
-  //   // wrap this.mapNode in a Google Map
-  //   this.map = new google.maps.Map(this.mapNode, mapOptions);
-  // }
-
-
   render (){
 
     return(

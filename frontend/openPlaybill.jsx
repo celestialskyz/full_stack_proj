@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
   window.login = ApiUtil.login;
   window.logout = ApiUtil.logout;
   window.signup = ApiUtil.signup;
-  window.fetchMusicals = API.fetchMusicals;
+  window.fetchMusicals = API.fetchMusicals;// //ajax
   window.loginUser = loginUser;
-  // //ajax
+  
 
   let store;
   if (window.currentUser) {
