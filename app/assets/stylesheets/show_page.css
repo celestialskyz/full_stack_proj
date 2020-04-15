@@ -171,7 +171,7 @@ html{
   position: relative;
   width: 60%;
   left: 5%;
-  
+  /* display: table; */
 }
 .photos h2{
   /* margin-top: 35%; */
@@ -184,10 +184,15 @@ html{
   padding-bottom: 1rem;
   margin-bottom: 60px;
   border-bottom: 1px solid #d8d9db;
+  height: 250px;
+  width: 250px;
 }
 
 .all_photos{
+  /* display: table-cell; */
   position: inherit;
+  max-width: 100%;
+  max-height: 100%;
   
 }
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_145530) do
+ActiveRecord::Schema.define(version: 2020_04_15_010259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -63,6 +63,16 @@ ActiveRecord::Schema.define(version: 2020_04_13_145530) do
     t.index ["name"], name: "index_musicals_on_name"
     t.index ["state"], name: "index_musicals_on_state"
     t.index ["zip"], name: "index_musicals_on_zip"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "show_id", null: false
+    t.integer "reserver_id", null: false
+    t.integer "party_size", null: false
+    t.date "date", null: false
+    t.integer "time"
+    t.index ["reserver_id"], name: "index_reservations_on_reserver_id"
+    t.index ["show_id"], name: "index_reservations_on_show_id"
   end
 
   create_table "users", force: :cascade do |t|

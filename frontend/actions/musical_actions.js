@@ -1,6 +1,6 @@
 export const RECEIVE_MUSICALS = 'RECEIVE_MUSICALS';
 export const RECEIVE_MUSICAL = 'RECEIVE_MUSICAL';
-import * as API from '../util/musical_api_util';
+import * as EventAPIUtil from '../util/musical_api_util';
 const receiveMusicals = (musicals) =>{
   return(
    {type: RECEIVE_MUSICALS,
@@ -8,7 +8,6 @@ const receiveMusicals = (musicals) =>{
   
   );
 };
-
 
 const receiveMusical = (musical) =>{
   return({
@@ -19,17 +18,17 @@ const receiveMusical = (musical) =>{
 
 
 export const fetchMusicals = (filters)=> dispatch =>{
-  //debugger
+  // debugger
   return(
-    API.fetchMusicals(filters).then(musicals =>{dispatch(receiveMusicals(musicals));})
+    EventAPIUtil.fetchMusicals(filters).then(musicals =>{dispatch(receiveMusicals(musicals));})
     );
-    //debugger
+    // debugger
 };
 
 export const fetchMusical = (musicalId)=> dispatch =>{
-  //debugger
+  debugger
   return(
-    API.fetchMusical(musicalId).then(musical =>{dispatch(receiveMusical(musical));})
+    EventAPIUtil.fetchMusical(musicalId).then(musical =>{dispatch(receiveMusical(musical));})
     );
-  //debugger
+  debugger
 };

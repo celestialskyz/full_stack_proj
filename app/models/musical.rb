@@ -4,6 +4,8 @@ class Musical < ApplicationRecord
   validates :city, :state, :category, presence:true
   validates :lottery, inclusion: { in: [true, false] }
   validates :description, :max_cap, presence:true
+  
+  has_many :reservations
 
   has_many_attached :photos
   

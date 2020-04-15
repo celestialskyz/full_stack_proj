@@ -5,15 +5,18 @@ import MusicalDetail2 from './musical_detail2';
 class MusicalShow extends React.Component{
   constructor(props){
     super(props);
+    debugger
   }
 
   componentDidMount(){
+    debugger
     this.props.fetchMusical(this.props.match.params.musicalId);
+    debugger
   }
 
   render(){
     const {musical, fetchMusical} = this.props;
-    
+    debugger
     if (!musical) {
       return <div></div>;
     }

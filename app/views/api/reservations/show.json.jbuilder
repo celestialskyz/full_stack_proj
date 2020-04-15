@@ -1,0 +1,1 @@
+json.partial! 'api/musicals/musical', musical: @musical
