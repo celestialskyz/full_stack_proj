@@ -13,7 +13,7 @@ import MusicalShowContainer from "./musical_show/musical_show_container";
 import MusicalSearchContainer from './search/search_container';
 import MusicalIndex from "./musical_index/musical_index";
 import MainComponent from './main_component';
-
+import indexed from './testing';
 
 const App = () =>{
     // const additionalClass = state.ui.filters.query ? "search" : "home";
@@ -29,6 +29,8 @@ const App = () =>{
         </header>
         
         <Route exact path="/" component={MainComponent} />
+        {/* <Route exact path="/" component={indexed} /> */}
+
         <Route exact path="/musicals/:musicalId" component={MusicalShowContainer} />
     </div>)
 }

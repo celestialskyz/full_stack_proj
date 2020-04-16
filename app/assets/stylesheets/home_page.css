@@ -33,6 +33,29 @@
   text-align: center;
   width: 100%;
 }
+
+i.far.fa-calendar{
+ background: transparent;
+ position: absolute;
+ padding-left: 1%;
+}
+/* 
+i.far.fa-clock{
+background: white;
+padding-left: 1%;
+} */
+.partys-drop{
+ border-top-left-radius: 0px;
+ border-bottom-left-radius: 0px;
+}
+
+.far.fa-user{
+border-radius: 0px;
+}
+.texting{
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+ }
 .main.home .fillin{
   display: flex;
   flex-direction: row;
@@ -44,11 +67,11 @@
   position: absolute;
   /* left: 150px; */
   left: 5%;
-  background-color: transparent;
+  background-color: white;
   width: 50%;
   height: 50px;
 }
-.main.home .fillin > *{
+.fillin > *{
   display: flex;
   align-items: center; 
   background-color: white;
@@ -58,7 +81,19 @@
   justify-content: space-around; 
   
 }
-.main.home .texting{
+
+.clocked, .partytime{
+  background-color: white;
+  padding-left: 1.5%;
+}
+
+.time-drop{
+  background-color: white;
+  padding-left: 1.5%;
+  border:none;
+}
+
+.texting{
   margin-left: 5%;
   display: flex;
   align-items: center; 
@@ -72,11 +107,13 @@
 
 .main.home input{
   display: flex;
-  min-width: 30rem;
+  min-width:28rem;
   width: 28rem;
+  font-weight: 500;
+  color: #2d333f
 }
 
-.main.home .formFilter button{
+ .formFilter button{
   /* margin-top: 20%;
   padding-top:15px;
   padding-bottom:15px;
@@ -99,7 +136,7 @@
 .main.home .lineup{
   display: flex;
   align-items: center; 
-  background-color: white;
+  /* background-color: white; */
   width: 4%;
   margin-left: 50%;
   top: 30%
@@ -107,4 +144,10 @@
 
 .main.home .date{
   width: 30%;
+  border-left: thin rgb(206, 206, 206);
+}
+
+.main.home .sidebar{
+  display: none;
+  
 }

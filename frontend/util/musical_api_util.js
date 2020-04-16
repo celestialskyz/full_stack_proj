@@ -8,6 +8,16 @@ export const fetchMusicals = (data) => {
   );
 
 };
+
+export const initialFetchMusicals = () => {
+  return(
+  $.ajax({
+  method: "GET",
+  url: '/api/musicals'
+})
+);
+
+};
   
 export const fetchMusical = (musicalId) => {
   // debugger

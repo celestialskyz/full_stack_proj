@@ -12,7 +12,7 @@ class MusicalIndex extends React.Component{
   render () {
     // debugger
     const {musicals} = this.props;
-
+    // debugger
     return(
       <>
         <ul>
@@ -25,6 +25,19 @@ class MusicalIndex extends React.Component{
             ))
         }
         </ul>
+
+
+        <aside className = "sidebar">
+          <div className = "money">
+            <i className="fas fa-money-bill"></i>
+                Price
+            <div className="moneyButton">
+              <button>$$</button>
+              <button>$$$</button>
+              <button>$$$$</button>
+            </div>
+          </div>
+        </aside>
       </>
     );
   }

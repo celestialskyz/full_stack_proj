@@ -27,6 +27,7 @@ class FilterForm extends React.Component{
       return(e)=>{
         this.setState({[type]: e.currentTarget.value.toString()});
       };
+     // debugger
     }
    
   render(){
@@ -40,8 +41,10 @@ class FilterForm extends React.Component{
           <label>Find your musical for any occasion</label>
           <div className="lineup">
             <section className= "fillin">
-              {/* <input type="date" className= "date"></input> */}
+            <i className="far fa-calendar"> </i>     
               <input type="date" value={this.state.date} onChange= {this.handleInput('date')} />
+              <div className="clocked">
+              <i className="far fa-clock"></i>
               <select name="time" className="time-drop" defaultValue='19:00' onChange={this.handleInput('time')}>
                 <option value="0000">12.00 AM</option>
                 <option value="0030">12.30 AM</option>
@@ -91,7 +94,9 @@ class FilterForm extends React.Component{
                 <option value="2230">10.30 PM</option>
                 <option value="2300">11.00 PM</option>
                 <option value="2330">11.30 PM</option>
-              </select>
+              </select></div>
+              <div className = "partytime">
+              <i className="far fa-user"></i>
               <select name="partys" className="partys-drop" defaultValue='2' placeholder='2 people' onChange={this.handleInput('partys')}>
                 <option value='1' >1 person</option>
                 <option value='2' >2 people</option>
@@ -114,11 +119,13 @@ class FilterForm extends React.Component{
                 <option value='19' >19 people</option>
                 <option value='20' >20 people</option>
               </select>
+              </div>
               </section>
               <input
               className = "texting"
             type="query"
             value={inputQ}
+            placeholder='Location, Musical, or Category'
             onChange={this.handleInput('inputQ')}/>
           <button className="" type="submit">Let's go</button>
           </div>

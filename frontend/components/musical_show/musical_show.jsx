@@ -15,7 +15,7 @@ class MusicalShow extends React.Component{
   }
 
   render(){
-    const {musical, fetchMusical} = this.props;
+    const {musical} = this.props;
     //debugger
     if (!musical) {
       return <div></div>;

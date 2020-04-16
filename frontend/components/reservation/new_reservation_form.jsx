@@ -1,4 +1,3 @@
-
 class ResForm extends React.Component{
   constructor(props){
     super(props);
@@ -24,7 +23,7 @@ class ResForm extends React.Component{
         <h1>Make a reservation</h1>
         <form onSubmit = {this.handleSubmit} >
           <label>Party Size
-            <select name="partys" className="res-drop" value= {filters.psize} onChange={this.handleInput('partys')}>
+            <select name="partys" className="res-drop" value= {psize} onChange={this.handleInput('partys')}>
             <option value='1' >1 </option>
                 <option value='2' >2 </option>
                 <option value='3' >3 </option>
@@ -48,7 +47,7 @@ class ResForm extends React.Component{
             </select>
           </label>
           <label>Date
-          <input type="date" value={filters.date} onChange= {this.update('date')} />
+          <input type="date" value={date} onChange= {this.update('date')} />
           </label>
           <label>Time
           {/* <select name="time" className="time-drop" defaultValue='19:00' onChange={this.handleInput('time')}> </select> */}
