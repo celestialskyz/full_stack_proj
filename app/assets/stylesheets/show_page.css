@@ -90,7 +90,6 @@ html{
 }
 
 .right-side{
-
   border: 1px solid #d8d9db;
   padding: .25rem .25rem .5rem;
   border-radius: 4px;
@@ -103,7 +102,6 @@ html{
 }
 .musical_detail2{
  position: absolute;
-
 }
 .white{
   height: 1500px;
@@ -221,10 +219,4 @@ html{
   height: calc(42.85714% - 2px);
   width: calc(100% + 2px);
   overflow: hidden;
-  
-}
-.all_photos li{
-  position: inherit;
-  @media only screen and (min-width: 521px)
-
 }
