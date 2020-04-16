@@ -10,12 +10,12 @@ export const fetchMusicals = (data) => {
 };
   
 export const fetchMusical = (musicalId) => {
-  debugger
+  // debugger
   return(
   $.ajax({
     method: "GET",
     url: `/api/musicals/${musicalId}`
   })
   );
-  debugger
+  // debugger
 };

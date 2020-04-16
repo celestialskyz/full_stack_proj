@@ -5,14 +5,16 @@ class Musical < ApplicationRecord
   validates :lottery, inclusion: { in: [true, false] }
   validates :description, :max_cap, presence:true
   
-  has_many :reservations
-
   has_many_attached :photos
   
   include PgSearch
 
   pg_search_scope :search_it, against: [:name, :city, :state, :category,:description]
   
+  has_many :reservations,
+  foreign_key: :show_id,
+  class_name: 'Reservation'
+
   # def self.text_search(query)
   #   filtered=[]
   #   filtered.push(self.where("similarity(name, ?) > 0.3", query).order("similarity(name, #{ActiveRecord::Base.connection.quote(query)}) DESC"))

@@ -25,36 +25,36 @@ const removeRes =(resId)=>{
   });
 };
 
-export const requestResvs=()=>dispatch =>{
+export const requestResvs=(userId)=>dispatch =>{
   return(
-    APIres.fetchReservations().then(resvs =>{ dispatch(receiveResvs(resvs));})
+    APIres.fetchReservations(userId).then(resvs =>{ dispatch(receiveResvs(resvs));})
   );
 };
 
-export const requestRes=(resId)=>dispatch =>{
+export const requestRes=(userId, resId)=>dispatch =>{
   return(
-    APIres.fetchReservation(resId).then(res =>{ dispatch(receiveResvs(res));})
+    APIres.fetchReservation(userId, resId).then(res =>{ dispatch(receiveResvs(res));})
   );
 };
 
 
 
-export const createRes = res => dispatch =>{
+export const createRes = (userId, res) => dispatch =>{
   return(
-    APIres.createReservation(res).then(res => {dispatch(receiveRes(res));}
+    APIres.createReservation(userId, res).then(res => {dispatch(receiveRes(res));}
     )
   );
 };
 
 
-export const updateEvent = event => dispatch =>{
+export const updateRes = (userId, res) => dispatch =>{
   return(
-    EventAPIUtil.updateEvent(event).then(event => {dispatch(receiveEvent(event));})
+    APIres.updateReservation(userId, res).then(res => {dispatch(receiveRes(res));})
   );
 };
 
-export const deleteEvent = eventId =>dispatch=>{
+export const deleteRes = (userId, resId) =>dispatch=>{
   return(
-    EventAPIUtil.deleteEvent(eventId).then(()=>{dispatch(removeEvent(eventId));})
+    APIres.deleteReservation(userId, resId).then(()=>{dispatch(removeRes(resId));})
   );
 };

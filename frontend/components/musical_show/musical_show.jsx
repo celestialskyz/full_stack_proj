@@ -5,25 +5,25 @@ import MusicalDetail2 from './musical_detail2';
 class MusicalShow extends React.Component{
   constructor(props){
     super(props);
-    debugger
+    //debugger
   }
 
   componentDidMount(){
-    debugger
+    //debugger
     this.props.fetchMusical(this.props.match.params.musicalId);
-    debugger
+  //debugger
   }
 
   render(){
     const {musical, fetchMusical} = this.props;
-    debugger
+    //debugger
     if (!musical) {
       return <div></div>;
     }
     
     const mban = musical.photoUrls[musical.photoUrls.length-1];
     const phtos = musical.photoUrls.slice(0, -1);
-
+    // debugger
     
       return(
         <>

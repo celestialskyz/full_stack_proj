@@ -6,6 +6,7 @@ import * as API from './util/musical_api_util';
 import {loginUser} from './actions/session_actions';
 import configureStore from './store/store';
 import Root from './components/root';
+import * as RApi from './util/reservation_api_util';
 // debugger
 document.addEventListener("DOMContentLoaded", ()=>{
   const root = document.getElementById('root');
@@ -32,6 +33,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
   window.dispatch = store.dispatch;
   window.fetchMusicals = fetchMusicals;
   window.fetchMusical = fetchMusical;
+  window.fetchReservations = RApi.fetchReservations;
+  window.fetchReservation = RApi.fetchReservation;
+  window.createReservation = RApi.createReservation;
+  window.updateReservation = RApi.updateReservation;
+  window.deleteReservation = RApi.deleteReservation;
+
   // testing
+
+
+
   ReactDOM.render(<Root store={store}/>, root);
 });

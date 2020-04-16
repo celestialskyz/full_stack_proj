@@ -3,13 +3,10 @@ import {fetchMusical} from '../../actions/musical_actions';
 import MusicalShow from './musical_show';
 
 const msp = (state, ownProps)=>{
-debugger
-
   return({
      musical: state.entities.musicals[ownProps.match.params.musicalId]
      
   });
-debugger
 };
 
 const mdp = (dispatch)=>{

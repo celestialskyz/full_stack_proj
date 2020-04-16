@@ -1,18 +1,18 @@
-export const fetchReservations = () => {
+export const fetchReservations = (userId) => {
   // debugger
   return(
     $.ajax({
     method: "GET",
-    url: '/api/reservations'
+    url: `/api/users/${userId}/reservations`
   })
   );
 
 };
 
-export const fetchReservation = (reservationId) => (
+export const fetchReservation = (userId, reservationId) => (
   $.ajax({
     method: "GET",
-    url: `/api/reservations/${reservationId}`
+    url: `/api/users/${userId}/reservations/${reservationId}`
   })
 );
 
@@ -25,17 +25,20 @@ export const createReservation = (reservation) =>(
 );
 
 
-export const updateReservation =(reservation)=>(
+export const updateReservation =(userId, reservation)=>{
+  return(
   $.ajax({
     method:"PATCH",
-    url:`/api/reservations/${reservation.id}`,
+    url:`/api/users/${userId}/reservations/${reservation.id}`,
     data: {reservation}
   })
-)
+  );
+  // debugger
+};
 
-export const deleteReservation = reservationId =>(
+export const deleteReservation = (userId, reservationId) =>(
   $.ajax({
     method:"DELETE",
-    url:`/api/reservations/${reservationId}`,
+    url:`/api/users/${userId}/reservations/${reservationId}`,
    })
-)
+);

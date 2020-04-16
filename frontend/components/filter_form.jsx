@@ -11,7 +11,7 @@ class FilterForm extends React.Component{
       // time:"",
       inputQ:""
     };
-    let addClass = false;
+    // let addClass = false;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
   }
@@ -40,7 +40,8 @@ class FilterForm extends React.Component{
           <label>Find your musical for any occasion</label>
           <div className="lineup">
             <section className= "fillin">
-              <input type="date" className= "date"></input>
+              {/* <input type="date" className= "date"></input> */}
+              <input type="date" value={this.state.date} onChange= {this.handleInput('date')} />
               <select name="time" className="time-drop" defaultValue='19:00' onChange={this.handleInput('time')}>
                 <option value="0000">12.00 AM</option>
                 <option value="0030">12.30 AM</option>
@@ -91,7 +92,7 @@ class FilterForm extends React.Component{
                 <option value="2300">11.00 PM</option>
                 <option value="2330">11.30 PM</option>
               </select>
-              <select name="partys" className="partys-drop" defaultValue='2 people' onChange={this.handleInput('partys')}>
+              <select name="partys" className="partys-drop" defaultValue='2' placeholder='2 people' onChange={this.handleInput('partys')}>
                 <option value='1' >1 person</option>
                 <option value='2' >2 people</option>
                 <option value='3' >3 people</option>

@@ -27,7 +27,7 @@ const App = () =>{
             </Link>
             <GreetingContainer />
         </header>
-        {/* <MainComponent/> */}
+        
         <Route exact path="/" component={MainComponent} />
         <Route exact path="/musicals/:musicalId" component={MusicalShowContainer} />
     </div>)

@@ -3,11 +3,14 @@ class Reservation < ApplicationRecord
 
   belongs_to :user,
   foreign_key: :reserver_id,
-  class_name: :User
+  class_name: 'User'
   
   belongs_to :musical,
   foreign_key: :show_id,
-  class_name: :Musical
+  class_name: 'Musical'
 
 
 end
+
+#reservationMusical = {} 
+# reservationMusical[:show_id] = 

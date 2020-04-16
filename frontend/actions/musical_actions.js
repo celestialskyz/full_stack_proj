@@ -26,9 +26,9 @@ export const fetchMusicals = (filters)=> dispatch =>{
 };
 
 export const fetchMusical = (musicalId)=> dispatch =>{
-  debugger
+  //debugger
   return(
     EventAPIUtil.fetchMusical(musicalId).then(musical =>{dispatch(receiveMusical(musical));})
     );
-  debugger
+  //debugger
 };

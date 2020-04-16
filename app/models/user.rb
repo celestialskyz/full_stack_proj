@@ -7,7 +7,9 @@ class User < ApplicationRecord
   attr_reader :password
   after_initialize :ensure_session_token
 
-  has_many :reservations
+  has_many :reservations,
+  foreign_key: :reserver_id,
+  class_name: 'Reservation'
 
 
   #FGRIPE

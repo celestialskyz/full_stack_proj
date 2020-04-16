@@ -1,7 +1,7 @@
 import React from 'react';
 import FilterForm from '../filter_form';
 
-const MusicalSearch = ({musicals, query, updateFilter, klass})=>{
+const MusicalSearch = ({query, updateFilter, klass})=>{
   
   let unused = true;
   return(
