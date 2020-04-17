@@ -44,7 +44,7 @@ flex-direction: column;
 .main.search .row {
   margin-top: .5%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   border-bottom: 1px solid rgba(0,0,0,.08);
   width: 60%;
   margin-left: 25%;
@@ -55,11 +55,11 @@ flex-direction: column;
     color: #247f9e;
     font-size: 1.125rem;
     font-weight: 600;
+    display: flex;
 }
 
- .profile{
+.main.search .profile{
   height: 130px;
-  width: 37%;
   max-width: 16rem;
   overflow:hidden;
   text-align: center;
@@ -69,7 +69,6 @@ flex-direction: column;
 .main.search .profilep{
   border-radius: 4px;
   cursor: pointer;
-  width: 70%;
   height: 90%;
 }
 .main.search .sidebar{
@@ -105,4 +104,12 @@ border: 1px solid #d8d9db;
 margin-left: 0;
 padding: 5%;
 
+}
+
+.main.search .title{
+  font-size: 20px;
+}
+
+.main.search .extraExtra p{
+  font-weight: lighter;
 }

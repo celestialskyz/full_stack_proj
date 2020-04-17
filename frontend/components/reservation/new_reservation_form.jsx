@@ -1,7 +1,10 @@
+import React from 'react';
+
 class ResForm extends React.Component{
   constructor(props){
     super(props);
-    this.state=this.props.res;
+    this.state = props.filters;
+    
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -16,14 +19,14 @@ class ResForm extends React.Component{
 
   render(){
     const {musical, userId, inputQ, date, psize, time} = this.props;
-    const t = parseInt(tofilters.time);
+   
     
     return(
       <>
         <h1>Make a reservation</h1>
         <form onSubmit = {this.handleSubmit} >
           <label>Party Size
-            <select name="partys" className="res-drop" value= {psize} onChange={this.handleInput('partys')}>
+            <select name="partys" className="res-drop" value= {psize} onChange={this.update('partys')}>
             <option value='1' >1 </option>
                 <option value='2' >2 </option>
                 <option value='3' >3 </option>
@@ -62,3 +65,5 @@ class ResForm extends React.Component{
   }
 
 }
+
+export default ResForm;

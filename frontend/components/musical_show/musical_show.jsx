@@ -2,6 +2,9 @@ import React from 'react';
 import MusicalDetail from './musical_detail';
 import MusicalMap from './musical_map';
 import MusicalDetail2 from './musical_detail2';
+
+import ResForm from '../reservation/new_reservation_form';
+
 class MusicalShow extends React.Component {
   constructor(props) {
     super(props);
@@ -42,6 +45,10 @@ class MusicalShow extends React.Component {
 
         <section className="right-side">
           {/* <MusicalReservation> */}
+          {/* <ResForm
+            musical = {musical}
+            filters = {this.props.filters}
+          /> */}
           <MusicalMap
             musical={musical}
           />

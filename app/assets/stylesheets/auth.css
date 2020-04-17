@@ -40,8 +40,7 @@ html{
   text-overflow: ellipsis;
   overflow: hidden; 
   font-size: medium;
- 
-}
+ }
 
 .session_form button{
   margin-top: 5%;
@@ -81,19 +80,19 @@ html{
   display: flex;
 }
 .header-link h1 {
-  display: flex;
+  display: inline-flex;
   font-family: BrandonText;
   float: left;
   padding: 1px 6px;
   font-weight: bolder;
   font-size: large;
-  margin-top: 2%;
+  margin-top: 14px;
 }
 
 .login-signup{
   display: flex;
   justify-content: flex-end;
-  margin-left: 60%;
+  margin-left: 75%;
 }
 .login-signup button{
   display: flex;

@@ -13,11 +13,15 @@ const MusicalItem =({musical})=>{
           src = {mban}
         ></img>
       </div>
-       {musical.name}</Link>
-      <div className = "extraExtra">
-        <p> {musical.city}</p>
-        <p> {musical.category}</p>
+      <div className="underplz">
+        <h1 className = "title">{musical.name}</h1>
+        
+        <div className = "extraExtra">
+          <p> {musical.city}</p>
+          <p> {musical.category}</p>
+        </div>
       </div>
+      </Link>
     </li>
   )
 }

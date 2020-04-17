@@ -23,8 +23,8 @@ const App = () =>{
         <Modal />
         <header className = "header"> 
             <div className = "logo">
-                <i class="fas fa-theater-masks"></i>
                 <Link to="/" className="header-link">
+                <i className="fas fa-theater-masks"/>
                 <h1>OpenPlaybill</h1>
                 </Link>
             </div>
@@ -33,7 +33,7 @@ const App = () =>{
         
         {/* <Route exact path="/" component={MainComponent} /> */}
         <Route exact path="/" component={indexed} />
-
+        
         <Route exact path="/musicals/:musicalId" component={MusicalShowContainer} />
     </div>)
 }

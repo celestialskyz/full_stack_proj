@@ -3,7 +3,6 @@ import FilterForm from '../filter_form';
 
 const MusicalSearch = ({query, updateFilter, klass})=>{
   
-  let unused = true;
   return(
    
     <div className = {klass}>

@@ -150,24 +150,32 @@ border-radius: 0px;
 .home ul{
   display: flex;
   margin-left: 5%;
+  width: 100%;
 }
 .home .profile {
-  width: 80%;
+  width: 1%;
 }
 
-.main.home .profilep{
+.home .profilep{
   border-radius: 4px;
   cursor: pointer;
-  height: 80%;
-  width: 100%;
+  height: 5%;
   align-content: center;
+}
+.home .underplz{
+  margin-top: 35%;
 }
 
 .home .row{
   flex-direction: row;
   padding-top: 1%;
- 
-}
+  width: 13%;
+ }
+
+ .home .title{
+   font-size: 16px;
+ }
+
 .home .homey{
   border-bottom: .0625rem solid #d8d9db;
     padding-bottom: 16px;
@@ -178,11 +186,10 @@ border-radius: 0px;
     margin-left: 5%;
 }
 
-
 .extraExtra {
   display: flex;
   font-size: 12px;
-  margin: 0 0 8px;
+  margin: 0 6px 8px;
   color: #2d333f;
   white-space: nowrap;
   overflow: hidden;
