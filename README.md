@@ -1,5 +1,6 @@
 # README
-![Alt text](https://openplaybill-seeds.s3.amazonaws.com/FullStackPhotos/red_logo.png "Red Logo") ## OpenPlaybill
+![Alt text](https://openplaybill-seeds.s3.amazonaws.com/FullStackPhotos/red_logo.png "Red Logo") 
+## OpenPlaybill
 
 OpenPlaybill is a Open Table clone. One can search and look at musicals based on search query. 
 ##### Current Key Features:
