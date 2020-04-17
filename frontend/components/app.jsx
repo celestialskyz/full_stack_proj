@@ -28,8 +28,8 @@ const App = () =>{
             <GreetingContainer />
         </header>
         
-        <Route exact path="/" component={MainComponent} />
-        {/* <Route exact path="/" component={indexed} /> */}
+        {/* <Route exact path="/" component={MainComponent} /> */}
+        <Route exact path="/" component={indexed} />
 
         <Route exact path="/musicals/:musicalId" component={MusicalShowContainer} />
     </div>)

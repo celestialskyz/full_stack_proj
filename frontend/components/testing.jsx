@@ -3,7 +3,8 @@ import MusicalIndexContainer from './musical_index/musical_index_container';
 import MusicalSearchContainer from './search/search_container';
 import {connect} from 'react-redux';
 import {initialFetchMusicals} from '../actions/musical_actions';
-import {MusicalIndex} from './musical_index/musical_index';
+// import {MusicalIndex} from './musical_index/musical_index';
+
 const indexed = (props)=>{
   const {klass} = props;
   debugger
@@ -14,15 +15,15 @@ const indexed = (props)=>{
     }, []);
 
     debugger
-    
+   } 
     return (
     <div className = {`main ${klass}`}>
     <MusicalSearchContainer />
-    <MusicalIndex musicals = {musicals}
+    <MusicalIndexContainer/>
     />
   </div>)
   
-}
+
 }
 
 
