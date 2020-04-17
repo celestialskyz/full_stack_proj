@@ -52,23 +52,20 @@ class MusicalShow extends React.Component {
 
         <div className="photos">
           <h2>Photos</h2>
-          <section className="allphotos">
-            <ul>
-              {phtos.map((pic, idx) => {
-                return (
-                  <li key={`${pic}+${idx}`}>
-                    <img
-                      className="pict"
-                      id={`pic${idx}`}
-                      src={pic}
-                    ></img>
-                  </li>
-                )
-              })
-              }</ul>
-          </section>
+            <div className="row">
+                {phtos.map((pic, idx) => {
+                  return (
+                    <div className="column" key={`${pic}+${idx}`}>
+                      <img
+                        className="photograph"
+                        id={`pic${idx}`}
+                        src={pic}
+                      />
+                    </div>
+                  )
+                })}
+            </div>
         </div>
-
 
         {/* <MusicalReviews> */}
 

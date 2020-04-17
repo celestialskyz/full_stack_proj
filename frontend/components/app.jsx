@@ -21,10 +21,13 @@ const App = () =>{
     return(
     <div>
         <Modal />
-        <header className = "header">
-            <Link to="/" className="header-link">
-            <h1>OpenPlaybill</h1>
-            </Link>
+        <header className = "header"> 
+            <div className = "logo">
+                <i class="fas fa-theater-masks"></i>
+                <Link to="/" className="header-link">
+                <h1>OpenPlaybill</h1>
+                </Link>
+            </div>
             <GreetingContainer />
         </header>
         

@@ -39,11 +39,7 @@ i.far.fa-calendar{
  position: absolute;
  padding-left: 1%;
 }
-/* 
-i.far.fa-clock{
-background: white;
-padding-left: 1%;
-} */
+
 .partys-drop{
  border-top-left-radius: 0px;
  border-bottom-left-radius: 0px;
@@ -150,4 +146,49 @@ border-radius: 0px;
 .main.home .sidebar{
   display: none;
   
+}
+.home ul{
+  display: flex;
+  margin-left: 5%;
+}
+.home .profile {
+  width: 80%;
+}
+
+.main.home .profilep{
+  border-radius: 4px;
+  cursor: pointer;
+  height: 80%;
+  width: 100%;
+  align-content: center;
+}
+
+.home .row{
+  flex-direction: row;
+  padding-top: 1%;
+ 
+}
+.home .homey{
+  border-bottom: .0625rem solid #d8d9db;
+    padding-bottom: 16px;
+    margin: 0 0 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4%;
+    margin-left: 5%;
+}
+
+
+.extraExtra {
+  display: flex;
+  font-size: 12px;
+  margin: 0 0 8px;
+  color: #2d333f;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.extraExtra p {
+  padding-right: 3px;
 }

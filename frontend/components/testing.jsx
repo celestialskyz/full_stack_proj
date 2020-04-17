@@ -7,20 +7,20 @@ import {initialFetchMusicals} from '../actions/musical_actions';
 
 const indexed = (props)=>{
   const {klass} = props;
-  debugger
+  
   if (klass === 'home'){
-    debugger
+    
     useEffect(() => {
      props.initialFetchMusicals();
     }, []);
 
-    debugger
+    
    } 
     return (
     <div className = {`main ${klass}`}>
     <MusicalSearchContainer />
     <MusicalIndexContainer/>
-    />
+   
   </div>)
   
 

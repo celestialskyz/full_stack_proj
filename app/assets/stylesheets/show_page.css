@@ -165,9 +165,9 @@ html{
 
 .photos{
   margin-top: 35%;
-  padding-top: 2rem;
+  padding-top: 2rem; 
   position: relative;
-  width: 60%;
+  /* width: 60%; */
   left: 5%;
   /* display: table; */
 }
@@ -219,12 +219,14 @@ html{
   padding-top: 5px;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-/* Create four equal columns that sits next to each other */
 .column {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-  max-width: 25%;
+  flex: 35%;
+  max-width: 35%;
   padding: 0 4px;
 }
 
@@ -234,20 +236,24 @@ html{
   width: 100%;
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
   .column {
-    -ms-flex: 50%;
     flex: 50%;
     max-width: 50%;
   }
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .column {
-    -ms-flex: 100%;
     flex: 100%;
     max-width: 100%;
   }
+}
+
+.photograph {
+  width:100%;
+}
+
+.fa-comment-alt:before {
+  margin-right: 4px;
 }

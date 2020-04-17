@@ -78,6 +78,7 @@ html{
 }
 .header{
   margin: 20px;
+  display: flex;
 }
 .header-link h1 {
   display: flex;
@@ -86,11 +87,13 @@ html{
   padding: 1px 6px;
   font-weight: bolder;
   font-size: large;
+  margin-top: 2%;
 }
 
 .login-signup{
   display: flex;
   justify-content: flex-end;
+  margin-left: 60%;
 }
 .login-signup button{
   display: flex;

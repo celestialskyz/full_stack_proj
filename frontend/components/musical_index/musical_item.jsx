@@ -7,13 +7,17 @@ const MusicalItem =({musical})=>{
 
   return(
     <li className = "row">
+      <Link to ={`/musicals/${musical.id}`}>
         <div className = "profile"> 
         <img className = "profilep"
           src = {mban}
         ></img>
       </div>
-      <Link to ={`/musicals/${musical.id}`} >{musical.name}</Link>
-        
+       {musical.name}</Link>
+      <div className = "extraExtra">
+        <p> {musical.city}</p>
+        <p> {musical.category}</p>
+      </div>
     </li>
   )
 }

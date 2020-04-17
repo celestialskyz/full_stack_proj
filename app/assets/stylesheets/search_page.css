@@ -38,7 +38,10 @@ flex-direction: column;
   color:  rgba(198, 198, 198, 0.8);
 }
 
-.row {
+.main.search .homey{
+  display: none;
+}
+.main.search .row {
   margin-top: .5%;
   display: flex;
   flex-direction: row;
@@ -48,11 +51,11 @@ flex-direction: column;
   padding-top: 1%;
 }
 
-  .row a{
+.row a{
     color: #247f9e;
     font-size: 1.125rem;
     font-weight: 600;
-  }
+}
 
  .profile{
   height: 130px;
@@ -63,7 +66,7 @@ flex-direction: column;
   border-radius: 4px;
 }
 
-.profilep{
+.main.search .profilep{
   border-radius: 4px;
   cursor: pointer;
   width: 70%;

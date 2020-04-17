@@ -39,7 +39,7 @@ export const initialFetchMusicals = ()=> dispatch =>{
   return(
     EventAPIUtil.initialFetchMusicals().then(musicals =>{dispatch(intialreceiveMusicals(musicals));})
   );
-  debugger;
+  // debugger;
 };
 
 export const fetchMusical = (musicalId)=> dispatch =>{

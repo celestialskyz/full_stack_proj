@@ -15,6 +15,7 @@ class MusicalIndex extends React.Component{
     // debugger
     return(
       <>
+        <h3 className = "homey"> Today's Top Picks</h3>
         <ul>
           {
             musicals.map(musical =>(
@@ -25,7 +26,6 @@ class MusicalIndex extends React.Component{
             ))
         }
         </ul>
-
 
         <aside className = "sidebar">
           <div className = "money">
