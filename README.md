@@ -13,8 +13,8 @@ OpenPlaybill is a Open Table clone. One can search and look at musicals based on
 * Open your localhost/whatever server you have chosen
 
 Future Features:
- *Ability to make Reservation
+ * Ability to make Reservation
   -currently backend is set up but front end needs completion
- *Write Reviews
- *Favorite Musicals
+ * Write Reviews
+ * Favorite Musicals
  
