@@ -1,5 +1,3 @@
-require "byebug"
-
 class Api::MusicalsController < ApplicationController
   
   def index
