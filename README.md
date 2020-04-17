@@ -8,9 +8,9 @@ OpenPlaybill is a Open Table clone. One can search and look at musicals based on
     -usage of PgSearch in order to use full text search
     
 ##### How to Use the Application:
-*Set up rails server: `rails s`
-*Set up Webpack: `run npm webpack`
-*Open your localhost/whatever server you have chosen
+* Set up rails server: `rails s`
+* Set up Webpack: `run npm webpack`
+* Open your localhost/whatever server you have chosen
 
 Future Features:
  *Ability to make Reservation
