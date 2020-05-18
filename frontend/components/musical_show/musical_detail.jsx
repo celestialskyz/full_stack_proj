@@ -7,14 +7,14 @@ const MusicalDetail =({musical})=>{
    
     <section className ="musical_detail">
       {/* <div className="white"> </div>  */}
-      <nav className = "detailNav">
+      {/* <nav className = "detailNav">
         <ul className = "little_tabs">
           <li>Overview</li>
           <li>Specials</li>
           <li>Photos</li>
           <li>Reviews</li>
         </ul>
-      </nav> 
+      </nav>  */}
       <h1>{musical.name}</h1>
       <div className="horz">
         <ul className = "review_stats">

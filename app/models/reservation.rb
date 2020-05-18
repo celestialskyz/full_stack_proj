@@ -10,6 +10,13 @@ class Reservation < ApplicationRecord
   class_name: 'Musical'
 
 
+
+  class DateError < StandardError
+    def message
+      "There is no availability for that time."
+    end 
+  end
+
 end
 
 #reservationMusical = {} 

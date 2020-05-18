@@ -11,12 +11,21 @@ class User < ApplicationRecord
   foreign_key: :reserver_id,
   class_name: 'Reservation'
 
+  class LoginError < StandardError
+    def message
+      "Your email and password don't match. Please try again."
+    end 
+  end
+
 
   #FGRIPE
   def self.find_by_credentials(email, password)
     user = User.find_by(email:email)
+    raise LoginError if !user;
     if user && user.is_password?(password)
       return user
+    else 
+      raise LoginError
     end
     nil
   end

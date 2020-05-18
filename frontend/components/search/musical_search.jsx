@@ -1,5 +1,5 @@
 import React from 'react';
-import FilterForm from '../filter_form';
+import FilterForm from './filter_form';
 
 const MusicalSearch = ({query, updateFilter, klass})=>{
   

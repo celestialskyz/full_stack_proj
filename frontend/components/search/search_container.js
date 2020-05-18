@@ -4,7 +4,7 @@ import {updateFilter} from '../../actions/filter_actions';
 // // import MusicalMap from '../musical_show/musical_map';
 import MusicalSearch from './musical_search';
 
-const msp = (state)=>{
+const msp = (state)=>{ //debugger
   return({
      musicals: Object.values(state.entities.musicals),
      inputQ: state.ui.filters.query,

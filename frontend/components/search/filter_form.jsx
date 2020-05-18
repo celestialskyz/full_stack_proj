@@ -8,8 +8,10 @@ class FilterForm extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      // time:"",
-      inputQ:""
+      inputQ:"",
+      date:new Date(),
+      partys: 2,
+      time: new Date().getHours
     };
     // let addClass = false;
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -124,7 +126,6 @@ class FilterForm extends React.Component{
               <input
               className = "texting"
             type="query"
-            value={inputQ}
             placeholder='Location, Musical, or Category'
             onChange={this.handleInput('inputQ')}/>
           <button className="" type="submit">Let's go</button>

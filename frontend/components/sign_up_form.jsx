@@ -1,7 +1,7 @@
 import React from 'react';
+import { withRouter } from "react-router-dom";
 
 class SignUpForm extends React.Component{
-
   constructor(props){
     super(props);
     this.state={
@@ -9,45 +9,142 @@ class SignUpForm extends React.Component{
       password:"",
       first_name:"",
       last_name:"",
-      country:"United States"
+      country:"United States",
+      errors: []
     };
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
+    // this.clearedErrors = false;
   }
-   
-   
+     
     handleSubmit(e){
       e.preventDefault();
       const user= Object.assign({}, this.state); 
-      this.props.processForm(user);
+      this.props.processForm(user).then(this.props.closeModal);
     }
 
+    // componentWillReceiveProps(nextProps) {
+    //   if (nextProps.signedIn === true) {
+    //     this.props.history.push("/login");
+    //   }
+  
+    //   this.setState({ errors: nextProps.errors });
+    // }
+
     handleInput(type){
-      return(e)=>{
-        this.setState({[type]: e.target.value});
-      };
+     // debugger
+     return (e) =>{
+     let check = e.target.checkValidity();
+     //debugger
+       switch (type) {
+         case "email":
+           if (!check){//debugger 
+            this.setState({errors: [...this.state.errors, "Enter a valid email address."]}) 
+          }
+          else {
+            this.setState({
+              errors: this.state.errors.filter(words =>
+                words !== "Enter a valid email address.")
+            })
+          }
+          //   debugger
+            this.setState({
+              [type]: e.target.value
+            });
+            break;
+          case "password":
+           if (e.target.value.length < 8){ 
+            this.setState({errors: ["Passwords must be 8 characters or more."]}) 
+          }
+          //   debugger
+            this.setState({
+              [type]: e.target.value
+            });
+            break;
+          case "first_name":
+           if (!check){//debugger 
+            this.setState({errors: ["Please enter your first name."]}) 
+          }
+          //   debugger
+            this.setState({
+              [type]: e.target.value
+            });
+            break;
+          case "last_name":
+            //debugger
+              if (!check){ 
+               this.setState({errors: ["Please enter your last name."]}) 
+             }
+             //   debugger
+               this.setState({
+                 [type]: e.target.value
+               });
+               break;
+         default:
+          this.setState({
+              [type]: e.target.value
+            });
+            break;
+       }
+      }   
+      // this.setState({
+      //   [type]: e.target.value
+      // });
+    }
+
+
+      //   if (!e.target.value.includes("@") || !e.target.value.includes(".") ){
+      //   this.props.errors.push("Enter a valid email address.");
+      //   return renderErrors();
+      //   }
+      // }
+      // else if (type === "password"){
+      //   if (e.target.value < 8 ){
+      //   this.props.errors.push("Passwords must be 8 characters or more.");
+      //   return renderErrors();
+      //   }
+      // }
+    
+
+    renderErrors() {
+      // if (this.props.errors === undefined){
+      //   return (
+      //     <>
+      //     </>
+      //     );   }
+      return(
+        <ul>
+          {this.state.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
     }
 
     render(){
+     // debugger
       return(
             <>
             <form className = 'session_form' onSubmit={this.handleSubmit} >
+            {this.renderErrors()}
               <h1 className = "sign_h">Welcome to OpenPlaybill!</h1>
                 <label>
-                <input type="text" name="inputBox" onChange={this.handleInput('first_name')} placeholder='First Name *'/>
+                <input type="text" name="inputBox" onChange={this.handleInput('first_name')} placeholder='First Name *'  value={this.state.username}/>
                 </label>
               <label> 
                 <input type="text" name="inputBox" onChange={this.handleInput('last_name')} placeholder='Last Name *'/>
               </label>
               <label>
-                <input type="text" name="inputBox" onChange={this.handleInput('email')}placeholder='Enter email *'/>
+                <input type="email" name="inputBox" onChange={this.handleInput('email')} placeholder='Enter email *'/>
                 </label>
               <label>
-                <input type="password" name="inputBox" onChange={this.handleInput('password')} placeholder='Enter password *'/>
+                <input type="password" name="inputBox" onChange={this.handleInput('password')} placeholder='Enter password *' />
               </label>
               {/* <label htmlFor="country">Country</label>   */}
-                <select name="country" className="form-control" onChange={this.handleInput('country')}>
-                <option value="" selected disabled>Primary Viewing Location *</option>
+                <select name="country" className="form-control" onChange={this.handleInput('country')} placeholder="Primary Viewing Location">
                 <option value="United States" >United States</option>
                   <option value="Afghanistan">Afghanistan</option>
                   <option value="Åland Islands">Åland Islands</option>
@@ -301,4 +398,4 @@ class SignUpForm extends React.Component{
   
 }
 
-export default SignUpForm;
+export default withRouter(SignUpForm);

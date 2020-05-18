@@ -23,10 +23,13 @@ class MusicalMap extends React.Component{
 
     return(
       <>
-    <div id = "right side map">
-      <div id="map-container" ref="map">
-        <div ref={map => this.mapNode = map} className="map"></div>
-      </div>
+    <div id = "right-side map">
+      <label>
+        <div id="map-container" ref="map">
+          <div ref={map => this.mapNode = map} className="map"></div>
+        </div>
+        {this.props.musical.address} {this.props.musical.city}
+      </label>
     </div>   
       </>
     )

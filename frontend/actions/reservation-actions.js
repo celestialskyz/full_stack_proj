@@ -37,15 +37,12 @@ export const requestRes=(userId, resId)=>dispatch =>{
   );
 };
 
-
-
 export const createRes = (userId, res) => dispatch =>{
   return(
     APIres.createReservation(userId, res).then(res => {dispatch(receiveRes(res));}
     )
   );
 };
-
 
 export const updateRes = (userId, res) => dispatch =>{
   return(

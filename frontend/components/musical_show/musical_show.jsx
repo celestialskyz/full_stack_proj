@@ -8,13 +8,11 @@ import ResForm from '../reservation/new_reservation_form';
 class MusicalShow extends React.Component {
   constructor(props) {
     super(props);
-    //debugger
+   // debugger
   }
 
   componentDidMount() {
-    //debugger
     this.props.fetchMusical(this.props.match.params.musicalId);
-    //debugger
   }
 
   render() {
@@ -31,32 +29,27 @@ class MusicalShow extends React.Component {
     return (
       <>
         {/* <img src=  */}
-        <div className="white"> </div>
         <div className="banner">
           <img className="picbanner"
             src={mban}
           ></img>
         </div>
+        <div className = "inbanner">
+          <nav className = "detailNav">
+          <ul className = "little_tabs">
+            <li  key = "Overview" >Overview</li>
+            <li key ="Specials">Specials</li>
+            <li key ="Photos">Photos</li>
+            <li key ="Reviews" >Reviews</li>
+          </ul>
+        </nav> 
+      </div>
+      <div className = "align">
+        <div className = "leftside">
         <MusicalDetail
           musical={musical}
           key={musical.id}
         />
-
-
-        <section className="right-side">
-          {/* <MusicalReservation> */}
-          {/* <ResForm
-            musical = {musical}
-            filters = {this.props.filters}
-          /> */}
-          <MusicalMap
-            musical={musical}
-          />
-          <MusicalDetail2
-            musical={musical}
-          />
-        </section>
-
         <div className="photos">
           <h2>Photos</h2>
             <div className="row">
@@ -73,6 +66,23 @@ class MusicalShow extends React.Component {
                 })}
             </div>
         </div>
+       </div>
+        <section className="right-side">
+          {/* <MusicalReservation> */}
+          <ResForm
+            musical = {musical}
+            filters = {this.props.filters}
+            userid = {this.props.user.id}
+            usern = {this.props.user.first_name}
+          />
+          <MusicalMap
+            musical={musical}
+          />
+          <MusicalDetail2
+            musical={musical}
+          />
+        </section>
+      </div>
 
         {/* <MusicalReviews> */}
 

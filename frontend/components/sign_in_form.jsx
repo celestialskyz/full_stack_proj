@@ -15,17 +15,21 @@ class SignInForm extends React.Component{
    
    
     handleSubmit(e){
+      //debugger
       e.preventDefault();
       const user= Object.assign({}, this.state); 
       this.props.processForm(user);
-      this.props.closeModal();
+      // .then((this.props)=>{
+      //   console.log("Hello");
+      //   console.log(this.props);
+       // this.props.closeModal
+      //});
     }
 
     demoLogin(e){
       e.preventDefault();
       const user= {email: 'gAlinda@shiz.edu', password:'popular'};
-      this.props.processForm(user);
-      this.props.closeModal();
+      this.props.processForm(user).then(this.props.closeModal);
     }
 
     handleInput(type){
@@ -33,22 +37,43 @@ class SignInForm extends React.Component{
         this.setState({[type]: e.target.value});
       };
     }
-
+   
+    renderErrors() {
+      if (this.props.errors === undefined){
+        return (
+          <>
+          </>
+          );   }
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => {
+            //debugger
+            return ( <li key={`error-${i}`}>
+              {error}
+            </li>);
+           
+          })}
+        </ul>
+      );
+    }
+    
     render(){
       return (
         <>
           <form className = 'session_form' onSubmit={this.handleSubmit} >
+          {this.renderErrors()}
           <fieldset>
             <h1 className = "sign_h">Please sign in</h1>
               <label> 
-                <input type="text" name="inputBox" onChange={this.handleInput('email')}placeholder='Email'/>
+                <input type="text" name="inputBox" onChange={this.handleInput('email')}placeholder='Email' />
                 </label>
               <label> 
-                <input type="password" name="inputBox" onChange={this.handleInput('password')} placeholder='Password'/>
+                <input type="password" name="inputBox" onChange={this.handleInput('password')} placeholder='Password' />
               </label>
               <button onClick={this.handleSubmit}>Sign In</button>
               </fieldset>
               <button onClick={this.demoLogin}>Demo User</button>
+              
              </form>
         </>
       )

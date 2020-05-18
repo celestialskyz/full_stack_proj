@@ -41,7 +41,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   // testing
 
-
-
   ReactDOM.render(<Root store={store}/>, root);
 });

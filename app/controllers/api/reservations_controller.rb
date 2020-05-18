@@ -1,8 +1,8 @@
 class Api::ReservationsController < ApplicationController
-    before_action :ensure_logged_in, except:[:create]
+    before_action :ensure_logged_in
 
   def index 
-    @reservations = Reservation.all
+    @reservations = Reservation.find_by(params[:reserver_id])
     render :index
   end
 
@@ -11,33 +11,37 @@ class Api::ReservationsController < ApplicationController
   end
 
   def create
-    #if !(params[:reservation][:date].kind_of?(Date))
-     # day = Date.new(params[:reservation][:date])
-      #@reservation = Reservation.new(params[:reservation][:show_id], params[:reservation][:reserver_id], params[:reservation][:party_size], day, params[:reservation][:time])
-    #end
+    @reservations = Reservation.find_by(params[:reservation][:date], params[:reservation][:time])
+    
+    @reservations.each do |res| 
+      sum+=res.party_size.to_i;
+    end
+
+      if (sum > 400) || (sum +params[:reservation][:party_size]) > 400 {
+          raise DateError.new
+      }
+      else{
        @reservation = Reservation.new(res_params)
-      #if (current_user)
-      #  @reservation.reserver_id = current_user 
-      #end
-       #byebug
+       @reservation.reserver_id = params[:reserver_id]
        if @reservation.save 
            render :show
        else
         #byebug
-         redirect_to api_musical_url(params[:show_id])
+        render :json => { errors: @user.errors.full_messages}, :status => 422
+        redirect_to api_musical_url(params[:show_id])
        end
        # byebug
+      }
   end
 
   def update
     
-     reservation = Reservation.find( params[:id] )
+     reservation = Reservation.find(params[:id])
      
-       if reservation.update( res_params ) 
+       if reservation.update(res_params) 
            render :show
        else
-           render json: reservation.errors.full_messages, status: 422
-        
+           render :json => { errors: reservation.errors.full_messages}, status: 422
        end
        
   end

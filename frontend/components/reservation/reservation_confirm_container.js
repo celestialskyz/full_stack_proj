@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
-import { createEvent } from '../../actions/event_actions';
-import ResForm from './event_form';
+import ReservationConfirmForm from "./reservation_confirm_form";
 
 const msp = (state, ownProps) => {
+  debugger
   let filters= state.ui.filters.inputQ ? state.ui.filters : {inputQ:"",
-     date: Date.now(),
-     psize: 0,
-     time: ''};
+     date: new Date(Date.now()),
+     psize: 1,
+     time: 1900};
 
   return({
     musical: state.entities.musicals[ownProps.match.params.musicalId],
@@ -27,4 +27,4 @@ const mdp = dispatch => {
   });
   };
   
-  export default connect(msp,mdp)(ResForm);
+  export default connect(msp,mdp)(ReservationConfirmForm);

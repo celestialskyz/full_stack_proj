@@ -4,10 +4,12 @@ import SignInForm from './sign_in_form.jsx';
 import { openModal, closeModal } from '../actions/modal_actions';
 import React from 'react';
 
-const msp = (state = {}) => ({
-    errors: state.errors,
-    formType: "SignIn"
-});
+const msp = (state = {}) => {
+    // debugger
+    return ({errors: state.errors.session,
+    formType: "SignIn"});
+
+};
 
 const mdp = (dispatch) => ({
     processForm: (formUser) => dispatch(loginUser(formUser)),

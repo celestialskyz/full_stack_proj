@@ -5,7 +5,8 @@ import { openModal, closeModal } from '../actions/modal_actions';
 import React from 'react';
 
 const msp = (state = {}) => ({
-    errors: state.errors,
+    errors: state.errors.sessionErrors,
+    signedIn: state.session.isSignedIn,
     formType: "SignUp"
 });
 
