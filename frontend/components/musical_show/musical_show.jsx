@@ -38,8 +38,14 @@ class MusicalShow extends React.Component {
           <nav className = "detailNav">
           <ul className = "little_tabs">
             <li  key = "Overview" >Overview</li>
-            <li key ="Specials">Specials</li>
-            <li key ="Photos">Photos</li>
+            {/* <li key ="Specials">Specials</li> */}
+            <li key ="Photos"> Photos
+            {/* <a href="#pics" className="scroll-icon smoothscroll">  */}
+            {/* FIX */}
+                {/* <span>Photos</span> */}
+            {/* </a> */}
+            {/* <li key ="Photos">Photos */}
+            </li>
             <li key ="Reviews" >Reviews</li>
           </ul>
         </nav> 
@@ -50,6 +56,7 @@ class MusicalShow extends React.Component {
           musical={musical}
           key={musical.id}
         />
+    <a name="pics">
         <div className="photos">
           <h2>Photos</h2>
             <div className="row">
@@ -66,14 +73,16 @@ class MusicalShow extends React.Component {
                 })}
             </div>
         </div>
+      </a>
        </div>
         <section className="right-side">
           {/* <MusicalReservation> */}
           <ResForm
             musical = {musical}
             filters = {this.props.filters}
-            userid = {this.props.user.id}
-            usern = {this.props.user.first_name}
+            handleSubmit = {this.props.receivePendingRes}
+            // userid = {this.props.user.id}
+            // usern = {this.props.user.first_name}
           />
           <MusicalMap
             musical={musical}

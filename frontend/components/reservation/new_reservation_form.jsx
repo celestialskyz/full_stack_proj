@@ -1,46 +1,49 @@
 import React from 'react';
+import {Redirect, withRouter} from 'react-router-dom';
 import TimesForm from "./reservation_confirm_form";
+// import { LinkforId } from '../../util/link_util';
+import ReservationConfirmed from "./reservation_confirm_form";
+import moment from 'moment';
 
 class ResForm extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-     inputQ:props.filters.inputQ,
+    //  inputQ:props.filters.inputQ,
      date: props.filters.date,
      psize: props.filters.psize,
-     time: props.filters.time,
-     userid: props.userid,
-     usern: props.usern
+     time: props.filters.time
     };  
 
     this.createButtons = this.createButtons.bind(this);
     this.createTimes = this.createTimes.bind(this);
-    this.redirect = this.redirect.bind(this);
-
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.redirectIt = this.redirectIt.bind(this);
   }
 
-  // handleSubmit(e){
-  //   e.preventDefault();
+redirectIt(musical, time){
+  // debugger
+  let mName = musical.name;
+  this.props.handleSubmit({...this.state, time, mName});
+  this.props.history.push({
+      pathname: `/musicals/confirmRes`
+    });
+}
+  // const reserv = Object.assign({musicalId : musical.id, musicalName: musical.name, userid: this.props.userid, createRes : this.props.createRes}, this.state);
+  // <Redirect to={
+  //     pathname:{`/musicals/${musical.id}/confirmRes`},
+  //     createRes: this.props.createRes,
+  //     state= Object.assign({musicalId : musical.id, musicalName: musical.name, userid: this.props.userid, createRes : this.props.createRes}, this.state);
+  //   }
+  //   />
+  
+  
+    // <Redirect to=`/musicals/${musical.id}/confirmRes`/>
 
-  //   //this.setState({psize: parseInt(this.state.psize)})
-  //   //create res in the 2nd screen not here //make it a link to the reserve page passing parameters through
-  //   this.props.createRes(this.state.userId, this.state.res);
-  // }
-
-  redirect(musical){
-    const reserv = Object.assign({musicalId : musical.id, musicalName: musical.name, userid: props.userid, createRes : this.props.createRes}, this.state);
-    <Redirect to={{
-      pathname:`/${musicalId}/confirmRes`,
-      createRes: this.props.createRes,
-      state: reserv
-    }}
-    />
-  }
+  
 
   createTimes(time){
-    return time > 1200 ? (time-1200).toString().slice(0, 1) +":" + (time-1200).toString().slice(1) + "PM" :
-                (time).toString().slice(0, 1) +":" + (time).toString().slice(1)+ "AM"
+    return time > 1200 ? (time-1200).toString().slice(0, -2) +":" + (time-1200).toString().slice(-2) + "PM" :
+                (time).toString().slice(0, -2) +":" + (time).toString().slice(1)+ "AM";
   }
 
   update(field){
@@ -54,18 +57,21 @@ class ResForm extends React.Component{
   
    let buttonh = document.createElement("div");
    var newHead = document.createTextNode("Select a Time:"); 
+  //  let linked = document.createElement("div");
    newHead.className = "newheader";
    buttonh.appendChild(newHead);
    parent.appendChild(buttonh);
+  //  parent.appendChild()
    let findbutton = document.getElementById("firstFind");
     findbutton.remove();
     timearr.forEach(time => {
-      var button = document.createElement('button');
-      button.innerHTML = this.createTimes(time);
-      button.className = "timebuttons";
-      // debugger
-      button.onClick = () => this.redirect(musical);
-      parent.appendChild(button);
+      var newbutton = document.createElement('button');
+      newbutton.innerHTML = this.createTimes(time);
+      newbutton.className = "timebuttons";
+      newbutton.addEventListener("click", (event) =>{
+        event.preventDefault();
+        this.redirectIt(musical, time)})
+      parent.appendChild(newbutton);
     });   
   }
 
@@ -83,21 +89,33 @@ class ResForm extends React.Component{
 
   render(){
     const {musical} = this.props;
-   const {inputQ, date, psize, time} = this.state;
-      //1900
-   const timearr = [];
-   timearr.push(time-200); //1800
-    timearr.push(time-170);
-    timearr.push(time-100); //1800
-    timearr.push(time-70);  // 
-    timearr.push(time);
-    timearr.push(time+30);
-    timearr.push(time+100);
-    timearr.push(time+130);
-    timearr.push(time+200);
-    timearr.push(time+230);
+    const {inputQ, date, psize, time} = this.state;
     
- // debugger
+    let timearr = [];
+    let rangestart = time-200;    
+    if (time === 0){
+      rangestart = 2200;
+    }
+    else if (time === 100){ //0100
+      rangestart = 2100;
+    }
+    let otherTime= (rangestart).toString().slice(0,-2);
+    // debugger
+    let addhr = parseInt(otherTime)*100;
+      for (let i = 0; i<5; i++){
+         addhr = addhr + 100;
+         timearr.push(addhr)  
+        if (addhr >= 2400){ 
+          timearr.push('0000');
+          timearr.push('0030');
+        }
+        else{
+          timearr.push(addhr + 30);
+
+        }
+      }
+      // debugger
+   
     return(
       <>
       <div id="resform">
@@ -137,13 +155,17 @@ class ResForm extends React.Component{
           <label>Time
           {/* for select item must be string convert later */}
             <select key = "time" name="time" className="time-drop"  value={time} onChange={this.update('time')}>
-              {timearr.map( time =>(
-                <option key= {time} value = {time.toString()}> {this.createTimes(time)}
-                {/* { time > 1200 ? (time-1200).toString().slice(0, 1) +":" + (time-1200).toString().slice(1) + "PM" :
-                (time).toString().slice(0, 1) +":" + (time).toString().slice(1)+ "AM"} */}
+              {timearr.map(time =>(
+                <option key= {time} value ={time} > {this.createTimes(time)}
                 </option>
+              ))}
+              {/* { {nonMilitaryT.map( time =>(
+                <option key= {time} value = {time.toString()}> {this.createTimes(time)}
+                {{ time > 1200 ? (time-1200).toString().slice(0, 1) +":" + (time-1200).toString().slice(1) + "PM" :
+                (time).toString().slice(0, 1) +":" + (time).toString().slice(1)+ "AM"} }
+                </option> }
               ))
-              }
+              } */}
             </select>
           </label>
           </div>
@@ -161,5 +183,4 @@ class ResForm extends React.Component{
   }
 
 }
-
-export default ResForm;
+export default withRouter(ResForm);

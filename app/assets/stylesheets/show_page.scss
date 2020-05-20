@@ -84,8 +84,12 @@ html{
   float: right;
   z-index: 2;
   width: 30%;
+  height: 100%;
 }
 
+.musicalInfo a {
+  color: blue;
+}
 
 .map-container{
   height: 250px;
@@ -172,6 +176,9 @@ html{
   padding-top: 2%;
 }
 
+#firstFind{
+  margin-bottom: 5%;
+}
 
 .rightsideTabs label{
   font-size: 14px;
@@ -238,6 +245,7 @@ html{
   // height: 45%;
   box-shadow: 0 2px 8px rgba(153,153,153,.4);
   background-color: rgb(247, 247, 247);
+  margin-bottom: 5%;
 }
 
 #resform.timebutton{
@@ -294,9 +302,15 @@ html{
  }   
  .horizalign{
   padding-top: 3%;
-  margin-left: 6%;
   overflow-wrap: normal;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
 }
+
+.horizalign text{
+  display: flex;
+}
+
 #resform button{
   background-color: #da3743;
   border-color: #b8222d;

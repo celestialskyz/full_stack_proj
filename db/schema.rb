@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_15_010259) do
+ActiveRecord::Schema.define(version: 2020_05_20_214432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(version: 2020_04_15_010259) do
     t.integer "party_size", null: false
     t.date "date", null: false
     t.integer "time"
+    t.string "reserverPhoneN"
+    t.string "specialReq"
     t.index ["reserver_id"], name: "index_reservations_on_reserver_id"
     t.index ["show_id"], name: "index_reservations_on_show_id"
   end

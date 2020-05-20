@@ -5,6 +5,7 @@ import SignupContainer from './sign_up_form_container';
 import SignInContainer from './sign_in_form_container';
 
 function Modal({modal, closeModal}){
+  // debugger
   if (!modal) {
     return null;
   }
@@ -37,6 +38,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    
     closeModal: () => dispatch(closeModal())
   };
 };

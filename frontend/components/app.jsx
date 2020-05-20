@@ -1,4 +1,4 @@
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch, Link, withRouter } from "react-router-dom";
 import React from 'react';
 import GreetingContainer from "./greeting_container";
 // import SignupContainer from './sign_up_form_container';
@@ -14,7 +14,7 @@ import MusicalSearchContainer from './search/search_container';
 import MusicalIndex from "./musical_index/musical_index";
 import MainComponent from './main_component';
 import indexed from './testing';
-import ReservationConfirmForm from "./reservation/reservation_confirm_form";
+import ResConfirmFormContainer from "./reservation/reservation_confirm_container";
 
 const App = () =>{
     // const additionalClass = state.ui.filters.query ? "search" : "home";
@@ -34,10 +34,10 @@ const App = () =>{
         
         {/* <Route exact path="/" component={MainComponent} /> */}
         <Route exact path="/" component={indexed} />
-        <Route exact path="/musicals/:musicalId/:confirmRes" component={ReservationConfirmForm} />
+        <ProtectedRoute exact path="/musicals/confirmRes" component={ResConfirmFormContainer} />
         <Route exact path="/musicals/:musicalId" component={MusicalShowContainer} />
-        {/* <ProtectedRoute exact path="/:resId/:confirmed" component= {ReservationConfirmed} /> */}
+        {/* <Route exact path="/reservations" component={ResIndxContainer} /> */}
     </div>)
 }
 
-export default App;
+export default withRouter(App);

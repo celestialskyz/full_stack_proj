@@ -3,6 +3,8 @@ import * as APIres from '../util/reservation_api_util';
 export const RECEIVE_RESVS = 'RECEIVE_RESVS';
 export const RECEIVE_RES = 'RECEIVE_RES';
 export const REMOVE_RES = 'REMOVE_RES';
+export const RECEIVE_PENDING_RES ='RECEIVE_PENDING_RES';
+export const CLEAR_PENDING_RES = "CLEAR_PENDING_RES";
 
 const receiveResvs =(resvs)=>{
   return({
@@ -24,6 +26,18 @@ const removeRes =(resId)=>{
     resId
   });
 };
+export const receivePendingRes=(res)=>{
+  return({
+    type: RECEIVE_PENDING_RES,
+    res
+  });
+};
+
+export const clearPendingRes =()=>{
+  return({
+    type:CLEAR_PENDING_RES
+  })
+}
 
 export const requestResvs=(userId)=>dispatch =>{
   return(

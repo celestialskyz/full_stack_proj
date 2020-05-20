@@ -1,6 +1,8 @@
 import React from "react";
 import { connect }from "react-redux";
 import { Redirect, Route, withRouter } from 'react-router-dom';
+import Modal from '../components/modal';
+import SignUpContainer from '../components/sign_up_form_container';
 
 const msp = (state) => ({
     loggedIn: Boolean(state.session.currentUser)
@@ -15,7 +17,7 @@ const Auth = ({ loggedIn, path, component: Component }) => (
 
 const Protected = ({ loggedIn, path, component: Component }) => (
     <Route path={path} render={props => (
-        loggedIn ? <Component {...props} /> : <Redirect to="/signup" />
+        loggedIn ? <Component {...props} /> : <SignUpContainer/>
     )}
     />
 )

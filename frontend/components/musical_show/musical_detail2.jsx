@@ -31,7 +31,8 @@ const MusicalDetail =({musical})=>{
           <li>
           <label> Website </label>
             <div className="musicalInfo">
-            {musical.website}
+            <a href={musical.website}> {musical.name} Website</a>
+            
             </div>
           </li>
           <li>
