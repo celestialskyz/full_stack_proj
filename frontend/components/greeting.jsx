@@ -24,11 +24,6 @@ const Greeting = ({ currentUser, logoutUser, openModal }) => {
     else {
       return sessionLinks()
     }
-    // return (
-    //   currentUser ?
-    //   :
-    //   sessionLinks()
-    // );
   };
   
   export default Greeting;

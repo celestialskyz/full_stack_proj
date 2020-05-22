@@ -45,15 +45,15 @@ export const requestResvs=(userId)=>dispatch =>{
   );
 };
 
-export const requestRes=(userId, resId)=>dispatch =>{
+export const requestRes=(resId)=>dispatch =>{
   return(
-    APIres.fetchReservation(userId, resId).then(res =>{ dispatch(receiveResvs(res));})
+    APIres.fetchReservation(resId).then(res =>{ dispatch(receiveResvs(res));})
   );
 };
 
-export const createRes = (userId, res) => dispatch =>{
+export const createRes = (res) => dispatch =>{
   return(
-    APIres.createReservation(userId, res).then(res => {dispatch(receiveRes(res));}
+    APIres.createReservation(res).then(res => {dispatch(receiveRes(res));}
     )
   );
 };

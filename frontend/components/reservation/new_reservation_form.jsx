@@ -11,7 +11,7 @@ class ResForm extends React.Component{
     this.state = {
     //  inputQ:props.filters.inputQ,
      date: props.filters.date,
-     psize: props.filters.psize,
+     party_size: props.filters.party_size,
      time: props.filters.time
     };  
 
@@ -23,23 +23,13 @@ class ResForm extends React.Component{
 redirectIt(musical, time){
   // debugger
   let mName = musical.name;
-  this.props.handleSubmit({...this.state, time, mName});
+  let show_id = musical.id;
+  
+  this.props.handleSubmit({...this.state, time, mName, show_id});
   this.props.history.push({
       pathname: `/musicals/confirmRes`
     });
 }
-  // const reserv = Object.assign({musicalId : musical.id, musicalName: musical.name, userid: this.props.userid, createRes : this.props.createRes}, this.state);
-  // <Redirect to={
-  //     pathname:{`/musicals/${musical.id}/confirmRes`},
-  //     createRes: this.props.createRes,
-  //     state= Object.assign({musicalId : musical.id, musicalName: musical.name, userid: this.props.userid, createRes : this.props.createRes}, this.state);
-  //   }
-  //   />
-  
-  
-    // <Redirect to=`/musicals/${musical.id}/confirmRes`/>
-
-  
 
   createTimes(time){
     return time > 1200 ? (time-1200).toString().slice(0, -2) +":" + (time-1200).toString().slice(-2) + "PM" :
@@ -89,7 +79,7 @@ redirectIt(musical, time){
 
   render(){
     const {musical} = this.props;
-    const {inputQ, date, psize, time} = this.state;
+    const {inputQ, date, party_size, time} = this.state;
     
     let timearr = [];
     let rangestart = time-200;    
@@ -124,7 +114,7 @@ redirectIt(musical, time){
         </div>
         <form  >
           <label className = "psizehead">Party Size
-            <select key = "partys" name="partys" className="res-drop" value= {psize} onChange={this.update('partys')}>
+            <select key = "partys" name="partys" className="res-drop" value= {party_size} onChange={this.update('partys')}>
             <option key="partys1" value='1' >1 </option> 
             {/* for select item must be string convert later */}
                 <option key="partys2" value='2' >2 </option>

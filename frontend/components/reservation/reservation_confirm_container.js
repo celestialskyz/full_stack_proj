@@ -1,15 +1,11 @@
 import { connect } from 'react-redux';
 import ReservationConfirmForm from "./reservation_confirm_form";
 import {openModal} from '../../actions/modal_actions';
+import {createRes} from '../../actions/reservation-actions';
 const msp = (state, ownProps) => {
   
-  // let filters= state.ui.filters.inputQ ? state.ui.filters : {inputQ:"",
-  //    date: new Date(Date.now()),
-  //    psize: 1,
-  //    time: 1900};
-
   return({
-    login: state.session.currentUserId,
+    reserver_id: state.session.currentUserId,
     currentUserFname: state.session.currentUser.first_name,
     currentUserEmail: state.session.currentUser.email,
     res: state.ui.reservationdetails
@@ -18,7 +14,7 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
   return({
-    createRes:(userId, res)=>dispatch(createRes(userId, res)),
+    createRes:(res)=>dispatch(createRes(res)),
     openModal: (modal)=>dispatch(openModal(modal))
   });
 };

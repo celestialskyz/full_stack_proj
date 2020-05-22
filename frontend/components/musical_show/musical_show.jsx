@@ -81,8 +81,6 @@ class MusicalShow extends React.Component {
             musical = {musical}
             filters = {this.props.filters}
             handleSubmit = {this.props.receivePendingRes}
-            // userid = {this.props.user.id}
-            // usern = {this.props.user.first_name}
           />
           <MusicalMap
             musical={musical}

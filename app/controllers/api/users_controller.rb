@@ -10,6 +10,10 @@ class Api::UsersController < ApplicationController
         # render json: create
     end
   end
+  
+  def show
+    @user = User.find_by(id:params[:id])
+  end
 
   def user_params
     params.require(:user).permit(:email,:first_name, :last_name, :country, :password)

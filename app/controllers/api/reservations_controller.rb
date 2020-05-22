@@ -1,42 +1,47 @@
 class Api::ReservationsController < ApplicationController
-    before_action :ensure_logged_in
+    # before_action :ensure_logged_in
 
   def index 
-    @reservations = Reservation.find_by(params[:reserver_id])
+    @reservations = Reservation.find_by(params[:reservation][:reserver_id])
     render :index
   end
 
   def show
-    @reservation = Reservation.find(params[:id])
+    @reservation = Reservation.find_by(id:params[:id])
   end
 
   def create
-    @reservations = Reservation.find_by(params[:reservation][:date], params[:reservation][:time])
-    
-    @reservations.each do |res| 
-      sum+=res.party_size.to_i;
+    # byebug
+    @reservations = Reservation.where(date: params[:reservation][:date], time: params[:reservation][:time], show_id: params[:reservation][:show_id])
+    # byebug
+    partysum= 0
+    if !@reservations.empty?
+        @reservations.each do |res| 
+          partysum+=res.party_size.to_i;
+        end
+        # byebug
+        @musical = Musical.find_by(id: params[:reservation][:show_id])
+        if (partysum >  @musical.max_cap) || ((partysum +params[:reservation][:party_size].to_i) >  @musical.max_cap)
+            raise DateError.new
+        end
     end
-
-      if (sum > 400) || (sum +params[:reservation][:party_size]) > 400 {
-          raise DateError.new
-      }
-      else{
+    # byebug
        @reservation = Reservation.new(res_params)
-       @reservation.reserver_id = params[:reserver_id]
+       @reservation.reserver_id = params[:reservation][:reserver_id]
        if @reservation.save 
            render :show
        else
         #byebug
         render :json => { errors: @user.errors.full_messages}, :status => 422
-        redirect_to api_musical_url(params[:show_id])
+        redirect_to api_musical_url(params[:reservation][:show_id])
        end
        # byebug
-      }
+      
   end
 
   def update
     
-     reservation = Reservation.find(params[:id])
+     reservation = Reservation.find_by(id:params[:id])
      
        if reservation.update(res_params) 
            render :show
@@ -47,7 +52,7 @@ class Api::ReservationsController < ApplicationController
   end
 
   def destroy 
-     reservation = Reservation.find(params[:id] )
+     reservation = current_user.reservations.find_by(id: params[:id])
      reservation.destroy 
  
   end

@@ -16,13 +16,15 @@ export const fetchReservation = (userId, reservationId) => (
   })
 );
 
-export const createReservation = (reservation) =>(
-  $.ajax({
+export const createReservation = (reservation) =>{
+  return($.ajax({
     method:"POST",
     url:`/api/reservations`,
     data: {reservation}
   })
 );
+}
+  
 
 
 export const updateReservation =(userId, reservation)=>{

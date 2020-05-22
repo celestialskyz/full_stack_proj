@@ -6,16 +6,17 @@ class ReservationConfirmForm extends React.Component{
     //debugger
     super(props);
     this.state = {
-      userId: this.props.login,
       reserverPhoneN: "",
       occasion: "Everyday Dining",
       specialReq: ""
      };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.createTimes = this.createTimes.bind(this);
+
   }
 
   componentDidMount(){
-    if (!this.props.login){
+    if (!this.props.reserver_id){
       this.props.openModal('signup');
     }
   }
@@ -26,11 +27,23 @@ class ReservationConfirmForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createRes(this.state.userId, this.state.res);
+    // debugger
+    let otherprops = Object.assign(this.props.res,{reserver_id: this.props.reserver_id}, this.state);
+   
+    // debugger
+    this.props.createRes(otherprops).then(this.props.history.push({
+      pathname: `/musicals/ResMade`
+    }))
+  }
+  
+  createTimes(time){
+    // debugger
+    return time > 1200 ? (time-1200).toString().slice(0, -2) +":" + (time-1200).toString().slice(-2) + "PM" :
+                (time).toString().slice(0, -2) +":" + (time).toString().slice(1)+ "AM";
   }
 
   render(){
-  const {mName, psize, date, time} = this.props.res;
+  const {mName, party_size, date, time} = this.props.res;
   const {currentUserFname, currentUserEmail} = this.props;
   
   const {reserverPhoneN, specialReq }= this.state;
@@ -40,8 +53,8 @@ class ReservationConfirmForm extends React.Component{
       <div className = "musicalInfo">
         <h3>{mName}</h3>
           <div>{date}</div>
-          <div>{psize}</div>
-          <div>{time}</div>
+          <div>{party_size}</div>
+          <div>{this.createTimes(time)}</div>
       </div>
       <div>
         <h3>{currentUserFname}</h3> (Not {currentUserFname}?)
@@ -51,11 +64,14 @@ class ReservationConfirmForm extends React.Component{
           <input type = "text" value={reserverPhoneN}  onChange={this.update('reserverPhoneN')} placeholder = "Phone number" ></input>
           <input type = "text" value={currentUserEmail}  onChange={this.update('currentUserEmail')} placeholder = "Email" ></input>
         </p>
-        <select name="occasion" className="occasion" onChange={this.update('occasion')} defaultValue= "Everyday Dining" >
-          <option value="Everyday Dining" >Everyday Dining</option>
+        <select name="occasion" className="occasion" onChange={this.update('occasion')} defaultValue= "Select an occasion(optional)" >
+          <option value="Select an occasion(optional)">Select an occasion(optional)</option>
+          <option value="Birthday" >Birthday</option>
           <option value="Date Night">Date Night</option>
-          <option value="Friends Get Together" >Friends Get Together</option>
-          <option value="Special Occasion" >Special Occasion</option>
+          <option value="Anniversary" >Anniversary</option>
+          <option value="Business Meal" >Business Meal</option>
+          <option value="Celebration" >Celebration</option>
+
         </select>
         <input
               type="text"

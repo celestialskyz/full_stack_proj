@@ -10,7 +10,7 @@ const msp = (state, ownProps)=>{
   let filterinfo= jQuery.isEmptyObject(state.ui.filters) ? 
   {inputQ:"",
      date: moment().format("YYYY-MM-DD"),
-     psize: 1,
+     party_size: 1,
      time: 1900}  
      : state.ui.filters;
 //debugger
