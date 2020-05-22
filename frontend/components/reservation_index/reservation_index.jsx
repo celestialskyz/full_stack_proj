@@ -10,20 +10,23 @@ class ReservationIndex extends React.Component{
   }
 
   render(){
-   const {reservations, updateRes, deleteRes, requestUser} = this.props;
+   const {reservations, updateRes, deleteRes, currentUser} = this.props;
      return(
      <>
       <ul>
-      {reservations.map(res=>(
+      {reservations.map(res=>{
+       const musical = this.props.fetchMusical(reservations.show_id);
+        return(
         <ReservationsItem
         reservation = {res}
-          updateRes = {updateRes}
-          deleteRes = {deleteRes}
-          requestUser = {requestUser}
-          fetchMusical = {fetchMusical}
-          key = {res.id}
+        currentUser = {currentUser}
+        mName = {musical.name}
+        updateRes = {updateRes}
+        deleteRes = {deleteRes}
+        key = {res.id}
         />
-      ))
+        )
+      })
           }
       </ul>
      </>

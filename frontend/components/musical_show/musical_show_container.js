@@ -3,9 +3,9 @@ import {fetchMusical} from '../../actions/musical_actions';
 import MusicalShow from './musical_show';
 import moment from 'moment';
 import {receivePendingRes} from '../../actions/reservation-actions';
+import {openModal} from '../../actions/modal_actions';
 
 const msp = (state, ownProps)=>{
-
  // debugger
   let filterinfo= jQuery.isEmptyObject(state.ui.filters) ? 
   {inputQ:"",
@@ -13,11 +13,11 @@ const msp = (state, ownProps)=>{
      party_size: 1,
      time: 1900}  
      : state.ui.filters;
-//debugger
+// debugger
   return({
     musical: state.entities.musicals[ownProps.match.params.musicalId],
     filters: filterinfo,
-    // user: state.session.user? state.session.user : -1
+    reserver_id: state.session.currentUser? state.session.currentUser : {}
   });
 };
   // return({
@@ -29,7 +29,8 @@ const msp = (state, ownProps)=>{
 const mdp = (dispatch)=>{
   return({
     fetchMusical: (musicalId)=>dispatch(fetchMusical(musicalId)),
-    receivePendingRes: (reservationDetails) => dispatch(receivePendingRes(reservationDetails))
+    receivePendingRes: (reservationDetails) => dispatch(receivePendingRes(reservationDetails)),
+    openModal: (modal)=>dispatch(openModal(modal))
   });
 };
 

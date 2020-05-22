@@ -16,6 +16,7 @@ class ReservationConfirmForm extends React.Component{
   }
 
   componentDidMount(){
+    debugger
     if (!this.props.reserver_id){
       this.props.openModal('signup');
     }
@@ -28,7 +29,7 @@ class ReservationConfirmForm extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     // debugger
-    let otherprops = Object.assign(this.props.res,{reserver_id: this.props.reserver_id}, this.state);
+    let otherprops = Object.assign(this.props.reservation,{reserver_id: this.props.reserver_id}, this.state);
    
     // debugger
     this.props.createRes(otherprops).then(this.props.history.push({
@@ -43,7 +44,7 @@ class ReservationConfirmForm extends React.Component{
   }
 
   render(){
-  const {mName, party_size, date, time} = this.props.res;
+  const {mName, party_size, date, time} = this.props.reservation;
   const {currentUserFname, currentUserEmail} = this.props;
   
   const {reserverPhoneN, specialReq }= this.state;

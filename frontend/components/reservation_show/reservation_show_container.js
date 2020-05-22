@@ -5,7 +5,7 @@ import {openModal} from '../../actions/modal_actions';
 
 const msp = (state, ownProps) =>{
   return({
-    reservation: state.posts[ownProps.match.params.resId],
+    reservation: state.entities.musicals[ownProps.match.params.resId],
     reserver_id: state.session.currentUserId,
     currentUserFname: state.session.currentUser.first_name
   });

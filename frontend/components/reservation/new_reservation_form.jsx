@@ -26,9 +26,15 @@ redirectIt(musical, time){
   let show_id = musical.id;
   
   this.props.handleSubmit({...this.state, time, mName, show_id});
+  //  debugger
+  if (jQuery.isEmptyObject(this.props.reserver_id)){
+    this.props.openModal('signup');
+  }
+  else {
   this.props.history.push({
       pathname: `/musicals/confirmRes`
     });
+  }
 }
 
   createTimes(time){

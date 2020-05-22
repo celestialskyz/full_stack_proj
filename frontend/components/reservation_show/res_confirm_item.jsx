@@ -1,14 +1,9 @@
 import React from 'react';
+import {fetchUser} from '../../actions/user_actions';
 
-
-const ReservationsItem = ({reservation, fetchMusical, updateRes, deleteRes, requestUser }) =>{
-  debugger
-  const {show_id, reserver_id, party_size, date, time} = reservation;
-  let currentUser = requestUser(reserver_id);
-  
-  if (!reservation.mName || reservation.mName === undefined){
-    let mName = fetchMusical(show_id);
-  }
+const ReservationsItem = ({reservation, currentUser, mName, updateRes, deleteRes}) =>{
+ 
+  const {party_size, date, time} = reservation;
  return(
    <>
      <div className="greenConfirm">

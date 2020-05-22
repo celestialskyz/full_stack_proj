@@ -24,8 +24,6 @@ export const createReservation = (reservation) =>{
   })
 );
 }
-  
-
 
 export const updateReservation =(userId, reservation)=>{
   return(

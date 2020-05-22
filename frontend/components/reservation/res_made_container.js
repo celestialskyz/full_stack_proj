@@ -7,7 +7,7 @@ const msp = (state, ownProps) => {
   return({
     reserver_id: state.session.currentUserId,
     currentUserFname: state.session.currentUser.first_name,
-    res: state.ui.reservationdetails
+    reservation: state.ui.reservationdetails
   });
 };
 
@@ -16,10 +16,7 @@ const mdp = dispatch=>{
     requestResvs: () =>dispatch(requestResvs()),
     updateRes: (userId, res) => dispatch(updateRes(userId, res)),
     deleteRes: postId => dispatch(deleteRes(postId)),
-    requestUser: (userId) => dispatch(requestUser(userId)),
-    fetchMusical: musicalId => dispatch(fetchMusical(musicalId))
   });
-
 };
 
 export default connect(msp, mdp)(ReservationMadeForm);

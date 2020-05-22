@@ -23,7 +23,7 @@ export const requestUsers=()=>dispatch =>{
 
 
 export const requestUser =(userId) =>dispatch=>(
-  PostApiUtil.fetchUser(postId).then(user=>
+  APIUtil.fetchUser(userId).then(user=>
     {dispatch(receiveUser(user))}
   )
 )

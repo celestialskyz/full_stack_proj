@@ -33,7 +33,7 @@ const App = () =>{
         <Route exact path="/" component={indexed} />
         <Route exact path="/musicals/confirmRes" component={ResConfirmFormContainer} />
         <Route exact path= "/musicals/ResMade" component = {ResMadeContainer}/>
-        <Route exact path= "/musicals/ResMade/:resId" component = {ResShowContainer}/>
+        <Route exact path= "/musicals/reservations/:resId" component = {ResShowContainer}/>
         {/* <ProtectedRoute exact path= "/musicals/deleted" component = {ResDeleted}/> */}
         <Route exact path="/musicals/:musicalId" component={MusicalShowContainer} />
         {/* <Route exact path="/reservations" component={ResIndxContainer} /> */}

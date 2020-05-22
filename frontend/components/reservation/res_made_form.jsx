@@ -7,7 +7,7 @@ class ReservationMadeForm extends React.Component{
     //debugger
     super(props);
     this.state = {
-      res:{}
+      reservation:{}
      };
     }
 
@@ -18,16 +18,14 @@ class ReservationMadeForm extends React.Component{
   }
       
   render(){
-    const {res, updateRes, deleteRes, requestUser} = this.props;
-
+    const {reservation, updateRes, deleteRes} = this.props;
     return(
       <>
           <ReservationsItem
-          reservation = {res}
+          reservation = {reservation}
           updateRes = {updateRes}
-          requestUser = {requestUser}
           deleteRes = {deleteRes}
-          key = {res.id}
+          key = {reservation.id}
         />
       </>
     )

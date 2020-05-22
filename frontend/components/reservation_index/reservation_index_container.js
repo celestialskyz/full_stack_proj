@@ -4,7 +4,8 @@ import {fetchMusical} from '../../actions/musical_actions';
 import {requestUser} from '../../actions/user_actions';
 const msp = (state)=>{
   return({
-     reservations: Object.values(state.entities.musicals)
+     reservations: Object.values(state.entities.resvs),
+     currentUser: state.session.currentUser,
   });
 
 };
@@ -13,7 +14,6 @@ const mdp = dispatch=>{
     {requestResvs: () =>dispatch(requestResvs()),
       updateRes: (userId, res) => dispatch(updateRes(userId, res)),
       deleteRes: postId => dispatch(deleteRes(postId)),
-      requestUser: (userId) => dispatch(requestUser(userId)),
       fetchMusical: musicalId => dispatch(fetchMusical(musicalId))
     }
   )

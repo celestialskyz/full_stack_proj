@@ -24,8 +24,7 @@ class MusicalShow extends React.Component {
 
     const mban = musical.photoUrls[musical.photoUrls.length - 1];
     const phtos = musical.photoUrls.slice(0, -1);
-    // debugger
-
+    
     return (
       <>
         {/* <img src=  */}
@@ -76,11 +75,14 @@ class MusicalShow extends React.Component {
       </a>
        </div>
         <section className="right-side">
+        
           {/* <MusicalReservation> */}
           <ResForm
             musical = {musical}
             filters = {this.props.filters}
             handleSubmit = {this.props.receivePendingRes}
+            reserver_id = {this.props.reserver_id}
+            openModal = {this.props.openModal}
           />
           <MusicalMap
             musical={musical}
