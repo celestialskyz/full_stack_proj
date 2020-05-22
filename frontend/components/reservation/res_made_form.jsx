@@ -23,6 +23,7 @@ class ReservationMadeForm extends React.Component{
       <>
           <ReservationsItem
           reservation = {reservation}
+          currentUser = {reserver_id}
           updateRes = {updateRes}
           deleteRes = {deleteRes}
           key = {reservation.id}

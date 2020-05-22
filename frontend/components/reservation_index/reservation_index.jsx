@@ -5,30 +5,35 @@ class ReservationIndex extends React.Component{
   constructor(props){
     super(props);
   }
-  componentDidMount(){
-    this.props.requestResvs();
-  }
+  // componentDidMount(){
+  //   this.props.requestResvs();
+  // }
 
   render(){
-   const {reservations, updateRes, deleteRes, currentUser} = this.props;
+   const {reservations, updateRes, currentUser, deleteRes} = this.props;
      return(
      <>
-      <ul>
+      <ul className = "dropdown-resvs">
       {reservations.map(res=>{
-       const musical = this.props.fetchMusical(reservations.show_id);
-        return(
-        <ReservationsItem
-        reservation = {res}
-        currentUser = {currentUser}
-        mName = {musical.name}
-        updateRes = {updateRes}
-        deleteRes = {deleteRes}
-        key = {res.id}
-        />
-        )
+        const musical = this.props.fetchMusical(reservations.show_id);
+          return(
+            <li>
+              <ReservationsItem
+              reservation = {res}
+              currentUser = {currentUser}
+              mName = {musical.name}
+              updateRes = {updateRes}
+              deleteRes = {deleteRes}
+              key = {res.id}
+              />
+            </li>
+          )
       })
-          }
+      }
       </ul>
      </>
-    )
+     )
   }
+}
+
+export default ReservationIndex;

@@ -8,6 +8,11 @@ const msp = (state)=>{
   });
 
 };
+const mdp = (dispatch)=>{
+  return({
+    fetchMusicals: musicalId => dispatch(fetchMusicals(musicalId))
+  });
 
+};
 
-export default connect(msp)(MusicalIndex);
+export default connect(msp, mdp)(MusicalIndex);

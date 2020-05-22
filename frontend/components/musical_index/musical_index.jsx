@@ -5,9 +5,9 @@ class MusicalIndex extends React.Component{
   constructor(props){
     super(props);
   }
-  // componentDidMount(){
-  //   this.props.fetchMusicals();
-  // }
+  componentDidMount(){
+    this.props.fetchMusicals();
+  }
 
   render () {
     // debugger

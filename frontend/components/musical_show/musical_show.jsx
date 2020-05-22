@@ -12,10 +12,12 @@ class MusicalShow extends React.Component {
   }
 
   componentDidMount() {
+    debugger
     this.props.fetchMusical(this.props.match.params.musicalId);
   }
 
   render() {
+    debugger
     const { musical } = this.props;
     //debugger
     if (!musical) {

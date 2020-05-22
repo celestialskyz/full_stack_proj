@@ -4,6 +4,7 @@ import { requestRes } from '../../actions/reservation-actions';
 import {openModal} from '../../actions/modal_actions';
 
 const msp = (state, ownProps) =>{
+  debugger
   return({
     reservation: state.entities.musicals[ownProps.match.params.resId],
     reserver_id: state.session.currentUserId,

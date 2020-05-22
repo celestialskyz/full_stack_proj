@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import {requestResvs, updateRes, deleteRes} from '../../actions/reservation-actions';
 import {fetchMusical} from '../../actions/musical_actions';
 import {requestUser} from '../../actions/user_actions';
+import ReservationIndex from './reservation_index';
+
 const msp = (state)=>{
   return({
      reservations: Object.values(state.entities.resvs),
@@ -19,4 +21,4 @@ const mdp = dispatch=>{
   )
 }
 
-export default connect(msp, mdp)(ResIndex);
+export default connect(msp, mdp)(ReservationIndex);
