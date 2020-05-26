@@ -7,10 +7,12 @@ import {requestResvs, updateRes, deleteRes} from '../actions/reservation-actions
 import {fetchMusical} from '../actions/musical_actions';
 
 
-const msp = (state) =>({
+const msp = (state) =>{
+    debugger
+    return ({
       currentUser: state.session.currentUser,
       reservations: Object.values(state.entities.resvs)
-});
+})};
 
 const mdp = (dispatch) =>({
     logoutUser: () => dispatch(logoutUser()),

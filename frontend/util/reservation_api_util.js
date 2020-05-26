@@ -1,5 +1,5 @@
 export const fetchReservations = (userId) => {
-  // debugger
+
   return(
     $.ajax({
     method: "GET",
@@ -23,7 +23,7 @@ export const createReservation = (reservation) =>{
     data: {reservation}
   })
 );
-}
+};
 
 export const updateReservation =(userId, reservation)=>{
   return(

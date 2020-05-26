@@ -6,6 +6,7 @@ const ReservationsItem = ({reservation, currentUser, mName, updateRes, deleteRes
   const {party_size, date, time} = reservation;
  return(
    <>
+   <div className = "confirmed">
      <div className="greenConfirm">
        <h2 className="done"> Thanks, {currentUser}! Your reservation is confirmed.</h2>
      </div>
@@ -18,6 +19,7 @@ const ReservationsItem = ({reservation, currentUser, mName, updateRes, deleteRes
        </Link> */}
      {/* button here to render buttons again but this time its a classname switch not DOM */}
      </div>
+    </div>
    </>
  )
 }

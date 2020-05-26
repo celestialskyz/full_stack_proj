@@ -1,14 +1,13 @@
 import {RECEIVE_PENDING_RES} from "../actions/reservation-actions";
 import merge from 'lodash/merge';
 
-const filtersReducer = (state = {}, action) => {
+const ResDetailReducer = (state = {}, action) => {
   Object.freeze(state);
   if (action.type === RECEIVE_PENDING_RES) {
-    //  debugger
-    return action.res;
+    return Object.assign({}, state, action.res);
   } else {
     return {};
   }
 };
 
-export default filtersReducer;
+export default ResDetailReducer;

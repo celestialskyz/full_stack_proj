@@ -10,20 +10,22 @@ class MusicalIndex extends React.Component{
   }
 
   render () {
-    // debugger
+    
     const {musicals} = this.props;
     // debugger
     return(
       <>
         <h3 className = "homey"> Today's Top Picks</h3>
-        <ul>
+        <ul className = "homeMusicals">
           {
-            musicals.map(musical =>(
+            musicals.map(musical =>{
+              debugger
+          return(
             <MusicalItem 
               key = {musical.id}
-               musical = {musical}
+              musical = {musical}
              />
-            ))
+            )})
         }
         </ul>
 

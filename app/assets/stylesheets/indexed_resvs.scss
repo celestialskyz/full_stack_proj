@@ -1,0 +1,25 @@
+.dropdown-resvs{
+  position:relative;
+}
+.dropdown-resvs button{
+  cursor: pointer;
+}
+.ResDropdwn {
+  width: 200px;
+  position:relative;
+}
+.ResDropdwn .dropdown-resvs{
+  list-style:none;
+  padding:0px;
+  border-radius: 2px;
+  margin: 0px;
+}
+.dropdown-resvs{
+  display: none;
+  position: absolute;
+  min-width: 200px;
+}
+
+.ResDropdwn:hover > .dropdown-resvs{
+  display: block;
+}

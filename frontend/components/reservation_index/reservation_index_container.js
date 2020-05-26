@@ -5,18 +5,20 @@ import {requestUser} from '../../actions/user_actions';
 import ReservationIndex from './reservation_index';
 
 const msp = (state)=>{
-  return({
+  debugger
+  return({    
      reservations: Object.values(state.entities.resvs),
      currentUser: state.session.currentUser,
+     limit: -1
+    //  MusicalName: Object.values(state.entities.musicalName)
   });
 
 };
 const mdp = dispatch=>{
   return(
-    {requestResvs: () =>dispatch(requestResvs()),
-      updateRes: (userId, res) => dispatch(updateRes(userId, res)),
-      deleteRes: postId => dispatch(deleteRes(postId)),
-      fetchMusical: musicalId => dispatch(fetchMusical(musicalId))
+    {requestResvs: (userId) =>dispatch(requestResvs(userId)),
+      fetchMusical: musicalId => dispatch(fetchMusical(musicalId)),
+      // receiveIndexLimit: (limit) => dispatch(receiveIndexLimit(limit))
     }
   )
 }

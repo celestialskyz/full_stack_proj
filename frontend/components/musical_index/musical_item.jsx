@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MusicalItem =({musical})=>{
-
+  // debugger
   const mban = musical.photoUrls[musical.photoUrls.length-1];
 
   return(

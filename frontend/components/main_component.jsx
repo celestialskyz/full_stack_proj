@@ -17,7 +17,7 @@ const MainComponent = (props)=>{
 
 const msp = (state)=>{
   return({
-    klass: state.ui.filters.inputQ ? "search" : "home"
+    : state.ui.filters.inputQ ? "search" : "home"
   });
 };
  

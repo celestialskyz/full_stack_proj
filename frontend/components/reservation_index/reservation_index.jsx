@@ -1,38 +1,88 @@
 import React from 'react';
-import ReservationsItem from '../reservation_show/res_confirm_item';
+import ReservationIndexItem from './listed_index_res';
 
 class ReservationIndex extends React.Component{
   constructor(props){
     super(props);
+    this.state = {
+      reservations: this.props.reservations
+    }
   }
-  // componentDidMount(){
-  //   this.props.requestResvs();
-  // }
+  
+  componentDidMount(){
+    debugger
+    // if (this.props.currentUser != null ||this.props.currentUser != undefined){
+   this.props.requestResvs(this.props.currentUser.id);
+      // }
+  }
+  update(field){
+    return e=> this.setState({[field]: e.target.value});
+  }
 
   render(){
-   const {reservations, updateRes, currentUser, deleteRes} = this.props;
+    
+    const {reservations, updateRes, currentUser, deleteRes, fetchMusical} = this.props;
+   debugger
+    if (reservations.length === 0) {
+      return (<div></div>);
+    }
+
+    debugger
+    if (this.props.limit > 0 && reservations.length > 5){
+    var limited = reservations.slice(0,5).map(function(res, index){
+      debugger;
      return(
+       <>
+          <ReservationIndexItem
+            key = {res.id}
+            reservation= {res}
+            currentUser ={currentUser}
+            fetchMusical = {fetchMusical}
+          />
+        </>
+      )
+    })}
+    else {
+      var limited = this.state.reservations.map(function(res, index){
+        debugger;
+       return(
+         <>
+            <ReservationIndexItem
+              key = {index}
+              reservation= {res}
+              currentUser ={currentUser}
+              fetchMusical = {fetchMusical}
+            />
+          </>
+        )
+      })
+    }
+      
+    return (
      <>
       <ul className = "dropdown-resvs">
-      {reservations.map(res=>{
-        const musical = this.props.fetchMusical(reservations.show_id);
-          return(
-            <li>
-              <ReservationsItem
-              reservation = {res}
-              currentUser = {currentUser}
-              mName = {musical.name}
-              updateRes = {updateRes}
-              deleteRes = {deleteRes}
-              key = {res.id}
-              />
-            </li>
-          )
-      })
-      }
+        <h3 className= "upcoming-list">UPCOMING</h3>
+       <div>
+         {limited}
+       </div>
+
+          {/* {this.state.reservations.map(function(res, index){
+              debugger;
+             return(
+               <>
+                  <ReservationIndexItem
+                    key = {index}
+                    reservation= {res}
+                    currentUser ={currentUser}
+                    fetchMusical = {fetchMusical}
+                            />
+                      </>
+                    )
+                })
+          }  */}
       </ul>
-     </>
-     )
+    </>
+    )
   }
 }
 

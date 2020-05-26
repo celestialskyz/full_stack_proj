@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import {updateFilter} from '../../actions/filter_actions';
 // import MusicalIndex from '../musical_index/musical_index';
 // // import MusicalMap from '../musical_show/musical_map';
-const msp = (state)=>{debugger
+const msp = (state)=>{
   return({
      musicals: Object.values(state.entities.musicals),
      inputQ: state.ui.filters.query,

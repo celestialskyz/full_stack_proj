@@ -1,4 +1,4 @@
-import {RECEIVE_MUSICALS, RECEIVE_MUSICAL, INITIALFETCHMUSICALS} from '../actions/musical_actions';
+import {RECEIVE_MUSICALS, RECEIVE_MUSICAL_NAME, RECEIVE_MUSICAL, INITIALFETCHMUSICALS} from '../actions/musical_actions';
 
 const musicalsReducer = (state={}, action) =>{
   Object.freeze(state);

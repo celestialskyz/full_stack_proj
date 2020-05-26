@@ -6,9 +6,9 @@ class ReservationMadeForm extends React.Component{
   constructor(props){
     //debugger
     super(props);
-    this.state = {
-      reservation:{}
-     };
+    // this.state = {
+    //   reservation:{}
+    //  };
     }
 
   componentDidMount(){
@@ -18,12 +18,13 @@ class ReservationMadeForm extends React.Component{
   }
       
   render(){
-    const {reservation, updateRes, deleteRes} = this.props;
+    debugger
+    const {reservation, updateRes, deleteRes, currentUserFname} = this.props;
     return(
       <>
           <ReservationsItem
           reservation = {reservation}
-          currentUser = {reserver_id}
+          currentUser = {currentUserFname}
           updateRes = {updateRes}
           deleteRes = {deleteRes}
           key = {reservation.id}

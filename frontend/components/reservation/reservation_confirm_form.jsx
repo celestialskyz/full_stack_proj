@@ -32,7 +32,7 @@ class ReservationConfirmForm extends React.Component{
     let otherprops = Object.assign(this.props.reservation,{reserver_id: this.props.reserver_id}, this.state);
    
     // debugger
-    this.props.createRes(otherprops).then(this.props.history.push({
+    this.props.submitEvent(otherprops).then(this.props.history.push({
       pathname: `/musicals/ResMade`
     }))
   }

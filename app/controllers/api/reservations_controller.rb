@@ -1,9 +1,11 @@
 class Api::ReservationsController < ApplicationController
-    before_action :ensure_logged_in
+  before_action :ensure_logged_in
 
   def index 
+    # byebug
     @reservations=current_user.reservations
-    #  = Reservation.find_by(params[:reservation][:reserver_id])
+    
+    # @reservations  = Reservation.find_by(params[:reservation][:reserver_id])
     render :index
   end
 

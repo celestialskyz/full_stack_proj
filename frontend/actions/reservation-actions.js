@@ -5,7 +5,7 @@ export const RECEIVE_RES = 'RECEIVE_RES';
 export const REMOVE_RES = 'REMOVE_RES';
 export const RECEIVE_PENDING_RES ='RECEIVE_PENDING_RES';
 export const CLEAR_PENDING_RES = "CLEAR_PENDING_RES";
-
+export const RECEIVE_INDEX_LIMIT = "RECEIVE_INDEX_LIMIT";
 const receiveResvs =(resvs)=>{
   return({
     type: RECEIVE_RESVS,
@@ -16,6 +16,7 @@ const receiveResvs =(resvs)=>{
 const receiveRes =(res)=>{
   return({
     type: RECEIVE_RES,
+    // reservationdetails
     res
   });
 };
@@ -33,6 +34,13 @@ export const receivePendingRes=(res)=>{
   });
 };
 
+// export const receiveIndexLimit=(limit)=>{
+//   return({
+//     type: RECEIVE_INDEX_LIMIT,
+//     limit
+//   });
+// };
+
 export const clearPendingRes =()=>{
   return({
     type:CLEAR_PENDING_RES
@@ -40,14 +48,15 @@ export const clearPendingRes =()=>{
 }
 
 export const requestResvs=(userId)=>dispatch =>{
+  
   return(
     APIres.fetchReservations(userId).then(resvs =>{ dispatch(receiveResvs(resvs));})
   );
 };
 
-export const requestRes=(resId)=>dispatch =>{
+export const requestRes=(userId, resId)=>dispatch =>{
   return(
-    APIres.fetchReservation(resId).then(res =>{ dispatch(receiveResvs(res));})
+    APIres.fetchReservation(userId, resId).then(res =>{ dispatch(receiveRes(res));})
   );
 };
 

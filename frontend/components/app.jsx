@@ -34,7 +34,8 @@ const App = () =>{
         <Route exact path="/musicals/:musicalId" component={MusicalShowContainer} />
         <Switch>
             <Route path="/reservations" component={ResIndxContainer} />
-            <Route exact path= "/musicals/reservations/:resId" component = {ResShowContainer}/>
+            <Route exact path= "/musicals/:musicalId/reservations/:resId" component = {ResShowContainer}/>
+            {/* <Route exact path= "/musicals/reservations/:resId/edit" component = {ResEditContainer}/> */}
         </Switch>
     </div>)
 }

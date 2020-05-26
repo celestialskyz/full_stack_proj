@@ -9,23 +9,24 @@ class ReservationShow extends React.Component{
   componentDidMount(){
       if (!this.props.reserver_id){
         this.props.openModal('signup'); }
-      this.props.requestRes(this.props.reservation.id);
-      this.props.fetchMusical(this.props.show_id);
+      this.props.requestRes(this.props.reserver_id, this.props.reservation.id);
+      this.props.fetchMusical(this.props.reservation.show_id);
   }
 
   render(){
-    const {show_id, party_size, date, time} = this.props.reservation;
+    const {reservation, musical, updateRes, deleteRes, reserver_id} = this.props;
    
     // this.props.currentUserFname;
     return(
       <>
-        <ReservationMadeForm 
-          show_id = {show_id}
-          party_size = {party_size}
-          date ={date} 
-          time ={time}
-          mName = {mName}
-          />
+          <ReservationsItem
+          reservation = {reservation}
+          currentUser = {reserver_id}
+          updateRes = {updateRes}
+          deleteRes = {deleteRes}
+          mName = {musical.name}
+          key = {reservation.id}
+        />
       </>
     )
   }
