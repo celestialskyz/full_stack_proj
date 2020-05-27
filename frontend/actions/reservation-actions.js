@@ -6,10 +6,10 @@ export const REMOVE_RES = 'REMOVE_RES';
 export const RECEIVE_PENDING_RES ='RECEIVE_PENDING_RES';
 export const CLEAR_PENDING_RES = "CLEAR_PENDING_RES";
 export const RECEIVE_INDEX_LIMIT = "RECEIVE_INDEX_LIMIT";
-const receiveResvs =(resvs)=>{
+const receiveResvs =({resvs, musicals})=>{
   return({
     type: RECEIVE_RESVS,
-    resvs
+    resvs, musicals
   });
 }
 ;

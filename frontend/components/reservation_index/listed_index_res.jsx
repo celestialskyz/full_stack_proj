@@ -7,11 +7,11 @@ class ReservationIndexItem extends React.Component{
     super(props);
     this.createTimes = this.createTimes.bind(this);
   }
-  componentDidMount(){
-    debugger
-    this.props.fetchMusical(this.props.currentUser.id);
-    debugger
-  }
+  // componentDidMount(){
+  //  //debugger
+  //  this.props.fetchMusical(this.props.currentUser.id);
+  //  //debugger
+  // }
 
   createTimes(time){
     return time > 1200 ? (time-1200).toString().slice(0, -2) +":" + (time-1200).toString().slice(-2) + "PM" :
@@ -19,15 +19,15 @@ class ReservationIndexItem extends React.Component{
   }
 
   render(){
-    debugger
-    const {reservation, musical} =this.props;
+    //debugger
+    const {reservation} =this.props;
+    // musical
     const {party_size, date, time} = reservation;
-    debugger
     return(
       <>
       <li>
         <div>      
-          <h2 className ="list-res-musical">{musical.name}</h2>
+          {/* <h2 className ="list-res-musical">{musical.name}</h2> */}
           <div> Table for {party_size} people</div> 
           <div>{date}</div> <div>{this.createTimes(time)}</div>
           <Link to = {`/musicals/reservations/${reservation.id}`}>

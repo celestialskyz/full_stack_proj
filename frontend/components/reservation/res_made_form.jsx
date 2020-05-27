@@ -18,7 +18,7 @@ class ReservationMadeForm extends React.Component{
   }
       
   render(){
-    debugger
+    
     const {reservation, updateRes, deleteRes, currentUserFname} = this.props;
     return(
       <>

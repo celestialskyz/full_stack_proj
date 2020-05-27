@@ -1,8 +1,10 @@
 import {RECEIVE_MUSICALS, RECEIVE_MUSICAL_NAME, RECEIVE_MUSICAL, INITIALFETCHMUSICALS} from '../actions/musical_actions';
+import { RECEIVE_RESVS } from '../actions/reservation-actions';
 
 const musicalsReducer = (state={}, action) =>{
   Object.freeze(state);
   switch(action.type){
+    case RECEIVE_RESVS:
     case RECEIVE_MUSICALS:
       return Object.assign({}, action.musicals);
     case INITIALFETCHMUSICALS:

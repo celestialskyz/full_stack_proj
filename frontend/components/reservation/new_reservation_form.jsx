@@ -120,8 +120,8 @@ redirectIt(musical, time){
         </div>
         <form  >
           <label className = "psizehead">Party Size
-            <select key = "partys" name="partys" className="res-drop" onChange={this.update('partys')}>
-            <option key="partys1" value='1' >1 </option> 
+            <select key = "partys" name="partys" className="res-drop" defaultValue='2' placeholder='2' onChange={this.update('partys')}>
+                <option key="partys1" value='1' >1 </option> 
             {/* for select item must be string convert later */}
                 <option key="partys2" value='2' >2 </option>
                 <option key="partys3" value='3' >3 </option>

@@ -19,7 +19,6 @@ class MusicalIndex extends React.Component{
         <ul className = "homeMusicals">
           {
             musicals.map(musical =>{
-              debugger
           return(
             <MusicalItem 
               key = {musical.id}

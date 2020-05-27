@@ -13,7 +13,7 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch=>{
   return({
-    requestResvs: () =>dispatch(requestResvs()),
+    requestResvs: (userId) =>dispatch(requestResvs(userId)),
     updateRes: (userId, res) => dispatch(updateRes(userId, res)),
     deleteRes: postId => dispatch(deleteRes(postId)),
   });

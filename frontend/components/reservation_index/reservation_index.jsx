@@ -10,7 +10,6 @@ class ReservationIndex extends React.Component{
   }
   
   componentDidMount(){
-    debugger
     // if (this.props.currentUser != null ||this.props.currentUser != undefined){
    this.props.requestResvs(this.props.currentUser.id);
       // }
@@ -20,38 +19,39 @@ class ReservationIndex extends React.Component{
   }
 
   render(){
-    
+    debugger
     const {reservations, updateRes, currentUser, deleteRes, fetchMusical} = this.props;
-   debugger
+   
     if (reservations.length === 0) {
       return (<div></div>);
     }
 
-    debugger
+    // debugger
     if (this.props.limit > 0 && reservations.length > 5){
-    var limited = reservations.slice(0,5).map(function(res, index){
-      debugger;
+    var limited = reservations.slice(0,5).map(function(res){
+    debugger
+    res.resName
      return(
-       <>
-          <ReservationIndexItem
+        <>
+           <ReservationIndexItem
             key = {res.id}
             reservation= {res}
             currentUser ={currentUser}
+            // musicalN = {musicalN}
             fetchMusical = {fetchMusical}
           />
-        </>
+       </>
       )
     })}
     else {
       var limited = this.state.reservations.map(function(res, index){
-        debugger;
        return(
          <>
             <ReservationIndexItem
               key = {index}
               reservation= {res}
               currentUser ={currentUser}
-              fetchMusical = {fetchMusical}
+              // fetchMusical = {fetchMusical}
             />
           </>
         )
@@ -67,7 +67,7 @@ class ReservationIndex extends React.Component{
        </div>
 
           {/* {this.state.reservations.map(function(res, index){
-              debugger;
+              ;
              return(
                <>
                   <ReservationIndexItem

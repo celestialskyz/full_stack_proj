@@ -76,7 +76,6 @@ class MusicalShow extends React.Component {
       </a>
        </div>
         <section className="right-side">
-        
           {/* <MusicalReservation> */}
           <ResForm
             musical = {musical}

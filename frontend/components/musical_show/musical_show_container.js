@@ -9,8 +9,8 @@ const msp = (state, ownProps)=>{
  // debugger
   let filterinfo= jQuery.isEmptyObject(state.ui.filters) ? 
   {inputQ:"",
-     date: moment().format("YYYY-MM-DD"),
-     party_size: 1,
+     date: moment().format("yyyy-MM-DD"),
+     party_size: 2,
      time: 1900}  
      : state.ui.filters;
 // debugger

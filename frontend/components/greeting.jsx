@@ -9,12 +9,12 @@ class Greeting extends React.Component{
     this.sessionLinks = this.sessionLinks.bind(this);
     this.personalGreeting = this.personalGreeting.bind(this);
   }
-  // componentDidMount(){
-  //   debugger
-  //   // if (this.props.currentUser != null ||this.props.currentUser != undefined){
-  //  this.props.requestResvs(this.props.currentUser.id);
-  //     // }
-  // }
+  componentDidMount(){
+   // debugger
+    // if (this.props.currentUser != null ||this.props.currentUser != undefined){
+   this.props.requestResvs(this.props.currentUser.id);
+      // }
+  }
   
   sessionLinks(){
     return (
@@ -28,10 +28,9 @@ class Greeting extends React.Component{
   }
         
   personalGreeting() {
-    //debugger
+    debugger
     const {reservations, currentUser, requestResvs, updateRes, deleteRes, fetchMusical} = this.props;
     
-    debugger
     return (
           <>
               <hgroup className="header-group">
@@ -42,7 +41,7 @@ class Greeting extends React.Component{
                 <ReservationIndex
                   reservations = {reservations}
                   currentUser = {currentUser}
-                  fetchMusical = {fetchMusical}
+                  // fetchMusical = {fetchMusical}
                   requestResvs = {requestResvs}
                   limit = {5}
                 />

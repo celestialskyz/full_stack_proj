@@ -11,7 +11,7 @@ const msp = (state) =>{
     debugger
     return ({
       currentUser: state.session.currentUser,
-      reservations: Object.values(state.entities.resvs)
+      reservations: Object.values(state.entities.resvs).map((res)=>  Object.assign({}, res, {resName: state.entities.musicals.res.showid}) )
 })};
 
 const mdp = (dispatch) =>({
@@ -20,7 +20,7 @@ const mdp = (dispatch) =>({
     closeModal: () => dispatch(closeModal()),
     requestUsers: ()=> dispatch(requestUsers),
     fetchMusical: musicalId => dispatch(fetchMusical(musicalId)),
-    requestResvs: () =>dispatch(requestResvs()),
+    requestResvs: (userId) =>dispatch(requestResvs(userId)),
     updateRes: (userId, res) => dispatch(updateRes(userId, res)),
     deleteRes: postId => dispatch(deleteRes(postId))
 });

@@ -36,7 +36,7 @@
 
 i.far.fa-calendar{
  background: transparent;
- position: absolute;
+//  position: absolute;
  padding-left: 1%;
 }
 
@@ -60,7 +60,7 @@ border-radius: 0px;
   /* display: flex;
   justify-content: space-around; */
   display: flex;
-  position: absolute;
+  // position: absolute;
   /* left: 150px; */
   left: 5%;
   background-color: white;
@@ -90,8 +90,8 @@ border-radius: 0px;
 }
 
 .texting{
-  margin-left: 5%;
-  display: flex;
+  // margin-left: 5%;
+  // display: flex;
   align-items: center; 
   background-color: white;
   height: 50px;
@@ -103,8 +103,7 @@ border-radius: 0px;
 
 .main.home input{
   display: flex;
-  min-width:28rem;
-  width: 28rem;
+  width: 100%;
   font-weight: 500;
   color: #2d333f
 }
@@ -133,8 +132,8 @@ border-radius: 0px;
   display: flex;
   align-items: center; 
   /* background-color: white; */
-  width: 4%;
-  margin-left: 50%;
+  width: 90%;
+  margin-left: 5%;
   top: 30%
 }
 
@@ -150,7 +149,7 @@ border-radius: 0px;
 .home ul{
   display: flex;
   margin-left: 5%;
-  width: 100%;
+  // width: 100%;
 }
 .home .profile {
   width: 1%;
@@ -163,14 +162,21 @@ border-radius: 0px;
   align-content: center;
 }
 .home .underplz{
-  margin-top: 35%;
+  margin-top: 75%;
 }
 
 .home .row{
   flex-direction: row;
   padding-top: 1%;
-  width: 13%;
+  width: 18%;
+  display: initial;
+  padding: .8%;
  }
+ .home .row a{
+  height: 100%;
+  width: 90%;
+ }
+
 
  .home .title{
    font-size: 16px;
@@ -194,6 +200,7 @@ border-radius: 0px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  flex-direction: column;
 }
 
 .extraExtra p {

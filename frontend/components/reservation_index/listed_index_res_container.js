@@ -1,14 +1,13 @@
 import { connect } from 'react-redux';
 import {requestResvs, updateRes, deleteRes} from '../../actions/reservation-actions';
-// import {fetchMusical} from '../../actions/musical_actions';
-import {fetchMusical} from '../../util/musical_api_util';
+import {fetchMusical} from '../../actions/musical_actions';
 import {requestUser} from '../../actions/user_actions';
-import ReservationIndex from './reservation_index';
+// import ReservationIndex from './reservation_index';
+import ReservationIndexItem from './listed_index_res';
 
 const msp = (state)=>{
-  debugger
   return({    
-     reservations: Object.values(state.entities.resvs).map((res)=>  Object.assign({}, res, {resName: state.entities.musicals.res.showid}) ),
+     reservation: Object.values(state.entities.resvs),
      currentUser: state.session.currentUser,
      limit: -1
     //  MusicalName: Object.values(state.entities.musicalName)
@@ -17,11 +16,11 @@ const msp = (state)=>{
 };
 const mdp = dispatch=>{
   return(
-    {requestResvs: (userId) =>dispatch(requestResvs(userId)),
+    {receiveRes: (res) =>dispatch(receiveRes(res)),
       fetchMusical: musicalId => dispatch(fetchMusical(musicalId)),
       // receiveIndexLimit: (limit) => dispatch(receiveIndexLimit(limit))
     }
   )
 }
 
-export default connect(msp, mdp)(ReservationIndex);
+export default connect(msp, mdp)(ReservationIndexItem);
