@@ -22,7 +22,7 @@ class ReservationIndexItem extends React.Component{
     //debugger
     const {reservation} =this.props;
     // musical
-    const {party_size, date, time} = reservation;
+    const {musicalN, party_size, date, time} = reservation;
     return(
       <>
       <li>

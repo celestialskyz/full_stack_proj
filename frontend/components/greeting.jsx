@@ -11,9 +11,9 @@ class Greeting extends React.Component{
   }
   componentDidMount(){
    // debugger
-    // if (this.props.currentUser != null ||this.props.currentUser != undefined){
+    if (this.props.currentUser != null ||this.props.currentUser != undefined){
    this.props.requestResvs(this.props.currentUser.id);
-      // }
+      }
   }
   
   sessionLinks(){

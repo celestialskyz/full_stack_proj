@@ -11,7 +11,8 @@ const msp = (state) =>{
     debugger
     return ({
       currentUser: state.session.currentUser,
-      reservations: Object.values(state.entities.resvs).map((res)=>  Object.assign({}, res, {resName: state.entities.musicals.res.showid}) )
+      reservations: Object.values(state.entities.resvs).map((res)=> {  
+        return (Object.assign({}, res, {resName: state.entities.musicals[res.show_id].name}))} )
 })};
 
 const mdp = (dispatch) =>({

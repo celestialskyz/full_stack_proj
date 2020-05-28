@@ -19,7 +19,7 @@ class ReservationIndex extends React.Component{
   }
 
   render(){
-    debugger
+
     const {reservations, updateRes, currentUser, deleteRes, fetchMusical} = this.props;
    
     if (reservations.length === 0) {
@@ -29,15 +29,14 @@ class ReservationIndex extends React.Component{
     // debugger
     if (this.props.limit > 0 && reservations.length > 5){
     var limited = reservations.slice(0,5).map(function(res){
-    debugger
-    res.resName
+    
      return(
         <>
            <ReservationIndexItem
             key = {res.id}
             reservation= {res}
             currentUser ={currentUser}
-            // musicalN = {musicalN}
+            musicalN = {res.resName}
             fetchMusical = {fetchMusical}
           />
        </>
