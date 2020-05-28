@@ -1,3 +1,7 @@
+.ResDropdwn{
+z-index: 5;
+}
+
 .dropdown-resvs{
   position:relative;
 }
@@ -7,19 +11,80 @@
 .ResDropdwn {
   width: 200px;
   position:relative;
-}
-.ResDropdwn .dropdown-resvs{
-  list-style:none;
-  padding:0px;
-  border-radius: 2px;
-  margin: 0px;
-}
+ }
+// .ResDropdwn .dropdown-resvs{
+//   list-style:none;
+//   padding:0px;
+//   border-radius: 2px;
+//   margin: 0px;
+// }
+// .dropdown-resvs{
+//   display: none;
+//   position: absolute;
+//   min-width: 200px;
+// }
+
+// .ResDropdwn:hover > .dropdown-resvs{
+//   display: block;
+//}
+
 .dropdown-resvs{
-  display: none;
-  position: absolute;
-  min-width: 200px;
+  background: #fff;
+  box-shadow: 0 0 0 0.0625rem rgba(0,0,0,.1);
+  margin: .125rem;
+  border-radius: .1875rem;
+}
+.upcoming-list{
+text-transform: uppercase;
+color: #666;
+font-size: .875rem;
+padding: 1rem;
+border-bottom: .0625rem solid rgba(0,0,0,.12);
+white-space: nowrap;
+font-weight: 500;
+}
+.calendar-drop {
+  margin-bottom: -30px;
 }
 
-.ResDropdwn:hover > .dropdown-resvs{
-  display: block;
+.calendar-drop i{
+width: 1.125rem;
+height: 3.375rem;
+}
+.list-res-musical {
+  color: #237b98;
+}
+.details-res{
+  color: #666;
+  font-size: .875rem;
+}
+
+.resInfodop{
+  padding: 0 1rem 1rem 1rem;
+  border-bottom: .0625rem solid rgba(0,0,0,.12);
+}
+.links{
+  margin-top: .6rem;
+  font-size: medium;
+  color: #237b98;
+}
+
+.date-time-drop{
+  padding-top: 3px;
+  display: flex;
+}
+.date-time-drop div{
+  margin-left:3px;
+}
+
+.dropdown-resvs a{
+  background: #fff;
+  margin: .125rem;
+  border-radius: .1875rem;
+}
+
+.dropdown-resvs a div{
+  margin-left: 1rem;
+  color: #237b98;
+
 }

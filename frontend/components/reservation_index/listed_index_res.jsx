@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+var dateFormat = require('dateformat');
 
 class ReservationIndexItem extends React.Component{
   constructor(props){
@@ -19,20 +20,32 @@ class ReservationIndexItem extends React.Component{
   }
 
   render(){
-    //debugger
-    const {reservation} =this.props;
+    
+    const {reservation, currentUser, updateRes, deleteRes} =this.props;
     // musical
-    const {musicalN, party_size, date, time} = reservation;
+    const {resName, party_size, date, time, show_id} = reservation;
+  
     return(
       <>
       <li>
-        <div>      
-          {/* <h2 className ="list-res-musical">{musical.name}</h2> */}
-          <div> Table for {party_size} people</div> 
-          <div>{date}</div> <div>{this.createTimes(time)}</div>
-          <Link to = {`/musicals/reservations/${reservation.id}`}>
-          <div>View </div>
-          </Link>
+        <div className="resInfodop">      
+        <Link to ={`/musicals/${show_id}`}>
+          <h5 className ="list-res-musical">{resName}</h5>
+        </Link>
+          <div className="details-res">
+            <div> Seating for {party_size} </div> 
+            <div className = "date-time-drop">{dateFormat(date, "mediumDate")}
+            <div>{this.createTimes(time)}</div>
+            </div> 
+          </div>  
+        <div className="links">
+            <Link to = {`/musicals/${show_id}/reservations/${reservation.id}`}>
+              <div>View </div>
+            </Link>
+            {/* <button onClick = {()=>{updateRes(reservation.id)}}>Modify</button> */}
+
+            {/* <button onClick = {()=>{deleteRes(reservation.id)}}>Delete</button> */}
+          </div>
         </div>
       </li>
       

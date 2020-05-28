@@ -11,6 +11,7 @@
     "@fortawesome/react-fontawesome": "^0.1.9",
     "@material-ui/icons": "^4.9.1",
     "babel-loader": "^8.1.0",
+    "dateformat": "^3.0.3",
     "moment": "^2.25.3",
     "react": "^16.13.1",
     "react-datepicker": "^2.16.0",

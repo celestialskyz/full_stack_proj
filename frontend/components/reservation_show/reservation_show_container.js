@@ -4,9 +4,8 @@ import { requestRes } from '../../actions/reservation-actions';
 import {openModal} from '../../actions/modal_actions';
 import {fetchMusical} from '../../actions/musical_actions';
 const msp = (state, ownProps) =>{
-  
   return({
-    reservation: state.entities.musicals[ownProps.match.params.resId],
+    reservation: state.entities.resvs[ownProps.match.params.resId],
     reserver_id: state.session.currentUserId,
     currentUserFname: state.session.currentUser.first_name,
     musical: state.entities.musicals[ownProps.match.params.musicalId]

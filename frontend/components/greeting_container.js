@@ -8,7 +8,7 @@ import {fetchMusical} from '../actions/musical_actions';
 
 
 const msp = (state) =>{
-    debugger
+    // debugger
     return ({
       currentUser: state.session.currentUser,
       reservations: Object.values(state.entities.resvs).map((res)=> {  
@@ -20,7 +20,6 @@ const mdp = (dispatch) =>({
     openModal: modal => dispatch(openModal(modal)),
     closeModal: () => dispatch(closeModal()),
     requestUsers: ()=> dispatch(requestUsers),
-    fetchMusical: musicalId => dispatch(fetchMusical(musicalId)),
     requestResvs: (userId) =>dispatch(requestResvs(userId)),
     updateRes: (userId, res) => dispatch(updateRes(userId, res)),
     deleteRes: postId => dispatch(deleteRes(postId))

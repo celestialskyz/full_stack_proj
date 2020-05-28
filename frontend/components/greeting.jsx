@@ -28,21 +28,22 @@ class Greeting extends React.Component{
   }
         
   personalGreeting() {
-    debugger
+    // debugger
     const {reservations, currentUser, requestResvs, updateRes, deleteRes, fetchMusical} = this.props;
     
     return (
           <>
               <hgroup className="header-group">
                 <div className = "ResDropdwn"> 
-                <button>CalendarIcon
+                <button className = "calendar-drop">CalendarIcon
                 <i className="far fa-calendar"> </i>   
                 </button>
                 <ReservationIndex
                   reservations = {reservations}
                   currentUser = {currentUser}
-                  // fetchMusical = {fetchMusical}
                   requestResvs = {requestResvs}
+                  updateRes = {updateRes}
+                  deleteRes = {deleteRes}
                   limit = {5}
                 />
                 </div>

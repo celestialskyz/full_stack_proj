@@ -8,18 +8,17 @@ import ReservationIndex from './reservation_index';
 const msp = (state)=>{
   debugger
   return({    
-     reservations: Object.values(state.entities.resvs).map((res)=>  Object.assign({}, res, {resName: state.entities.musicals.res.showid}) ),
+     reservations: Object.values(state.entities.resvs).map((res)=>  Object.assign({}, res, {resName: state.entities.musicals[res.show_id].name}) ),
      currentUser: state.session.currentUser,
      limit: -1
-    //  MusicalName: Object.values(state.entities.musicalName)
   });
 
 };
 const mdp = dispatch=>{
   return(
     {requestResvs: (userId) =>dispatch(requestResvs(userId)),
-      fetchMusical: musicalId => dispatch(fetchMusical(musicalId)),
-      // receiveIndexLimit: (limit) => dispatch(receiveIndexLimit(limit))
+    updateRes: (userId, res) => dispatch(updateRes(userId, res)),
+    deleteRes: postId => dispatch(deleteRes(postId))
     }
   )
 }

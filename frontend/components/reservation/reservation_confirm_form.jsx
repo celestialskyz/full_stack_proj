@@ -16,7 +16,6 @@ class ReservationConfirmForm extends React.Component{
   }
 
   componentDidMount(){
-    debugger
     if (!this.props.reserver_id){
       this.props.openModal('signup');
     }

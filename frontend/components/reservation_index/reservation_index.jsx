@@ -1,5 +1,6 @@
 import React from 'react';
 import ReservationIndexItem from './listed_index_res';
+import {Link} from "react-router-dom";
 
 class ReservationIndex extends React.Component{
   constructor(props){
@@ -20,15 +21,15 @@ class ReservationIndex extends React.Component{
 
   render(){
 
-    const {reservations, updateRes, currentUser, deleteRes, fetchMusical} = this.props;
+    const {reservations, updateRes, currentUser, deleteRes} = this.props;
    
     if (reservations.length === 0) {
       return (<div></div>);
     }
 
     // debugger
-    if (this.props.limit > 0 && reservations.length > 5){
-    var limited = reservations.slice(0,5).map(function(res){
+    if (this.props.limit > 0 && reservations.length > 3){
+    var limited = reservations.slice(0,3).map(function(res){
     
      return(
         <>
@@ -36,8 +37,8 @@ class ReservationIndex extends React.Component{
             key = {res.id}
             reservation= {res}
             currentUser ={currentUser}
-            musicalN = {res.resName}
-            fetchMusical = {fetchMusical}
+            updateRes = {updateRes}
+            deleteRes = {deleteRes}
           />
        </>
       )
@@ -50,6 +51,8 @@ class ReservationIndex extends React.Component{
               key = {index}
               reservation= {res}
               currentUser ={currentUser}
+              updateRes = {updateRes}
+              deleteRes = {deleteRes}
               // fetchMusical = {fetchMusical}
             />
           </>
@@ -64,7 +67,9 @@ class ReservationIndex extends React.Component{
        <div>
          {limited}
        </div>
-
+       <Link to = {`/reservations`}>
+          <div>View All </div>
+        </Link>
           {/* {this.state.reservations.map(function(res, index){
               ;
              return(
