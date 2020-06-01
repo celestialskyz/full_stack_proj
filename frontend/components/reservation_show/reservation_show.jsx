@@ -17,7 +17,8 @@ class ReservationShow extends React.Component{
 
   render(){
     const {reservation, musical, updateRes, deleteRes, reserver_id} = this.props;
-   
+    let mPic = musical.photoUrls[musical.photoUrls.length - 1];
+
    if (!musical || !reservation) {
      return (<div></div>);
    }
@@ -31,6 +32,7 @@ class ReservationShow extends React.Component{
           updateRes = {updateRes}
           deleteRes = {deleteRes}
           mName = {musical.name}
+          mPic = {mPic}
           key = {reservation.id}
           />
       </>

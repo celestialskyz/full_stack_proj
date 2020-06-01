@@ -67,9 +67,11 @@ class ReservationIndex extends React.Component{
        <div>
          {limited}
        </div>
-       <Link to = {`/reservations`}>
-          <div>View All </div>
-        </Link>
+       <div className="view-all">
+        <Link to = {`/reservations`}>
+            <div>View All </div>
+          </Link>
+        </div>
           {/* {this.state.reservations.map(function(res, index){
               ;
              return(

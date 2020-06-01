@@ -29,7 +29,7 @@ const App = () =>{
         {/* <Route exact path="/" component={MainComponent} /> */}
         <Route exact path="/" component={indexed} />
         <Route exact path="/musicals/confirmRes" component={ResConfirmFormContainer} />
-        <Route exact path= "/musicals/ResMade" component = {ResMadeContainer}/>
+        <Route exact path= "/musicals/:musicalId/ResMade" component = {ResMadeContainer}/>
         {/* <ProtectedRoute exact path= "/musicals/deleted" component = {ResDeleted}/> */}
         <Route exact path="/musicals/:musicalId" component={MusicalShowContainer} />
         <Switch>

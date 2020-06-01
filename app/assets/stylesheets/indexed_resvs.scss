@@ -1,5 +1,6 @@
 .ResDropdwn{
 z-index: 5;
+font-size: 24px;
 }
 
 .dropdown-resvs{
@@ -8,31 +9,48 @@ z-index: 5;
 .dropdown-resvs button{
   cursor: pointer;
 }
-.ResDropdwn {
-  width: 200px;
-  position:relative;
- }
-// .ResDropdwn .dropdown-resvs{
-//   list-style:none;
-//   padding:0px;
-//   border-radius: 2px;
-//   margin: 0px;
-// }
-// .dropdown-resvs{
-//   display: none;
-//   position: absolute;
-//   min-width: 200px;
-// }
+.header-group{
+  flex-direction: column;
+  margin-left: 60%;
+}
+.logout-plz{
+  margin-left: 50px;
+}
 
-// .ResDropdwn:hover > .dropdown-resvs{
-//   display: block;
-//}
+.ResDropdwn {
+  position:relative;
+  flex-direction: column;
+ }
+ .horizontal-greeting{
+   display: flex;
+  flex-direction: row;
+ }
+.ResDropdwn .dropdown-resvs{
+  list-style:none;
+  padding:0px;
+  border-radius: 2px;
+  margin: 0px;
+}
+.horizontal-greeting .header-name{
+  padding-left: 10px;
+}
+
+.dropdown-resvs{
+  display: none;
+  position: absolute;
+  min-width: 200px;
+}
+
+.ResDropdwn:hover > .dropdown-resvs{
+  display: block;
+}
 
 .dropdown-resvs{
   background: #fff;
   box-shadow: 0 0 0 0.0625rem rgba(0,0,0,.1);
   margin: .125rem;
   border-radius: .1875rem;
+  padding-bottom: 0.5px;
 }
 .upcoming-list{
 text-transform: uppercase;
@@ -44,13 +62,9 @@ white-space: nowrap;
 font-weight: 500;
 }
 .calendar-drop {
-  margin-bottom: -30px;
+  margin-top: 80%;
 }
 
-.calendar-drop i{
-width: 1.125rem;
-height: 3.375rem;
-}
 .list-res-musical {
   color: #237b98;
 }
@@ -76,15 +90,20 @@ height: 3.375rem;
 .date-time-drop div{
   margin-left:3px;
 }
-
+.view-all{
+  margin: 1rem;
+  border-radius: .1875rem;
+}
+.view-all div{
+  font-weight: 500;
+}
 .dropdown-resvs a{
   background: #fff;
-  margin: .125rem;
-  border-radius: .1875rem;
+  // margin: .125rem;
+  // border-radius: .1875rem;
 }
 
 .dropdown-resvs a div{
   margin-left: 1rem;
   color: #237b98;
-
 }

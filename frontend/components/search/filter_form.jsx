@@ -45,7 +45,7 @@ class FilterForm extends React.Component{
           <div className="lineup">
             <section className= "fillin">
             <div className="cal">
-            <i className="far fa-calendar"> </i>     
+            {/* <i className="far fa-calendar"> </i>      */}
               <input type="date" value={this.state.date} onChange= {this.handleInput('date')} />
             </div>
              <div className="clocked">

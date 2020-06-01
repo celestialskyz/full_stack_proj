@@ -33,12 +33,14 @@
   text-align: center;
   width: 100%;
 }
-
-i.far.fa-calendar{
- background: transparent;
-//  position: absolute;
- padding-left: 1%;
+.main.home .cal input{
+flex-direction: row-reverse;
 }
+// i.far.fa-calendar{
+//  background: transparent;
+// //  position: absolute;
+//  padding-left: 1%;
+// }
 
 .partys-drop{
  border-top-left-radius: 0px;
@@ -55,7 +57,9 @@ border-radius: 0px;
 .main.home .fillin{
   display: flex;
   flex-direction: row;
+  padding-right: 1.5%;
 }
+
 .main.home .fillin{
   /* display: flex;
   justify-content: space-around; */
@@ -80,7 +84,7 @@ border-radius: 0px;
 
 .clocked, .partytime{
   background-color: white;
-  padding-left: 1.5%;
+  padding-left: 2.5%;
 }
 
 .time-drop{
@@ -113,7 +117,7 @@ border-radius: 0px;
   padding-top:15px;
   padding-bottom:15px;
   margin-left: 30%; */
-  display: flex;
+  // display: flex;
   justify-content: center;
   text-align: center;
   background-color: #da3743;
@@ -123,11 +127,13 @@ border-radius: 0px;
   color: white;
   font-size: larger;
   white-space: nowrap;
-  min-width: 144px;
+  min-width: 19%;
   width: 144px;
   height: 50px;
 }
-
+.formFilter button text{
+  padding-top: 5%;
+}
 .main.home .lineup{
   display: flex;
   align-items: center; 
@@ -149,6 +155,7 @@ border-radius: 0px;
 .home ul{
   display: flex;
   margin-left: 5%;
+  width: 80%;
   // width: 100%;
 }
 .home .profile {

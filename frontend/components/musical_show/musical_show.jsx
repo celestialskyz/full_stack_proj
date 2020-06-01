@@ -2,6 +2,7 @@ import React from 'react';
 import MusicalDetail from './musical_detail';
 import MusicalMap from './musical_map';
 import MusicalDetail2 from './musical_detail2';
+import { Link, animateScroll as scroll } from "react-scroll";
 
 import ResForm from '../reservation/new_reservation_form';
 
@@ -37,7 +38,7 @@ class MusicalShow extends React.Component {
         <div className = "inbanner">
           <nav className = "detailNav">
           <ul className = "little_tabs">
-            <li  key = "Overview" >Overview</li>
+            <li  key = "Overview" > Overview </li>
             {/* <li key ="Specials">Specials</li> */}
             <li key ="Photos"> Photos
             {/* <a href="#pics" className="scroll-icon smoothscroll">  */}
@@ -52,29 +53,30 @@ class MusicalShow extends React.Component {
       </div>
       <div className = "align">
         <div className = "leftside">
+       
         <MusicalDetail
           musical={musical}
           key={musical.id}
         />
-    <a name="pics">
-        <div className="photos">
-          <h2>Photos</h2>
-            <div className="row">
-                {phtos.map((pic, idx) => {
-                  return (
-                    <div className="column" key={`${pic}+${idx}`}>
-                      <img
-                        className="photograph"
-                        id={`pic${idx}`}
-                        src={pic}
-                      />
-                    </div>
-                  )
-                })}
+        <a name="pics">
+            <div className="photos">
+              <h2>Photos</h2>
+                <div className="row">
+                    {phtos.map((pic, idx) => {
+                      return (
+                        <div className="column" key={`${pic}+${idx}`}>
+                          <img
+                            className="photograph"
+                            id={`pic${idx}`}
+                            src={pic}
+                          />
+                        </div>
+                      )
+                    })}
+                </div>
             </div>
-        </div>
-      </a>
-       </div>
+        </a>
+      </div>
         <section className="right-side">
           {/* <MusicalReservation> */}
           <ResForm

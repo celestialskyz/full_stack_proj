@@ -1,0 +1,37 @@
+.confirmed .greenConfirm{
+  display: flex;
+    margin-left: 5%;
+    background: #55b68d;
+    color: white;
+    padding: 2%;
+    margin-bottom: 3%;
+    font-size: 12px;
+    margin-bottom: 3%;
+}
+
+.confirmed .InfoDone{
+  margin-left: 8%;
+}
+.confirmed .done{
+  margin-left: 2%;
+  margin-top: 1.5%;
+}
+.mNameDone{
+  padding-left: 2%;
+}
+.confirmed .people{
+  margin-top: 4%;
+    margin-left: 36%;
+    display: flex;
+}
+.InfoHead{
+  display: flex;
+}
+.listconfirminfo{
+  display: flex;
+    margin-left: 36%;
+    margin-top: -4%;
+}
+.listconfirminfo div{
+  display: flex;
+}

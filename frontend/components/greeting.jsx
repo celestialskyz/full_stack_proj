@@ -34,21 +34,26 @@ class Greeting extends React.Component{
     return (
           <>
               <hgroup className="header-group">
-                <div className = "ResDropdwn"> 
-                <button className = "calendar-drop">CalendarIcon
-                <i className="far fa-calendar"> </i>   
-                </button>
-                <ReservationIndex
-                  reservations = {reservations}
-                  currentUser = {currentUser}
-                  requestResvs = {requestResvs}
-                  updateRes = {updateRes}
-                  deleteRes = {deleteRes}
-                  limit = {5}
-                />
-                </div>
-              <h2 className="header-name">Hi {this.props.currentUser.first_name}</h2>
+                <div className = "horizontal-greeting"> 
+                  <div className = "ResDropdwn"> 
+                    <button className = "calendar-drop">
+                      <i className="far fa-calendar fa-2x"> </i>   
+                    </button>
+                    <ReservationIndex
+                      reservations = {reservations}
+                      currentUser = {currentUser}
+                      requestResvs = {requestResvs}
+                      updateRes = {updateRes}
+                      deleteRes = {deleteRes}
+                      limit = {5}
+                    />
+                  </div>
+              
+                <h2 className="header-name">Hi {this.props.currentUser.first_name}</h2>
+               </div>
+               <div className="logout-plz">
               <button onClick={()=> this.props.logoutUser()}>Log Out</button>
+              </div>
             </hgroup>
           </>
         )

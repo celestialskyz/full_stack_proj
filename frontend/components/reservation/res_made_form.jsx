@@ -16,10 +16,19 @@ class ReservationMadeForm extends React.Component{
         this.props.openModal('signup');
       }
   }
+
+  // componentDidUpdate(prevProps) {
+  //   if (this.props.reservation !== prevProps.reservation) {
+  //     this.props.requestRes(this.props.reserver_id );
+  //   }
+  // }
       
   render(){
     
-    const {reservation, updateRes, deleteRes, currentUserFname} = this.props;
+    const {reservation, updateRes, deleteRes, currentUserFname, mPic} = this.props;
+    const lastpic = mPic["length"];
+    const headPic = mPic[lastpic - 1];
+    
     return(
       <>
           <ReservationsItem
@@ -27,6 +36,7 @@ class ReservationMadeForm extends React.Component{
           currentUser = {currentUserFname}
           updateRes = {updateRes}
           deleteRes = {deleteRes}
+          mPic= {headPic}
           key = {reservation.id}
         />
       </>

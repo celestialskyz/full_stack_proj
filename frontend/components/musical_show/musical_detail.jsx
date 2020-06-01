@@ -6,15 +6,6 @@ const MusicalDetail =({musical})=>{
   return(
    
     <section className ="musical_detail">
-      {/* <div className="white"> </div>  */}
-      {/* <nav className = "detailNav">
-        <ul className = "little_tabs">
-          <li>Overview</li>
-          <li>Specials</li>
-          <li>Photos</li>
-          <li>Reviews</li>
-        </ul>
-      </nav>  */}
       <h1>{musical.name}</h1>
       <div className="horz">
         <ul className = "review_stats">

@@ -1,0 +1,82 @@
+.musicalInfo {
+  margin-left: 28%;
+  margin-top: 5%;
+}
+
+.almost, .user
+{
+  margin-left: 26%;
+}
+
+.sidebyside{
+display: flex;
+}
+.sidebyside img.picmini2{
+  width:30%;
+  margin-right: 2%;
+}
+
+.InfoDone img {
+width:30%
+}
+.confirmForm {
+  height: 250px;
+  margin-left: 25%;
+}
+.confirmForm .occasion{
+height: 22%;
+color: #9b9b9b;
+border: #949494;
+}
+
+.confirmForm input{
+  height: 54px;
+  width: 40%;
+  color: #2d333f;
+  background: #fff;
+  border-radius: 4px;
+  font-size: 16px;
+  border: .0625rem solid #d8d9db;
+  line-height: 24px;
+  box-sizing: border-box;
+  margin: 1.2%;
+}
+
+.confirmForm button{
+  justify-content: center;
+  text-align: center;
+  background-color: #da3743;
+  border-color: #b8222d;
+  border-radius: 3px;
+  font: BrandonText;
+  color: white;
+  font-size: larger;
+  height: 20%;
+  white-space: nowrap;
+  width: 80%;
+  border-radius: 3px;
+}
+.infolisthorz {
+  display: flex;
+}
+.infolisthorz div {
+margin: 3%;
+display: flex;
+}
+.infolisthorz > i {
+  margin-right: 45%;
+}
+.dets{
+  padding-left: 26%;
+  font-weight: bold;
+}
+.iconInfo{
+  padding-left: 9px;
+}
+.secondrowInfo .occasion{
+  width: 42%;
+}
+
+.confirmForm > .occasion{
+  margin-left: 1%;
+}

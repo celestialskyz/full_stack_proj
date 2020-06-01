@@ -66,7 +66,24 @@ html{
   padding: 20px;
  
 }
+.horizalign .datinginput{
+  display: flex;
+  flex-direction: column;
+}
+.datinginput label{
+  margin-bottom: -15%;
+}
+.horizalign .time-drop{
+  margin-left: 12%;
+  margin-top: 10%;
+}    
+.horizalign .datewidth{
+  width: 90px;
+}
 
+.timinginput label{
+  margin-left: 16%;
+}
 
 .little_tabs{
   /* padding-left: 20px;
@@ -89,6 +106,7 @@ html{
 
 .musicalInfo a {
   color: blue;
+  height: 40%;
 }
 
 .map-container{
@@ -246,6 +264,7 @@ html{
   box-shadow: 0 2px 8px rgba(153,153,153,.4);
   background-color: rgb(247, 247, 247);
   margin-bottom: 5%;
+  position: sticky;
 }
 
 #resform.timebutton{
@@ -294,18 +313,17 @@ html{
   border-right: none;
   position: relative;
   height: 35px;
-  width: 100%;
   font-size: .875rem;
   font-weight: 500;
   padding-top: 3%;
    //@function padding-bottom: 20px;
  }   
- .horizalign{
-  padding-top: 3%;
-  overflow-wrap: normal;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-}
+//  .horizalign{
+//   padding-top: 3%;
+//   overflow-wrap: normal;
+//   position: -webkit-sticky; /* Safari */
+//   position: sticky;
+// }
 
 .horizalign text{
   display: flex;
@@ -344,7 +362,9 @@ html{
 // button.timebuttons{
 //   margin-left: 15%;
 // }
-
+.timinginput .time-drop{
+  width: 95%;
+}
 .align{
   display: flex;
   margin-left: 10%;

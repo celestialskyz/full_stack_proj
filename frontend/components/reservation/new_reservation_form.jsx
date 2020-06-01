@@ -23,9 +23,10 @@ class ResForm extends React.Component{
 redirectIt(musical, time){
   // debugger
   let mName = musical.name;
+  let mPic = musical.photoUrls[musical.photoUrls.length - 1];
   let show_id = musical.id;
   
-  this.props.handleSubmit({...this.state, time, mName, show_id});
+  this.props.handleSubmit({...this.state,time, mName, mPic, show_id});
   //  debugger
   if (jQuery.isEmptyObject(this.props.reserver_id)){
     this.props.openModal('signup');
@@ -38,6 +39,12 @@ redirectIt(musical, time){
 }
 
   createTimes(time){
+    if (time === 0 || time === 2400){
+      return "12:00AM";
+    }
+    else if(time === 1200){
+      return '12:00PM';
+    }
     return time > 1200 ? (time-1200).toString().slice(0, -2) +":" + (time-1200).toString().slice(-2) + "PM" :
                 (time).toString().slice(0, -2) +":" + (time).toString().slice(1)+ "AM";
   }
@@ -110,8 +117,7 @@ redirectIt(musical, time){
 
         }
       }
-      // debugger
-   
+    
     return(
       <>
       <div id="resform">
@@ -145,25 +151,28 @@ redirectIt(musical, time){
             </select>
           </label>
           <div className = "horizalign">
-          <label>Date
-           <input type="date" value={date} onChange= {this.update('date')} />
-          </label>
-          <label>Time
-          {/* for select item must be string convert later */}
-            <select key = "time" name="time" className="time-drop"  value={time} onChange={this.update('time')}>
-              {timearr.map(time =>(
-                <option key= {time} value ={time} > {this.createTimes(time)}
-                </option>
-              ))}
-              {/* { {nonMilitaryT.map( time =>(
-                <option key= {time} value = {time.toString()}> {this.createTimes(time)}
-                {{ time > 1200 ? (time-1200).toString().slice(0, 1) +":" + (time-1200).toString().slice(1) + "PM" :
-                (time).toString().slice(0, 1) +":" + (time).toString().slice(1)+ "AM"} }
-                </option> }
-              ))
-              } */}
-            </select>
-          </label>
+            <div className="datinginput">
+              <label>Date</label>
+              
+              <input className= "datewidth" type="date" value={date} onChange= {this.update('date')} />
+            </div>
+            <div className="timinginput">
+              <label>Time</label>
+              {/* for select item must be string convert later */}
+                <select key = "time" name="time" className="time-drop"  value={time} onChange={this.update('time')}>
+                  {timearr.map(time =>(
+                    <option key= {time} value ={time} > {this.createTimes(time)}
+                    </option>
+                  ))}
+                  {/* { {nonMilitaryT.map( time =>(
+                    <option key= {time} value = {time.toString()}> {this.createTimes(time)}
+                    {{ time > 1200 ? (time-1200).toString().slice(0, 1) +":" + (time-1200).toString().slice(1) + "PM" :
+                    (time).toString().slice(0, 1) +":" + (time).toString().slice(1)+ "AM"} }
+                    </option> }
+                  ))
+                  } */}
+                </select>
+            </div>
           </div>
             {/* <button >
             <div>Find a Seat</div>
