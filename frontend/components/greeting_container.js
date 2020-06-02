@@ -6,9 +6,8 @@ import {requestUsers} from '../actions/user_actions';
 import {requestResvs, updateRes, deleteRes} from '../actions/reservation-actions';
 import {fetchMusical} from '../actions/musical_actions';
 
-
 const msp = (state) =>{
-    // debugger
+   
     return ({
       currentUser: state.session.currentUser,
       reservations: Object.values(state.entities.resvs).map((res)=> {  

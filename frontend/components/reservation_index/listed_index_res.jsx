@@ -27,7 +27,7 @@ class ReservationIndexItem extends React.Component{
 
   render(){
     
-    const {reservation, currentUser, updateRes, deleteRes} =this.props;
+    const {reservation, currentUser, updateRes, deleteRes, currentUserFname} =this.props;
     // musical
     const {resName, party_size, date, time, show_id} = reservation;
   
@@ -48,9 +48,10 @@ class ReservationIndexItem extends React.Component{
             <Link to = {`/musicals/${show_id}/reservations/${reservation.id}`}>
               <div>View </div>
             </Link>
-            {/* <button onClick = {()=>{updateRes(reservation.id)}}>Modify</button> */}
-
-            {/* <button onClick = {()=>{deleteRes(reservation.id)}}>Delete</button> */}
+            <Link to = {`/musicals/${show_id}/reservations/${reservation.id}/edit`}>
+              <div>Modify </div>
+            </Link>
+            <button onClick = {()=>{deleteRes(reservation.id)}}>Cancel</button>
           </div>
         </div>
       </li>

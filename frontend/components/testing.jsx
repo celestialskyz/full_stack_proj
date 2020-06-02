@@ -10,11 +10,10 @@ const indexed = (props)=>{
   if (klass === 'home'){
     
     useEffect(() => {
-      debugger
+      
      props.initialFetchMusicals();
     }, []);
 
-    debugger
    } 
     return (
     <div className = {`main ${klass}`}>

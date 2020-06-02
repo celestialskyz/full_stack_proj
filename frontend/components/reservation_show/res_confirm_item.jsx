@@ -21,7 +21,7 @@ class ReservationsItem extends React.Component{
     this.props.clearPendingRes();
   }
   render (){
-    const {reservation, currentUser, mPic, updateRes, deleteRes} = this.props;      
+    const {reservation, currentUser, mPic, updateRes, deleteRes, currentUserFname} = this.props;      
     const {mName, party_size, date, time, show_id} = reservation;
 
     return(
@@ -29,7 +29,7 @@ class ReservationsItem extends React.Component{
       <div className = "confirmed">
         <div className="greenConfirm">
         <i className="fas fa-check-circle icon-large"></i>
-          <h2 className="done"> Thanks, {currentUser}! Your reservation is confirmed.</h2>
+          <h2 className="done"> Thanks, {currentUserFname}! Your reservation is confirmed.</h2>
         </div>
         <div className="InfoDone">
           <div className="InfoHead">

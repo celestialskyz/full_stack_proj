@@ -41,10 +41,10 @@ export const fetchMusicals = (filters)=> dispatch =>{
 
 
 export const initialFetchMusicals = ()=> dispatch =>{
-  debugger
+  
   return(
     EventAPIUtil.initialFetchMusicals().then(musicals =>{
-      debugger
+      
       dispatch(intialreceiveMusicals(musicals));})
   );
   ;
