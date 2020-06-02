@@ -41,10 +41,13 @@ export const fetchMusicals = (filters)=> dispatch =>{
 
 
 export const initialFetchMusicals = ()=> dispatch =>{
+  debugger
   return(
-    EventAPIUtil.initialFetchMusicals().then(musicals =>{dispatch(intialreceiveMusicals(musicals));})
+    EventAPIUtil.initialFetchMusicals().then(musicals =>{
+      debugger
+      dispatch(intialreceiveMusicals(musicals));})
   );
-  // debugger;
+  ;
 };
 
 export const fetchMusical = (musicalId)=> dispatch =>{
@@ -55,11 +58,3 @@ export const fetchMusical = (musicalId)=> dispatch =>{
   //debugger
 };
 
-
-// export const fetchMusicalName = (musicalId)=> dispatch =>{
-//   //debugger
-//   return(
-//     EventAPIUtil.fetchMusical(musicalId).then(musical =>{dispatch(receiveMusicalName(musical.name));})
-//     );
-//   //debugger
-// };
