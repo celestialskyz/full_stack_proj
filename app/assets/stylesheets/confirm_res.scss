@@ -71,12 +71,17 @@ display: flex;
   font-weight: bold;
 }
 .iconInfo{
-  padding-left: 9px;
+  margin-left: 12%;
 }
+
 .secondrowInfo .occasion{
   width: 42%;
 }
 
 .confirmForm > .occasion{
   margin-left: 1%;
+}
+
+.listconfirminfo:first-child{
+  padding-right: 5%;
 }

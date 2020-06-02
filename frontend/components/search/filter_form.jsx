@@ -11,7 +11,7 @@ class FilterForm extends React.Component{
     this.state={
       inputQ:"",
       date: moment().format("yyyy-MM-DD"),
-      partys: 2,
+      party_size: 2,
       time: 1900
     };
     // let addClass = false;
@@ -102,7 +102,7 @@ class FilterForm extends React.Component{
               </select></div>
               <div className = "partytime">
               <i className="far fa-user"></i>
-              <select name="partys" className="partys-drop" defaultValue='2' placeholder='2 people' onChange={this.handleInput('partys')}>
+              <select name="party_size" className="partys-drop" defaultValue='2' placeholder='2 people' onChange={this.handleInput('party_size')}>
                 <option value='1' >1 person</option>
                 <option value='2' >2 people</option>
                 <option value='3' >3 people</option>

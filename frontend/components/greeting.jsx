@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import ReservationIndex from '../components/reservation_index/reservation_index';
 // import ReservationIndexContainer from '../components/reservation_index/reservation_index_container';
 class Greeting extends React.Component{
@@ -28,7 +28,7 @@ class Greeting extends React.Component{
   }
         
   personalGreeting() {
-    // debugger
+    
     const {reservations, currentUser, requestResvs, updateRes, deleteRes, fetchMusical} = this.props;
     
     return (
@@ -52,7 +52,9 @@ class Greeting extends React.Component{
                 <h2 className="header-name">Hi {this.props.currentUser.first_name}</h2>
                </div>
                <div className="logout-plz">
-              <button onClick={()=> this.props.logoutUser()}>Log Out</button>
+              <button onClick={()=> {
+                this.props.logoutUser();
+              }}>Log Out</button>
               </div>
             </hgroup>
           </>

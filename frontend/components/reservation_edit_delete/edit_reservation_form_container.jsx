@@ -1,4 +1,5 @@
 // deleteRes: postId => dispatch(deleteRes(postId)),
+import React from 'react';
 import {updateRes, requestRes} from '../../actions/reservation-actions';
 import {openModal} from '../../actions/modal_actions';
 import { connect } from 'react-redux';
@@ -10,33 +11,37 @@ class EditReservationForm extends React.Component {
   }
 
   render () {
-    const { reservation, currentUserFname, currentUserEmail, submitEvent, openModal} = this.props;
+    const { reservation, currentUserFname, currentUserEmail, submitEvent, openModal, kclass} = this.props;
 
     if (!reservation) return null;
     return (
-      <ReservationConfirmForm
-      reservation={reservation}
-      currentUserFname={currentUserFname}
-      currentUserEmail ={currentUserEmail}
-      submitEvent={submitEvent}
-      openModal ={openModal}
+      <ResForm
+        musical = {musical}
+        filters = {this.props.filters}
+        handleSubmit = {this.props.receivePendingRes}
+        reserver_id = {this.props.reserver_id}
+        openModal = {this.props.openModal}
+        kclass = {kclass}
       />
     );
   }
 }
 
 const msp = (state, ownProps) => {
-  return({
+   return({
     reserver_id: state.session.currentUserId,
-    currentUserFname: state.session.currentUser.first_name,
-    currentUserEmail: state.session.currentUser.email,
-    reservation: state.entities.resvs[ownProps.match.params.resId]
+    musical: state.entities.musicals[ownProps.match.params.musicalId],
+    filters: state.entities.resvs[ownProps.match.params.resId],
+    kclass: "editp"
   })
 }
-
+// currentUserFname: state.session.currentUser.first_name,
+// currentUserEmail: state.session.currentUser.email,
 
 const mdp = dispatch => {
 return({
+  fetchMusical: (musicalId)=>dispatch(fetchMusical(musicalId)),
+  handleSubmit: (reservationDetails) => dispatch(receivePendingRes(reservationDetails)),
   requestRes:(userId, resId)  => dispatch(requestRes(userId, resId)),
   submitEvent: (resId, res) => dispatch(updateRes(resId, res)), //update
   openModal: (modal)=>dispatch(openModal(modal))

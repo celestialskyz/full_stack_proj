@@ -6,18 +6,19 @@ import {receivePendingRes} from '../../actions/reservation-actions';
 import {openModal} from '../../actions/modal_actions';
 
 const msp = (state, ownProps)=>{
- // debugger
+  
   let filterinfo= jQuery.isEmptyObject(state.ui.filters) ? 
   {inputQ:"",
      date: moment().format("yyyy-MM-DD"),
      party_size: 2,
      time: 1900}  
      : state.ui.filters;
-// debugger
+  
   return({
     musical: state.entities.musicals[ownProps.match.params.musicalId],
     filters: filterinfo,
-    reserver_id: state.session.currentUser? state.session.currentUser : {}
+    reserver_id: state.session.currentUser? state.session.currentUser : {},
+    kclass: "showp"
   });
 };
   // return({

@@ -17,14 +17,6 @@ class ReservationConfirmForm extends React.Component{
 
   }
 
-  componentDidMount(){
-    if (!this.props.reserver_id){
-      this.props.openModal('signup');
-    }
-
-
-  }
-
   update(field){
     return e=> this.setState({[field]:e.target.value});
   }
@@ -68,7 +60,7 @@ class ReservationConfirmForm extends React.Component{
       </div>
           <div className= "infolisthorz">
             <div><i className="far fa-calendar"> </i> <div className="iconInfo">{dateFormat(date, "ddd, mmm d")}</div></div>
-            <div><i className="far fa-user"></i><div className="iconInfo">{party_size}</div></div>
+            <div><i className="far fa-user"></i><div className="iconInfo">{party_size} people</div></div>
             <div><i className="far fa-clock"></i> <div className="iconInfo"> {this.createTimes(time)}</div></div>
           </div>
       </div>

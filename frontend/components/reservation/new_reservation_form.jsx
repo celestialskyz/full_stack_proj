@@ -8,12 +8,13 @@ import moment from 'moment';
 class ResForm extends React.Component{
   constructor(props){
     super(props);
-    this.state = {
-    //  inputQ:props.filters.inputQ,
-     date: props.filters.date,
-     party_size: props.filters.party_size,
-     time: props.filters.time
-    };  
+    this.state = this.props.filters;
+    // {
+    // //  inputQ:props.filters.inputQ,
+    //  date: props.filters.date,
+    //  party_size: props.filters.party_size,
+    //  time: props.filters.time
+    // };  
 
     this.createButtons = this.createButtons.bind(this);
     this.createTimes = this.createTimes.bind(this);
@@ -27,8 +28,9 @@ redirectIt(musical, time){
   let show_id = musical.id;
   
   this.props.handleSubmit({...this.state,time, mName, mPic, show_id});
-  //  debugger
+   
   if (jQuery.isEmptyObject(this.props.reserver_id)){
+    
     this.props.openModal('signup');
   }
   else {
@@ -91,7 +93,8 @@ redirectIt(musical, time){
   }
 
   render(){
-    const {musical} = this.props;
+    const {musical, kclass} = this.props;
+    
     const {inputQ, date, party_size, time} = this.state;
     
     let timearr = [];
@@ -119,71 +122,72 @@ redirectIt(musical, time){
       }
     
     return(
-      <>
-      <div id="resform">
-        <div className = "res-head">
-          <h1>Make a reservation</h1>
-        </div>
-        <form  >
-          <label className = "psizehead">Party Size
-            <select key = "partys" name="partys" className="res-drop" defaultValue='2' placeholder='2' onChange={this.update('partys')}>
-                <option key="partys1" value='1' >1 </option> 
-            {/* for select item must be string convert later */}
-                <option key="partys2" value='2' >2 </option>
-                <option key="partys3" value='3' >3 </option>
-                <option key="partys4" value='4' >4 </option>
-                <option key="partys5" value='5' >5 </option>
-                <option key="partys6" value='6' >6 </option>
-                <option key="partys7" value='7' >7 </option>
-                <option key="partys8" value='8' >8 </option>
-                <option key="partys9" value='9' >9 </option>
-                <option key="partys10" value='10' >10 </option>
-                <option key="partys11" value='11' >11 </option>
-                <option key="partys12" value='12' >12 </option>
-                <option key="partys13" value='13' >13 </option>
-                <option key="partys14" value='14' >14 </option>
-                <option key="partys15" value='15' >15 </option>
-                <option key="partys16" value='16' >16 </option>
-                <option key="partys17" value='17' >17 </option>
-                <option key="partys18" value='18' >18 </option>
-                <option key="partys19" value='19' >19 </option>
-                <option key="partys20" value='20' >20 </option>
-            </select>
-          </label>
-          <div className = "horizalign">
-            <div className="datinginput">
-              <label>Date</label>
-              
-              <input className= "datewidth" type="date" value={date} onChange= {this.update('date')} />
-            </div>
-            <div className="timinginput">
-              <label>Time</label>
-              {/* for select item must be string convert later */}
-                <select key = "time" name="time" className="time-drop"  value={time} onChange={this.update('time')}>
-                  {timearr.map(time =>(
-                    <option key= {time} value ={time} > {this.createTimes(time)}
-                    </option>
-                  ))}
-                  {/* { {nonMilitaryT.map( time =>(
-                    <option key= {time} value = {time.toString()}> {this.createTimes(time)}
-                    {{ time > 1200 ? (time-1200).toString().slice(0, 1) +":" + (time-1200).toString().slice(1) + "PM" :
-                    (time).toString().slice(0, 1) +":" + (time).toString().slice(1)+ "AM"} }
-                    </option> }
-                  ))
-                  } */}
-                </select>
-            </div>
+      <div className = {`res-small-form ${kclass}`}>
+        <div id="resform">
+          <div className = {"res-head"}>
+            <h1>Make a reservation</h1>
           </div>
-            {/* <button >
-            <div>Find a Seat</div>
-          </button> */}
-          <button id="firstFind" onClick = { () => this.createButtons(musical, timearr)}>
-            <div className="find">Find a Seat</div>
-          </button>
-          <div id = "putButtonsHere"></div>
-          </form>
+          <form  >
+            <label className = "psizehead">Party Size
+              <select key = "partys" className="partys" className="res-drop" defaultValue={this.state.description} placeholder='2' onChange={this.update('party_size')}>
+              {/* defaultValue='2' */}
+                  <option key="partys1" value='1' >1 </option> 
+              {/* for select item must be string convert later */}
+                  <option key="partys2" value='2' >2 </option>
+                  <option key="partys3" value='3' >3 </option>
+                  <option key="partys4" value='4' >4 </option>
+                  <option key="partys5" value='5' >5 </option>
+                  <option key="partys6" value='6' >6 </option>
+                  <option key="partys7" value='7' >7 </option>
+                  <option key="partys8" value='8' >8 </option>
+                  <option key="partys9" value='9' >9 </option>
+                  <option key="partys10" value='10' >10 </option>
+                  <option key="partys11" value='11' >11 </option>
+                  <option key="partys12" value='12' >12 </option>
+                  <option key="partys13" value='13' >13 </option>
+                  <option key="partys14" value='14' >14 </option>
+                  <option key="partys15" value='15' >15 </option>
+                  <option key="partys16" value='16' >16 </option>
+                  <option key="partys17" value='17' >17 </option>
+                  <option key="partys18" value='18' >18 </option>
+                  <option key="partys19" value='19' >19 </option>
+                  <option key="partys20" value='20' >20 </option>
+              </select>
+            </label>
+            <div className = "horizalign">
+              <div className="datinginput">
+                <label>Date</label>
+                
+                <input className= "datewidth" type="date" value={date} onChange= {this.update('date')} />
+              </div>
+              <div className="timinginput">
+                <label>Time</label>
+                {/* for select item must be string convert later */}
+                  <select key = "time" name="time" className="time-drop"  value={time} onChange={this.update('time')}>
+                    {timearr.map(time =>(
+                      <option key= {time} value ={time} > {this.createTimes(time)}
+                      </option>
+                    ))}
+                    {/* { {nonMilitaryT.map( time =>(
+                      <option key= {time} value = {time.toString()}> {this.createTimes(time)}
+                      {{ time > 1200 ? (time-1200).toString().slice(0, 1) +":" + (time-1200).toString().slice(1) + "PM" :
+                      (time).toString().slice(0, 1) +":" + (time).toString().slice(1)+ "AM"} }
+                      </option> }
+                    ))
+                    } */}
+                  </select>
+              </div>
+            </div>
+              {/* <button >
+              <div>Find a Seat</div>
+            </button> */}
+            <button id="firstFind" onClick = { () => this.createButtons(musical, timearr)}>
+              <div className="find">Find a Seat</div>
+            </button>
+            <div id = "putButtonsHere"></div>
+            </form>
         </div>
-      </>
+    </div>
     )
   }
 

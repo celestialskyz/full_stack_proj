@@ -1,6 +1,6 @@
 import {RECEIVE_MUSICALS, RECEIVE_MUSICAL_NAME, RECEIVE_MUSICAL, INITIALFETCHMUSICALS} from '../actions/musical_actions';
 import { RECEIVE_RESVS } from '../actions/reservation-actions';
-
+import {CLOSE_MODAL} from '../actions/modal_actions';
 const musicalsReducer = (state={}, action) =>{
   Object.freeze(state);
   switch(action.type){
@@ -9,8 +9,8 @@ const musicalsReducer = (state={}, action) =>{
       return Object.assign({}, action.musicals);
     case INITIALFETCHMUSICALS:
       return Object.assign({},action.musicals);
-      case RECEIVE_MUSICAL:
-      return Object.assign({}, state, {[action.musical.id]:action.musical});
+    case RECEIVE_MUSICAL:
+     return Object.assign({}, state, {[action.musical.id]:action.musical});
     default:
       return state;
   }

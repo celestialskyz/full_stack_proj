@@ -17,6 +17,9 @@ class ReservationsItem extends React.Component{
     return time > 1200 ? (time-1200).toString().slice(0, -2) +":" + (time-1200).toString().slice(-2) + "PM" :
                 (time).toString().slice(0, -2) +":" + (time).toString().slice(1)+ "AM";
   }
+  componentWillUnmount(){
+    this.props.clearPendingRes();
+  }
   render (){
     const {reservation, currentUser, mPic, updateRes, deleteRes} = this.props;      
     const {mName, party_size, date, time, show_id} = reservation;
@@ -25,7 +28,7 @@ class ReservationsItem extends React.Component{
       <>
       <div className = "confirmed">
         <div className="greenConfirm">
-        <i class="fas fa-check-circle icon-large"></i>
+        <i className="fas fa-check-circle icon-large"></i>
           <h2 className="done"> Thanks, {currentUser}! Your reservation is confirmed.</h2>
         </div>
         <div className="InfoDone">
@@ -40,7 +43,11 @@ class ReservationsItem extends React.Component{
                 <div><i className="far fa-calendar"> </i> <div className="iconInfo">{dateFormat(date, "dddd, mmm d")}</div></div>
                 <div><i className="far fa-clock"></i> <div className="iconInfo"> {this.createTimes(time)}</div></div>
           </div>
-          <div className="people"><i className="far fa-user"></i><div className="iconInfo">{party_size}</div></div>
+          <div className="people"><i className="far fa-user"></i><div className="iconInfo">{party_size} people</div></div>
+          {/* <Link to='/musicals/:musicalId/reservations/:resId/edit'>
+            Modify
+          </Link> */}
+
 {/* <Link to='/musicals/deleted'>
             Cancel
           </Link> */}

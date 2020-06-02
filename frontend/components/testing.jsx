@@ -7,7 +7,6 @@ import {initialFetchMusicals} from '../actions/musical_actions';
 
 const indexed = (props)=>{
   const {klass} = props;
-  
   if (klass === 'home'){
     
     useEffect(() => {

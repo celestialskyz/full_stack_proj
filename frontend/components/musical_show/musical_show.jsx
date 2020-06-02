@@ -9,7 +9,7 @@ import ResForm from '../reservation/new_reservation_form';
 class MusicalShow extends React.Component {
   constructor(props) {
     super(props);
-   // debugger
+    
   }
 
   componentDidMount() {
@@ -17,16 +17,14 @@ class MusicalShow extends React.Component {
   }
 
   render() {
+    const { musical, kclass } = this.props;
     
-    const { musical } = this.props;
-    //debugger
     if (!musical) {
       return (<div></div>);
     }
 
     const mban = musical.photoUrls[musical.photoUrls.length - 1];
     const phtos = musical.photoUrls.slice(0, -1);
-    
     return (
       <>
         {/* <img src=  */}
@@ -85,6 +83,7 @@ class MusicalShow extends React.Component {
             handleSubmit = {this.props.receivePendingRes}
             reserver_id = {this.props.reserver_id}
             openModal = {this.props.openModal}
+            kclass={kclass}
           />
           <MusicalMap
             musical={musical}

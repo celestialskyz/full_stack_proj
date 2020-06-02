@@ -11,16 +11,10 @@ class ReservationMadeForm extends React.Component{
     //  };
     }
 
-  componentDidMount(){
-      if (!this.props.reserver_id){
-        this.props.openModal('signup');
-      }
-  }
-
-  // componentDidUpdate(prevProps) {
-  //   if (this.props.reservation !== prevProps.reservation) {
-  //     this.props.requestRes(this.props.reserver_id );
-  //   }
+  // componentDidMount(){
+  //     if (!this.props.reserver_id){
+  //       this.props.openModal('signup');
+  //     }
   // }
       
   render(){
