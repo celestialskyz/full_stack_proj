@@ -34,7 +34,7 @@ class Greeting extends React.Component{
         
   personalGreeting() {
     const {reservations, currentUser, requestResvs, updateRes, deleteRes, fetchMusical} = this.props;
-    debugger
+    // debugger
     return (
           <>
               <hgroup className="header-group">

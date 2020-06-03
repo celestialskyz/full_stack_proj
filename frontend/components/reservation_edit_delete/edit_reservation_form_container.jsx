@@ -15,14 +15,14 @@ class EditReservationForm extends React.Component {
     const { reservation, currentUserFname, currentUserEmail, submitEvent, openModal, kclass, musical} = this.props;
     if (!reservation) return null;
     return (
-      <ResForm
-        musical = {musical}
-        filters = {this.props.filters}
-        handleSubmit = {this.props.receivePendingRes}
-        reserver_id = {this.props.reserver_id}
-        openModal = {this.props.openModal}
-        kclass = {kclass}
-      />
+        <ResForm
+          musical = {musical}
+          filters = {this.props.reservation}
+          handleSubmit = {this.props.receivePendingRes}
+          reserver_id = {this.props.reserver_id}
+          openModal = {this.props.openModal}
+          kclass = {kclass}
+        />
     );
   }
 }

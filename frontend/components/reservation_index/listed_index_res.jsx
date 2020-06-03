@@ -4,9 +4,7 @@ var dateFormat = require('dateformat');
 
 class ReservationIndexItem extends React.Component{
   constructor(props){
-    
     super(props);
-    debugger
     this.createTimes = this.createTimes.bind(this);
   }
   // componentDidMount(){
@@ -30,7 +28,7 @@ class ReservationIndexItem extends React.Component{
    
     const {reservation, currentUser, updateRes, deleteRes, currentUserFname} =this.props;
     // musical
-    debugger
+   // debugger
     const {mName, party_size, date, time, show_id} = reservation;
       if(!reservation){
           return(<></>)

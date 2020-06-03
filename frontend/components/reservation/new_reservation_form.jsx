@@ -113,7 +113,12 @@ redirectIt(musical, time){
 
         }
       }
-    
+    if (kclass === 'editp'){
+      let greeting = "Edit reservation"
+    }
+    else {
+      let greeting = "Make a reservation"
+    }
     
     return(
       <div className = {`res-small-form ${kclass}`}>

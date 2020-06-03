@@ -20,6 +20,7 @@ const mdp = dispatch=>{
     requestRes: (userId, resId) =>dispatch(requestRes(userId, resId)),
     updateRes: (userId, res) => dispatch(updateRes(userId, res)),
     deleteRes: postId => dispatch(deleteRes(postId)),
+    receivePendingRes: (reservationDetails)=> dispatch(receivePendingRes(reservationDetails)),
   });
 };
 

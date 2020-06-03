@@ -35,6 +35,7 @@ class ReservationMadeForm extends React.Component{
           clearPendingRes = {clearPendingRes}
           mPic= {headPic}
           key = {reservation.id}
+          receivePendingRes = {receivePendingRes}
         />
       </>
     )
