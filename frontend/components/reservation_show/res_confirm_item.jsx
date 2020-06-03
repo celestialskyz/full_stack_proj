@@ -1,8 +1,10 @@
 import React from 'react';
 var dateFormat = require('dateformat');
+import {Link, Redirect} from "react-router-dom";
 
 class ReservationsItem extends React.Component{
   constructor(props){
+    
     super(props);
     this.createTimes = this.createTimes.bind(this);
   }
@@ -21,9 +23,10 @@ class ReservationsItem extends React.Component{
     this.props.clearPendingRes();
   }
   render (){
-    const {reservation, currentUser, mPic, updateRes, deleteRes, currentUserFname} = this.props;      
-    const {mName, party_size, date, time, show_id} = reservation;
-
+    
+    const {reservation, currentUser, mPic, updateRes, deleteRes, currentUserFname, mName} = this.props;      
+    const {party_size, date, time, show_id} = reservation;
+      
     return(
       <>
       <div className = "confirmed">
@@ -36,7 +39,6 @@ class ReservationsItem extends React.Component{
             <img className="picmini"
                     src={mPic}
                   ></img>
-              
               <h2 className="mNameDone">{mName}</h2>
           </div>
           <div className= "listconfirminfo">
@@ -44,15 +46,14 @@ class ReservationsItem extends React.Component{
                 <div><i className="far fa-clock"></i> <div className="iconInfo"> {this.createTimes(time)}</div></div>
           </div>
           <div className="people"><i className="far fa-user"></i><div className="iconInfo">{party_size} people</div></div>
-          {/* <Link to='/musicals/:musicalId/reservations/:resId/edit'>
+          <Link to='/musicals/:musicalId/reservations/:resId/edit'>
             Modify
-          </Link> */}
+          </Link>
 
-{/* <Link to='/musicals/deleted'>
+          <Link to='/musicals/deleted'>
             Cancel
-          </Link> */}
-        {/* button here to render buttons again but this time its a classname switch not DOM */}
-        </div>
+          </Link>
+          </div>
         </div>
       </>
     )

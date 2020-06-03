@@ -5,8 +5,11 @@
     color: white;
     padding: 2%;
     margin-bottom: 3%;
+    margin-right: 3%;
     font-size: 12px;
     margin-bottom: 3%;
+    border-bottom: solid rgba(0,0,0,.12);
+    border-bottom-width: 1px;
 }
 
 .confirmed .InfoDone{
@@ -30,11 +33,22 @@
 .listconfirminfo{
   display: flex;
     margin-left: 36%;
-    margin-top: -4%;
+    margin-top: -3%;
 }
 .listconfirminfo div{
   display: flex;
 }
 .greenConfirm i{
   font-size: 50px;
+}
+.InfoHead{
+  padding-top: 3%;
+  border-top: solid rgba(0,0,0,.12);
+  border-top-width: 1px;
+}
+
+.InfoDone{
+  border-bottom: solid rgba(0,0,0,.12);
+  border-bottom-width: 1px;
+  padding-bottom: 3%;
 }

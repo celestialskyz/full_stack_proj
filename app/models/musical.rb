@@ -7,7 +7,7 @@ class Musical < ApplicationRecord
   
   has_many_attached :photos
   
-  include PgSearch
+  include PgSearch::Model
 
   pg_search_scope :search_it, against: [:name, :city, :state, :category,:description]
   

@@ -9,7 +9,6 @@ import ResForm from '../reservation/new_reservation_form';
 class MusicalShow extends React.Component {
   constructor(props) {
     super(props);
-    
   }
 
   componentDidMount() {
@@ -18,13 +17,13 @@ class MusicalShow extends React.Component {
 
   render() {
     const { musical, kclass } = this.props;
-    
     if (!musical) {
       return (<div></div>);
     }
 
     const mban = musical.photoUrls[musical.photoUrls.length - 1];
     const phtos = musical.photoUrls.slice(0, -1);
+    
     return (
       <>
         {/* <img src=  */}

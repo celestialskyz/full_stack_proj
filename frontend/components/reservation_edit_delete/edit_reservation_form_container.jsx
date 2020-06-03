@@ -3,16 +3,16 @@ import React from 'react';
 import {updateRes, requestRes} from '../../actions/reservation-actions';
 import {openModal} from '../../actions/modal_actions';
 import { connect } from 'react-redux';
+import ResForm from "../reservation/new_reservation_form";
 
 class EditReservationForm extends React.Component {
 
   componentDidMount(){
-    this.props.requestRes(this.props.reserver_id, this.props.reservation.id);
+    this.props.requestRes(this.props.reserver_id, this.props.match.params.resId);
   }
 
   render () {
-    const { reservation, currentUserFname, currentUserEmail, submitEvent, openModal, kclass} = this.props;
-
+    const { reservation, currentUserFname, currentUserEmail, submitEvent, openModal, kclass, musical} = this.props;
     if (!reservation) return null;
     return (
       <ResForm
@@ -31,7 +31,7 @@ const msp = (state, ownProps) => {
    return({
     reserver_id: state.session.currentUserId,
     musical: state.entities.musicals[ownProps.match.params.musicalId],
-    filters: state.entities.resvs[ownProps.match.params.resId],
+    reservation: state.entities.resvs[ownProps.match.params.resId],
     kclass: "editp"
   })
 }

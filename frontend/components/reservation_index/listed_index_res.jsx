@@ -4,8 +4,9 @@ var dateFormat = require('dateformat');
 
 class ReservationIndexItem extends React.Component{
   constructor(props){
-    //debugger
+    
     super(props);
+    debugger
     this.createTimes = this.createTimes.bind(this);
   }
   // componentDidMount(){
@@ -26,17 +27,20 @@ class ReservationIndexItem extends React.Component{
   }
 
   render(){
-    
+   
     const {reservation, currentUser, updateRes, deleteRes, currentUserFname} =this.props;
     // musical
-    const {resName, party_size, date, time, show_id} = reservation;
-  
+    debugger
+    const {mName, party_size, date, time, show_id} = reservation;
+      if(!reservation){
+          return(<></>)
+        }
     return(
       <>
       <li>
         <div className="resInfodop">      
         <Link to ={`/musicals/${show_id}`}>
-          <h5 className ="list-res-musical">{resName}</h5>
+          <h5 className ="list-res-musical">{mName}</h5>
         </Link>
           <div className="details-res">
             <div> Seating for {party_size} </div> 

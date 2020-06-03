@@ -3,7 +3,7 @@ import {RECEIVE_RESVS, RECEIVE_RES, REMOVE_RES} from '../actions/reservation-act
 const reservationsReducer = (state={}, action) =>{
   const oldState = Object.freeze(state);
   switch(action.type){
-    case RECEIVE_RESVS:
+    case RECEIVE_RESVS:      
       return Object.assign({}, oldState, state, action.resvs);
     case RECEIVE_RES:
       return Object.assign({}, oldState, {[action.res.id]:action.res});

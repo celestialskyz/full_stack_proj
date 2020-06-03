@@ -9,24 +9,22 @@ class ReservationShow extends React.Component{
   componentDidMount(){
     debugger
     this.props.requestRes(this.props.reserver_id, this.props.match.params.resId);
-    debugger
+    // console.log("req the res")
     this.props.fetchMusical(this.props.match.params.musicalId);
-    if (!this.props.reserver_id){
-     this.props.openModal('signup'); }
+    // console.log("fetch the musical")
+    // if (!this.props.reserver_id){
+    //  this.props.openModal('signup'); }
    }
 
   render(){
-    const {reservation, musical, updateRes, deleteRes, reserver_id, currentUserFname} = this.props;
-    debugger
-
+    const {reservation, musical, updateRes, deleteRes, reserver_id, currentUserFname, clearPendingRes} = this.props;
    if (!musical || !reservation) {
-     return (<div></div>);
+     return null;
    }
    else {
-     debugger
     let mPic = musical.photoUrls[musical.photoUrls.length - 1];
    }
-
+    debugger
     // this.props.currentUserFname;
     return(
       <>
@@ -34,6 +32,7 @@ class ReservationShow extends React.Component{
           reservation = {reservation}
           currentUser = {reserver_id}
           currentUserFname = {currentUserFname}
+          clearPendingRes = {clearPendingRes}
           updateRes = {updateRes}
           deleteRes = {deleteRes}
           mName = {musical.name}

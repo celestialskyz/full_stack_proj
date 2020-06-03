@@ -9,13 +9,7 @@ class ResForm extends React.Component{
   constructor(props){
     super(props);
     this.state = this.props.filters;
-    // {
-    // //  inputQ:props.filters.inputQ,
-    //  date: props.filters.date,
-    //  party_size: props.filters.party_size,
-    //  time: props.filters.time
-    // };  
-
+   
     this.createButtons = this.createButtons.bind(this);
     this.createTimes = this.createTimes.bind(this);
     this.redirectIt = this.redirectIt.bind(this);
@@ -94,8 +88,7 @@ redirectIt(musical, time){
 
   render(){
     const {musical, kclass} = this.props;
-    
-    const {inputQ, date, party_size, time} = this.state;
+    const {date, party_size, time} = this.state;
     
     let timearr = [];
     let rangestart = time-200;    
@@ -120,6 +113,7 @@ redirectIt(musical, time){
 
         }
       }
+    
     
     return(
       <div className = {`res-small-form ${kclass}`}>

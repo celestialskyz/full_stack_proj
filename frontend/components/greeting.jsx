@@ -10,9 +10,14 @@ class Greeting extends React.Component{
     this.personalGreeting = this.personalGreeting.bind(this);
   }
   componentDidMount(){
-   // debugger
+   this.props.initialFetchMusicals();
+   
     if (this.props.currentUser != null ||this.props.currentUser != undefined){
-   this.props.requestResvs(this.props.currentUser.id);
+
+      this.props.requestResvs(this.props.currentUser.id).catch(error=> {
+  
+        console.log(error);
+      });
       }
   }
   
@@ -28,9 +33,8 @@ class Greeting extends React.Component{
   }
         
   personalGreeting() {
-    
     const {reservations, currentUser, requestResvs, updateRes, deleteRes, fetchMusical} = this.props;
-    
+    debugger
     return (
           <>
               <hgroup className="header-group">
@@ -62,8 +66,16 @@ class Greeting extends React.Component{
       }
 
   render (){
+    if (!this.props.reservations || this.props.reservations.length === 0){
+
+      return (
+        <>
+        </>
+      )
+    }
+
     const { currentUser, logoutUser } = this.props;
-    // debugger
+    
       if (currentUser != null ||currentUser != undefined){
                return (this.personalGreeting(currentUser));
             }

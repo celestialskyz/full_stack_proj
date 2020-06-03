@@ -7,6 +7,7 @@ export const RECEIVE_PENDING_RES ='RECEIVE_PENDING_RES';
 export const CLEAR_PENDING_RES = "CLEAR_PENDING_RES";
 export const RECEIVE_INDEX_LIMIT = "RECEIVE_INDEX_LIMIT";
 const receiveResvs =({resvs, musicals})=>{
+  
   return({
     type: RECEIVE_RESVS,
     resvs, musicals
@@ -48,7 +49,6 @@ export const clearPendingRes =()=>{
 }
 
 export const requestResvs=(userId)=>dispatch =>{
-  
   return(
     APIres.fetchReservations(userId).then(resvs =>{ dispatch(receiveResvs(resvs));})
   );

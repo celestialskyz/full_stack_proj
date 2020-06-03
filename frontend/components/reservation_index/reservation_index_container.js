@@ -6,10 +6,14 @@ import {requestUser} from '../../actions/user_actions';
 import ReservationIndex from './reservation_index';
 
 const msp = (state)=>{
-  
+  debugger
   return({    
-     reservations: Object.values(state.entities.resvs).map((res)=>  Object.assign({}, res, {resName: state.entities.musicals[res.show_id].name}) ),
-     currentUser: state.session.currentUser,
+    //  reservations: Object.values(state.entities.resvs).map((res)=>  Object.assign({}, res, {mName: state.entities.musicals[res.show_id].name}) ),
+    reservations: Object.values(state.entities.resvs).map((res)=> {
+      let showinfo= state.entities.musicals[res.show_id];
+      return (Object.assign({}, res, {mName: showinfo? showinfo.name : undefined}))} ),
+    
+    currentUser: state.session.currentUser,
      limit: -1
   });
 

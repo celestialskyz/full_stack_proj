@@ -19,7 +19,8 @@ class ReservationMadeForm extends React.Component{
       
   render(){
     
-    const {reservation, updateRes, deleteRes, currentUserFname, mPic} = this.props;
+    const {reservation, updateRes, deleteRes, currentUserFname, mPic, clearPendingRes} = this.props;
+    
     const lastpic = mPic["length"];
     const headPic = mPic[lastpic - 1];
     
@@ -27,9 +28,11 @@ class ReservationMadeForm extends React.Component{
       <>
           <ReservationsItem
           reservation = {reservation}
+          mName = {reservation.mName}
           currentUser = {currentUserFname}
           updateRes = {updateRes}
           deleteRes = {deleteRes}
+          clearPendingRes = {clearPendingRes}
           mPic= {headPic}
           key = {reservation.id}
         />

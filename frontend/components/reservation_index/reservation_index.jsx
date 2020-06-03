@@ -11,6 +11,7 @@ class ReservationIndex extends React.Component{
   }
   
   componentDidMount(){
+    debugger
     // if (this.props.currentUser != null ||this.props.currentUser != undefined){
    this.props.requestResvs(this.props.currentUser.id);
       // }
@@ -22,15 +23,15 @@ class ReservationIndex extends React.Component{
   render(){
 
     const {reservations, updateRes, currentUser, deleteRes} = this.props;
-   
-    if (reservations.length === 0) {
+    debugger
+    if (reservations.length === 0 || !reservations) {
       return (<div></div>);
     }
 
     // debugger
     if (this.props.limit > 0 && reservations.length > 3){
     var limited = reservations.slice(0,3).map(function(res){
-    
+    debugger
      return(
         <>
            <ReservationIndexItem

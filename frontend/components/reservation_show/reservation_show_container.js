@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import ReservationShow from './reservation_show';
-import { requestRes } from '../../actions/reservation-actions';
+import { requestRes, clearPendingRes } from '../../actions/reservation-actions';
 import {openModal} from '../../actions/modal_actions';
 import {fetchMusical} from '../../actions/musical_actions';
+
 const msp = (state, ownProps) =>{
   debugger
   return({
@@ -15,6 +16,7 @@ const msp = (state, ownProps) =>{
 
 const mdp = dispatch=>{
   return({
+    clearPendingRes: ()=> dispatch(clearPendingRes()),
     requestRes:(userId, resId)  => dispatch(requestRes(userId, resId)),
     fetchMusical: musicalId => dispatch(fetchMusical(musicalId)),
     openModal: (action)=>dispatch(openModal(action)),
