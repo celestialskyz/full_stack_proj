@@ -113,18 +113,18 @@ redirectIt(musical, time){
 
         }
       }
-    if (kclass === 'editp'){
-      let greeting = "Edit reservation"
-    }
-    else {
-      let greeting = "Make a reservation"
-    }
+    // if (kclass === 'editp'){
+    //   let greeting = "Edit reservation"
+    // }
+    // else {
+    //   let greeting = "Make a reservation"
+    // }
     
     return(
       <div className = {`res-small-form ${kclass}`}>
         <div id="resform">
           <div className = {"res-head"}>
-            <h1>Make a reservation</h1>
+            <h1>{kclass=== "editp" ?  "Edit reservation":"Make a reservation" }</h1>
           </div>
           <form  >
             <label className = "psizehead">Party Size
