@@ -9,7 +9,7 @@ class FilterForm extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      inputQ:"",
+      inputQ:"new york",
       date: moment().format("yyyy-MM-DD"),
       party_size: 2,
       time: 1900
@@ -21,8 +21,17 @@ class FilterForm extends React.Component{
     
     handleSubmit(e){
       e.preventDefault();
-      const query= Object.assign({}, this.state); 
+      // if (this.state.inputQ === ""){
+      //   debugger
+      //   const query=Object.assign({},{inputQ:"new york",
+      //   date: moment().format("yyyy-MM-DD"),
+      //   party_size: 2,
+      //   time: 1900
+      //   });
+      // }
       // debugger
+      const query= Object.assign({}, this.state); 
+      debugger
       this.props.updateFilter(query);
     }
 

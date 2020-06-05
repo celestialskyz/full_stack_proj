@@ -19,11 +19,11 @@ class ReservationMadeForm extends React.Component{
       
   render(){
     
-    const {reservation, updateRes, deleteRes, currentUserFname, mPic, clearPendingRes} = this.props;
+    const {reservation, updateRes, deleteRes, currentUserFname, mPic, clearPendingRes, receivePendingRes} = this.props;
     
     const lastpic = mPic["length"];
     const headPic = mPic[lastpic - 1];
-    
+    debugger
     return(
       <>
           <ReservationsItem

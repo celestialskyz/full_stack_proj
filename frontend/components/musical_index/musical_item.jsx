@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MusicalItem =({musical})=>{
+const MusicalItem =({musical, timearr, klass})=>{
   // debugger
   const mban = musical.photoUrls[musical.photoUrls.length-1];
 

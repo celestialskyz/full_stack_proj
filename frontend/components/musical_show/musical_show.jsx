@@ -12,6 +12,7 @@ class MusicalShow extends React.Component {
   }
 
   componentDidMount() {
+    debugger
     this.props.fetchMusical(this.props.match.params.musicalId);
   }
 

@@ -1,34 +1,85 @@
 import React from 'react';
 import MusicalItem from './musical_item';
-
+import IndexSearchButton from "../reservation/indexSearchButton";
 class MusicalIndex extends React.Component{
   constructor(props){
     super(props);
+    this.searchIndex = this.searchIndex.bind(this);
+    this.homepageIndex = this.homepageIndex.bind(this);
   }
   componentDidMount(){
     this.props.fetchMusicals();
   }
 
-  render () {
-    
+  homepageIndex(){
     const {musicals} = this.props;
-    // debugger
-    return(
-      <>
+    return (<>
         <h3 className = "homey"> Today's Top Picks</h3>
         <ul className = "homeMusicals">
-          {
-            musicals.map(musical =>{
+          { musicals.slice(0,5).map(musical =>{
           return(
-            <MusicalItem 
-              key = {musical.id}
-              musical = {musical}
-             />
+              <MusicalItem 
+                key = {musical.id}
+                musical = {musical}
+              />
             )})
+          }
+        </ul>
+    </>)
+  }
+
+  searchIndex(){
+    const {musicals, klass, time, handleSubmit, filterinfo, openModal, currentUserId} = this.props;
+    debugger
+    let timearr = [];
+    let rangestart = time-200;    
+    if (time === 0){
+      rangestart = 2200;
+    }
+    else if (time === 100){ //0100
+      rangestart = 2100;
+    }
+    let otherTime= (rangestart).toString().slice(0,-2);
+    // debugger
+    let addhr = parseInt(otherTime)*100;
+      for (let i = 0; i<3; i++){
+         addhr = addhr + 100;
+         timearr.push(addhr)  
+        if (addhr >= 2400){ 
+          timearr.push('0000');
+          timearr.push('0030');
         }
+        else{
+          timearr.push(addhr + 30);
+        }
+      }
+      return (
+      <>
+        <ul className = "homeMusicals">
+          { musicals.map(musical =>{
+          return(
+            <div className="keeptogether">
+              <MusicalItem 
+                key = {musical.id}
+                musical = {musical}
+              />
+              <div className = {`${klass}index`}>
+                <IndexSearchButton
+                  timearr = {timearr}
+                  musical = {musical}
+                  handleSubmit = {handleSubmit}
+                  filterinfo = {filterinfo}
+                  openModal = {openModal}
+                  reserver_id = {currentUserId}
+                 />
+              </div>
+            </div>
+            )})
+          }
         </ul>
 
-        <aside className = "sidebar">
+
+        {/* <aside className = "sidebar">
           <div className = "money">
             <i className="fas fa-money-bill"></i>
                 Price
@@ -38,9 +89,19 @@ class MusicalIndex extends React.Component{
               <button>$$$$</button>
             </div>
           </div>
-        </aside>
-      </>
-    );
+        </aside> */}
+        </>
+    )
+  }
+  render () {
+   const {klass} = this.props;
+      debugger
+   if (klass === "home"){
+    return (this.homepageIndex())
+   }
+   else{
+    return (this.searchIndex())
+   }
   }
 }
 

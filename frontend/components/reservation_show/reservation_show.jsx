@@ -7,7 +7,7 @@ class ReservationShow extends React.Component{
     }
 
   componentDidMount(){
-    
+    debugger
     this.props.requestRes(this.props.reserver_id, this.props.match.params.resId);
     // console.log("req the res")
     this.props.fetchMusical(this.props.match.params.musicalId);

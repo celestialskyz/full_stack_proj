@@ -23,10 +23,9 @@ class ReservationConfirmForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    // debugger
+   debugger
     let otherprops = Object.assign(this.props.reservation,{reserver_id: this.props.reserver_id}, this.state);
-   
-    // debugger
+    debugger
     this.props.submitEvent(otherprops).then(this.props.history.push({
       pathname: `/musicals/${this.props.reservation.show_id}/ResMade`
     }))

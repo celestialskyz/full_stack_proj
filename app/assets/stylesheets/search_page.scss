@@ -45,9 +45,7 @@ flex-direction: column;
   margin-top: .5%;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid rgba(0,0,0,.08);
-  width: 60%;
-  margin-left: 25%;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   padding-top: 1%;
 }
 
@@ -70,6 +68,8 @@ flex-direction: column;
   border-radius: 4px;
   cursor: pointer;
   height: 90%;
+  width: 95%;
+  border: rgba(0, 0, 0, 0.173) solid 1px;
 }
 .main.search .sidebar{
   width: 30%;
@@ -112,4 +112,33 @@ padding: 5%;
 
 .main.search .extraExtra p{
   font-weight: lighter;
+}
+
+.main.search.index{
+  display: inline-flex;
+}
+
+.main.search .homeMusicals .searchindex{
+  display: flex;
+  margin-bottom: 8%;
+  display: inline-flex;
+  margin-left: 40%;
+}
+
+.main.search .homeMusicals button{
+  background-color: #da3743;
+  border-color: #b8222d;
+  border-radius: 3px;
+  font: BrandonText;
+  color: white;
+  width: 23%;
+  font-size: 1rem;
+  line-height: 1;
+  justify-content: center;
+  padding: 2%;
+  margin: .7%;
+}
+
+.main.search .keeptogether{
+  margin-left: 25%
 }
