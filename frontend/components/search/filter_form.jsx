@@ -9,7 +9,7 @@ class FilterForm extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      inputQ:"new york",
+      inputQ:"",
       date: moment().format("yyyy-MM-DD"),
       party_size: 2,
       time: 1900
