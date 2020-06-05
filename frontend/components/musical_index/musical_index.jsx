@@ -30,7 +30,7 @@ class MusicalIndex extends React.Component{
 
   searchIndex(){
     const {musicals, klass, time, handleSubmit, filterinfo, openModal, currentUserId} = this.props;
-    debugger
+    
     let timearr = [];
     let rangestart = time-200;    
     if (time === 0){
@@ -95,7 +95,6 @@ class MusicalIndex extends React.Component{
   }
   render () {
    const {klass} = this.props;
-      debugger
    if (klass === "home"){
     return (this.homepageIndex())
    }

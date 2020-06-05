@@ -31,7 +31,6 @@ class FilterForm extends React.Component{
       // }
       // debugger
       const query= Object.assign({}, this.state); 
-      debugger
       this.props.updateFilter(query);
     }
 

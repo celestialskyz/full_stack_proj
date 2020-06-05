@@ -23,7 +23,7 @@ class ReservationMadeForm extends React.Component{
     
     const lastpic = mPic["length"];
     const headPic = mPic[lastpic - 1];
-    debugger
+    
     return(
       <>
           <ReservationsItem

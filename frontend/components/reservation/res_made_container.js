@@ -14,7 +14,7 @@ const msp = (state, ownProps) => {
 };
 
 const mdp = dispatch=>{
-  debugger
+  
   return({
     clearPendingRes: ()=>dispatch(clearPendingRes()),
     requestResvs: (userId) =>dispatch(requestResvs(userId)),
