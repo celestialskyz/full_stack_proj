@@ -6,7 +6,6 @@ import {requestUser} from '../../actions/user_actions';
 import ReservationIndex from './reservation_index';
 
 const msp = (state)=>{
-  // debugger
   return({    
     //  reservations: Object.values(state.entities.resvs).map((res)=>  Object.assign({}, res, {mName: state.entities.musicals[res.show_id].name}) ),
     reservations: Object.values(state.entities.resvs).map((res)=> {

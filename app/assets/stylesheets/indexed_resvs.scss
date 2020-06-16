@@ -24,7 +24,7 @@ font-size: 24px;
  .horizontal-greeting{
    display: flex;
   flex-direction: row;
- }
+  }
 .ResDropdwn .dropdown-resvs{
   list-style:none;
   padding:0px;
@@ -106,4 +106,8 @@ font-weight: 500;
 .dropdown-resvs a div{
   margin-left: 1rem;
   color: #237b98;
+}
+
+.header{
+  justify-content: space-between;
 }

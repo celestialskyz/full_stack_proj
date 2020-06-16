@@ -1,11 +1,10 @@
 import React from 'react';
 import {Link, Redirect} from "react-router-dom";
-import ReservationIndex from '../components/reservation_index/reservation_index';
-// import ReservationIndexContainer from '../components/reservation_index/reservation_index_container';
+// import ReservationIndex from '../components/reservation_index/reservation_index';
+import ReservationIndexContainer from '../components/reservation_index/reservation_index_container';
 class Greeting extends React.Component{
   constructor(props){
     super(props);
-    
     this.sessionLinks = this.sessionLinks.bind(this);
     this.personalGreeting = this.personalGreeting.bind(this);
   }
@@ -25,8 +24,8 @@ class Greeting extends React.Component{
     return (
       <>
         <nav className="login-signup">
-           <button onClick={() => this.props.openModal('signup')}>Sign up</button>
-           <button onClick={() => this.props.openModal('login')}>Sign in</button>
+           <button onClick={() => this.props.openModal('signup')}><div>Sign up</div></button>
+           <button onClick={() => this.props.openModal('login')}><div>Sign in</div></button>
         </nav>
       </>
     )
@@ -34,7 +33,7 @@ class Greeting extends React.Component{
         
   personalGreeting() {
     const {reservations, currentUser, requestResvs, updateRes, deleteRes, fetchMusical} = this.props;
-    // debugger
+
     return (
           <>
               <hgroup className="header-group">
@@ -43,14 +42,15 @@ class Greeting extends React.Component{
                     <button className = "calendar-drop">
                       <i className="far fa-calendar fa-2x"> </i>   
                     </button>
-                    <ReservationIndex
+                    {/* <ReservationIndex
                       reservations = {reservations}
                       currentUser = {currentUser}
                       requestResvs = {requestResvs}
                       updateRes = {updateRes}
                       deleteRes = {deleteRes}
                       limit = {5}
-                    />
+                    /> */}
+                  <ReservationIndexContainer/>
                   </div>
               
                 <h2 className="header-name">Hi {this.props.currentUser.first_name}</h2>
@@ -66,23 +66,17 @@ class Greeting extends React.Component{
       }
 
   render (){
-    if (!this.props.reservations || this.props.reservations.length === 0){
-
-      return (
-        <>
-        </>
-      )
-    }
-
     const { currentUser, logoutUser } = this.props;
-    
       if (currentUser != null ||currentUser != undefined){
-               return (this.personalGreeting(currentUser));
-            }
-            else {
-              return this.sessionLinks()
-            }
-          };
+  
+        return (this.personalGreeting(currentUser));
+        }
+      else {
+  
+        return this.sessionLinks()
+      }
+
+    };
     
  }
 

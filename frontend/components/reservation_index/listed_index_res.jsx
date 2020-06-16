@@ -8,7 +8,7 @@ class ReservationIndexItem extends React.Component{
     this.createTimes = this.createTimes.bind(this);
   }
   // componentDidMount(){
-  //  //debugger
+  //  //
   //  this.props.fetchMusical(this.props.currentUser.id);
   //  //debugger
   // }
@@ -28,11 +28,12 @@ class ReservationIndexItem extends React.Component{
    
     const {reservation, currentUser, updateRes, deleteRes, currentUserFname} =this.props;
     // musical
-   // debugger
+   
     const {mName, party_size, date, time, show_id} = reservation;
       if(!reservation){
-          return(<></>)
-        }
+          return(<div>No Reservations Yet</div>)
+      }
+    
     return(
       <>
       <li>

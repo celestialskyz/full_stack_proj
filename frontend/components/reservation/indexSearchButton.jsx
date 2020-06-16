@@ -15,7 +15,7 @@ class IndexSearchButton  extends React.Component{
     let show_id = musical.id;
     
     this.props.handleSubmit({...filterinfo,time, mName, mPic, show_id});
-    debugger
+    
     this.props.reserver_id ? this.props.history.push({pathname: "/musicals/confirmRes"}) : 
     this.props.openModal('signup');
   }

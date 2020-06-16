@@ -92,19 +92,23 @@ html{
 .login-signup{
   display: flex;
   justify-content: flex-end;
-  margin-left: 75%;
+  align-items: center;
 }
+
 .login-signup button{
   display: flex;
   font: 14px;
   font-family: BrandonText,Helvetica Neue,Helvetica,Arial,sans-serif;
   height: 32px;
   width: 77px;
+  align-items: center;
   justify-content: center;
+  border:.0625rem solid rgba(0,0,0,.12);
 }
 
 .login-signup button:first-of-type{
   display: flex;
+  margin: 0 8px;
   border-radius: 3px;
   background-color: #237b98;
   padding: 1px 6px;

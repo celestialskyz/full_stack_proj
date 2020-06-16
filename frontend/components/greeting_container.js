@@ -7,7 +7,8 @@ import {requestResvs, updateRes, deleteRes} from '../actions/reservation-actions
 import {initialFetchMusicals} from '../actions/musical_actions';
 
 const msp = (state) =>{
-    return ({
+   
+  return ({
       currentUser: state.session.currentUser,
       reservations: Object.values(state.entities.resvs).map((res)=> {
         let showinfo= state.entities.musicals[res.show_id];

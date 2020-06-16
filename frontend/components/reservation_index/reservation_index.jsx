@@ -11,7 +11,7 @@ class ReservationIndex extends React.Component{
   }
   
   componentDidMount(){
-  //  debugger
+    
     // if (this.props.currentUser != null ||this.props.currentUser != undefined){
    this.props.requestResvs(this.props.currentUser.id);
       // }
@@ -23,15 +23,16 @@ class ReservationIndex extends React.Component{
   render(){
 
     const {reservations, updateRes, currentUser, deleteRes} = this.props;
-    // debugger
+     
     if (reservations.length === 0 || !reservations) {
-      return (<div></div>);
+      
+      var empty= (<div>No Reservations Yet</div>);
     }
 
-    // debugger
+    // 
     if (this.props.limit > 0 && reservations.length > 3){
     var limited = reservations.slice(0,3).map(function(res){
-   // debugger
+      
      return(
         <>
            <ReservationIndexItem
@@ -45,8 +46,10 @@ class ReservationIndex extends React.Component{
       )
     })}
     else {
-      var limited = this.state.reservations.map(function(res, index){
-       return(
+      
+      var limited = reservations.map(function(res, index){
+        
+        return(
          <>
             <ReservationIndexItem
               key = {index}
@@ -60,7 +63,7 @@ class ReservationIndex extends React.Component{
         )
       })
     }
-      
+  
     return (
      <>
       <ul className = "dropdown-resvs">
@@ -73,8 +76,8 @@ class ReservationIndex extends React.Component{
             <div>View All </div>
           </Link>
         </div>
-          {/* {this.state.reservations.map(function(res, index){
-              ;
+          {this.state.reservations.map(function(res, index){
+             
              return(
                <>
                   <ReservationIndexItem
@@ -86,7 +89,7 @@ class ReservationIndex extends React.Component{
                       </>
                     )
                 })
-          }  */}
+          } 
       </ul>
     </>
     )
