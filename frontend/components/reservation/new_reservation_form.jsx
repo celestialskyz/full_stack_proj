@@ -16,7 +16,7 @@ class ResForm extends React.Component{
   }
 
 redirectIt(musical, time){
-  // debugger
+  debugger
   let mName = musical.name;
   let mPic = musical.photoUrls[musical.photoUrls.length - 1];
   let show_id = musical.id;
@@ -87,6 +87,7 @@ redirectIt(musical, time){
   }
 
   render(){
+    debugger
     const {musical, kclass} = this.props;
     const {date, party_size, time} = this.state;
     
@@ -113,12 +114,6 @@ redirectIt(musical, time){
 
         }
       }
-    // if (kclass === 'editp'){
-    //   let greeting = "Edit reservation"
-    // }
-    // else {
-    //   let greeting = "Make a reservation"
-    // }
     
     return(
       <div className = {`res-small-form ${kclass}`}>

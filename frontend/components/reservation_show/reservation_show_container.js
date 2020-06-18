@@ -9,7 +9,7 @@ const msp = (state, ownProps) =>{
   return({
     reservation: state.entities.resvs[ownProps.match.params.resId],
     reserver_id: state.session.currentUserId,
-    currentUserFname: state.session.currentUser.first_name,
+    currentUser: state.session.currentUser.first_name,
     musical: state.entities.musicals[ownProps.match.params.musicalId]
   });
 };
@@ -17,6 +17,7 @@ const msp = (state, ownProps) =>{
 const mdp = dispatch=>{
   return({
     clearPendingRes: ()=> dispatch(clearPendingRes()),
+    receivePendingRes: (reservationDetails) => dispatch(receivePendingRes(reservationDetails)),
     requestRes:(userId, resId)  => dispatch(requestRes(userId, resId)),
     fetchMusical: musicalId => dispatch(fetchMusical(musicalId)),
     openModal: (action)=>dispatch(openModal(action)),
