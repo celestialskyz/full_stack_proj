@@ -55,7 +55,7 @@ class ReservationsItem extends React.Component{
               <h2 className="mNameDone">{mName}</h2>
           </div>
           <div className= "listconfirminfo">
-                <div><i className="far fa-calendar"> </i> <div className="iconInfo">{dateFormat(date, "dddd, mmm d")}</div></div>
+                <div><i className="far fa-calendar"> </i> <div className="iconInfo">{dateFormat(date, "UTC: dddd, mmm d")}</div></div>
                 <div><i className="far fa-clock"></i> <div className="iconInfo"> {this.createTimes(time)}</div></div>
           </div>
           <div className="people"><i className="far fa-user"></i><div className="iconInfo">{party_size} people</div></div>

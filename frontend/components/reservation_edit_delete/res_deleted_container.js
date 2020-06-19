@@ -17,7 +17,7 @@ const msp = (state)=>{
       reservations: Object.values(state.entities.resvs).map((res)=> {
         let showinfo= state.entities.musicals[res.show_id];
         return (Object.assign({}, res, {mName: showinfo? showinfo.name : undefined}))} ),
-       currentUser: state.session.currentUser,
+      currentUser: state.session.currentUser,
   });
 
 };

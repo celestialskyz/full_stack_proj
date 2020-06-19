@@ -50,7 +50,7 @@ class ReservationConfirmForm extends React.Component{
   render(){
   const {mName, mPic, party_size, date, time} = this.props.reservation;
   const {currentUserFname, currentUserEmail} = this.props;
-  
+  debugger
   const {reserverPhoneN, specialReq }= this.state;
    return(
     <>
@@ -63,7 +63,7 @@ class ReservationConfirmForm extends React.Component{
             <h3>{mName}</h3>
       </div>
           <div className= "infolisthorz">
-            <div><i className="far fa-calendar"> </i> <div className="iconInfo">{dateFormat(date, "ddd, mmm d")}</div></div>
+            <div><i className="far fa-calendar"> </i> <div className="iconInfo">{dateFormat(date, "UTC: ddd, mmm, d")}</div></div>
             <div><i className="far fa-user"></i><div className="iconInfo">{party_size} people</div></div>
             <div><i className="far fa-clock"></i> <div className="iconInfo"> {this.createTimes(time)}</div></div>
           </div>
