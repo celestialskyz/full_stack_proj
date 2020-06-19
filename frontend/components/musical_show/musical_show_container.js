@@ -30,7 +30,7 @@ const msp = (state, ownProps)=>{
 const mdp = (dispatch)=>{
   return({
     fetchMusical: (musicalId)=>dispatch(fetchMusical(musicalId)),
-    receivePendingRes: (reservationDetails) => dispatch(receivePendingRes(reservationDetails)),
+    handleSubmit: (reservationDetails) => dispatch(receivePendingRes(reservationDetails)),
     openModal: (modal)=>dispatch(openModal(modal))
   });
 };

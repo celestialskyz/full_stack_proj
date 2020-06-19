@@ -20,6 +20,8 @@ html{
   padding-bottom: 5px;
   border-bottom: solid rgba(0,0,0,.12);
   border-bottom-width: 1px;
+  overflow: inherit;
+
 }
 .session_form label{
   display: flex;

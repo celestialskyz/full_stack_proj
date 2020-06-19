@@ -14,7 +14,7 @@ class ReservationShow extends React.Component{
    }
 
   render(){
-    const {reservation, musical, updateRes, deleteRes, reserver_id, currentUser, clearPendingRes} = this.props;
+    const {reservation, musical, openModal, updateRes, reserver_id, handleSubmit, deleteRes, currentUser, clearPendingRes} = this.props;
    if (!musical || !reservation) {
      return null;
    }
@@ -32,9 +32,12 @@ class ReservationShow extends React.Component{
           clearPendingRes = {clearPendingRes}
           updateRes = {updateRes}
           deleteRes = {deleteRes}
+          reserver_id = {reserver_id.id}
+          openModal = {openModal}
           mName = {musical.name}
           mPic = {musical.photoUrls[musical.photoUrls.length - 1]}
           key = {reservation.id}
+          handleSubmit = {handleSubmit}
           />
       </>
     )

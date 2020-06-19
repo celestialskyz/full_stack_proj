@@ -16,6 +16,7 @@ class MusicalShow extends React.Component {
   }
 
   render() {
+    debugger
     const { musical, kclass } = this.props;
     if (!musical) {
       return (<div></div>);
@@ -76,10 +77,11 @@ class MusicalShow extends React.Component {
       </div>
         <section className="right-side">
           {/* <MusicalReservation> */}
+          
           <ResForm
             musical = {musical}
             filters = {this.props.filters}
-            handleSubmit = {this.props.receivePendingRes}
+            handleSubmit = {this.props.handleSubmit}
             reserver_id = {this.props.reserver_id}
             openModal = {this.props.openModal}
             kclass={kclass}

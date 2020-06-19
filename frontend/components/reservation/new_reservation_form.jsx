@@ -9,7 +9,7 @@ class ResForm extends React.Component{
   constructor(props){
     super(props);
     this.state = this.props.filters;
-   
+   debugger
     this.createButtons = this.createButtons.bind(this);
     this.createTimes = this.createTimes.bind(this);
     this.redirectIt = this.redirectIt.bind(this);
@@ -24,7 +24,7 @@ redirectIt(musical, time){
   this.props.handleSubmit({...this.state,time, mName, mPic, show_id});
    
   if (jQuery.isEmptyObject(this.props.reserver_id)){
-    
+    debugger
     this.props.openModal('signup');
   }
   else {
@@ -87,11 +87,13 @@ redirectIt(musical, time){
   }
 
   render(){
+    
     debugger
     const {musical, kclass} = this.props;
     const {date, party_size, time} = this.state;
     
     let timearr = [];
+    debugger
     let rangestart = time-200;    
     if (time === 0){
       rangestart = 2200;
@@ -123,7 +125,7 @@ redirectIt(musical, time){
           </div>
           <form  >
             <label className = "psizehead">Party Size
-              <select key = "partys" className="partys" className="res-drop" defaultValue={this.state.description} placeholder='2' onChange={this.update('party_size')}>
+              <select key = "partys" className="partys" className="res-drop" defaultValue={party_size} placeholder='2' onChange={this.update('party_size')}>
               {/* defaultValue='2' */}
                   <option key="partys1" value='1' >1 </option> 
               {/* for select item must be string convert later */}

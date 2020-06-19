@@ -5,7 +5,7 @@ var dateFormat = require('dateformat');
 //this itself is an protected route obj
 class ReservationConfirmForm extends React.Component{
   constructor(props){
-    //debugger
+    debugger
     super(props);
     this.state = {
       reserverPhoneN: "",
@@ -23,12 +23,16 @@ class ReservationConfirmForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-   
+    
     let otherprops = Object.assign(this.props.reservation,{reserver_id: this.props.reserver_id}, this.state);
     
-    this.props.submitEvent(otherprops).then(this.props.history.push({
+    this.props.submitEvent(otherprops).then(()=>
+      { 
+      return(this.props.history.push({
       pathname: `/musicals/${this.props.reservation.show_id}/ResMade`
-    }))
+      // /reservations/${res.id}
+    }))}
+      );
   }
   
   createTimes(time){ 

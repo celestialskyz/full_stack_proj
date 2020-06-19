@@ -6,12 +6,13 @@ import { connect } from 'react-redux';
 import ResForm from "../reservation/new_reservation_form";
 
 class EditReservationForm extends React.Component {
-
+  
   componentDidMount(){
     this.props.requestRes(this.props.reserver_id, this.props.match.params.resId);
   }
 
   render () {
+    debugger
     const { reservation, currentUserFname, currentUserEmail, submitEvent, openModal, kclass, musical} = this.props;
     if (!reservation) return null;
     return (
@@ -28,6 +29,7 @@ class EditReservationForm extends React.Component {
 }
 
 const msp = (state, ownProps) => {
+  debugger;
    return({
     reserver_id: state.session.currentUserId,
     musical: state.entities.musicals[ownProps.match.params.musicalId],

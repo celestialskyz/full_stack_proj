@@ -25,18 +25,19 @@ class ReservationsItem extends React.Component{
                 (time).toString().slice(0, -2) +":" + (time).toString().slice(1)+ "AM";
   }
 
-  componentWillUnmount(){
-    this.props.clearPendingRes();
-  }
+  // componentWillUnmount(){
+  //   this.props.clearPendingRes();
+  // }
 
   clickButton(){
     this.setState({edit:true});
   }
 
   render (){
-    
-    const {musical, reservation, mPic, updateRes, deleteRes, currentUser, mName, kclass} = this.props;      
     debugger
+    const {musical, reservation, mPic, handleSubmit, currentUser, mName} = this.props;      
+    debugger
+    // updateRes, deleteRes, 
     const {party_size, date, time, show_id} = reservation;
       
     return(
@@ -62,9 +63,10 @@ class ReservationsItem extends React.Component{
            <div>
              {this.state.edit? <ResForm
               musical = {musical}
-              filters = {this.props.reservation}
-              handleSubmit = {this.props.receivePendingRes}
-              reserver_id = {this.props.reserver_id}
+              filters = {reservation}
+              handleSubmit = {handleSubmit}
+             //CHANGED TO OBJ
+              reserver_id = { Object.assign({},{reserver_id:reservation.reserver_id})}
               openModal = {this.props.openModal}
               kclass = {"editp"}
               /> : <> </>}
