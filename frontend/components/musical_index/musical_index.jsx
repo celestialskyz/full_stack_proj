@@ -70,7 +70,7 @@ class MusicalIndex extends React.Component{
                   handleSubmit = {handleSubmit}
                   filterinfo = {filterinfo}
                   openModal = {openModal}
-                  reserver_id = {currentUserId}
+                  reserver_id = {{[currentUserId]:currentUserId} }
                  />
               </div>
             </div>

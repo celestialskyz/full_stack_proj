@@ -21,7 +21,7 @@ class ReservationShow extends React.Component{
    else {
     let mPic = musical.photoUrls[musical.photoUrls.length - 1];
    }
-    debugger
+ 
     // this.props.currentUserFname;
     return(
       <>

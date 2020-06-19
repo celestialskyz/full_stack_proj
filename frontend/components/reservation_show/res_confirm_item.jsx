@@ -65,13 +65,12 @@ class ReservationsItem extends React.Component{
               musical = {musical}
               filters = {reservation}
               handleSubmit = {handleSubmit}
-             //CHANGED TO OBJ
-              reserver_id = { Object.assign({},{reserver_id:reservation.reserver_id})}
+              reserver_id = { Object.assign({},{reserver_id:reservation.reserver_id})}//CHANGED TO OBJ
               openModal = {this.props.openModal}
               kclass = {"editp"}
               /> : <> </>}
            </div>
-          <Link to='/musicals/deleted'>
+          <Link to={`/musicals/${show_id}/reservations/delete`}>
             Cancel
           </Link>
           </div>

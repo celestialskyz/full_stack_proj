@@ -9,7 +9,7 @@ class Musical < ApplicationRecord
   
   include PgSearch::Model
 
-  pg_search_scope :search_it, against: [:name, :city, :state, :category,:description]
+  pg_search_scope :search_it, against: [:name, :city, :state, :category,:description, :country]
   
   has_many :reservations,
   foreign_key: :show_id,

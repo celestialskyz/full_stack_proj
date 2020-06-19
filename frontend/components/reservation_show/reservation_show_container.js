@@ -5,7 +5,6 @@ import {openModal} from '../../actions/modal_actions';
 import {fetchMusical} from '../../actions/musical_actions';
 
 const msp = (state, ownProps) =>{
-  debugger
   return({
     reservation: state.entities.resvs[ownProps.match.params.resId],
     reserver_id: state.session.currentUser? state.session.currentUser : {},    currentUser: state.session.currentUser.first_name,

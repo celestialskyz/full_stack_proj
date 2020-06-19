@@ -3,7 +3,7 @@ import ReservationMadeForm from "./res_made_form";
 import {requestResvs,updateRes, deleteRes, requestRes, clearPendingRes, receivePendingRes} from '../../actions/reservation-actions';
 import {openModal} from "../../actions/modal_actions";
 const msp = (state, ownProps) => {
-  debugger
+  // debugger
   return({
     reserver_id: state.session.currentUserId,
     currentUserFname: state.session.currentUser.first_name,

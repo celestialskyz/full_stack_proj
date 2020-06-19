@@ -63,7 +63,7 @@ class Api::ReservationsController < ApplicationController
   private
  
   def res_params 
-      params.require(:reservation).permit(:show_id, :reserver_id, :party_size, :date, :time, :reserverPhoneN, :specialReq )
-  end
+    params.require(:reservation).permit(:show_id, :reserver_id, :party_size, :date, :time, :reserverPhoneN, :specialReq )
+end
 
 end

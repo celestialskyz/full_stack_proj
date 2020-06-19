@@ -20,7 +20,7 @@ class ReservationMadeForm extends React.Component{
   render(){
     
     const {reservation, openModal, musical,currentUserFname, mPic, clearPendingRes, handleSubmit} = this.props;
-    debugger
+    // debugger
     const lastpic = mPic["length"];
     const headPic = mPic[lastpic - 1];
     

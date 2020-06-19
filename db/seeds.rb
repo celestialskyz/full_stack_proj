@@ -58,8 +58,8 @@ BOM2 = open('https://openplaybill-seeds.s3.amazonaws.com/FullStackPhotos/book_OM
 BOM1 = open('https://openplaybill-seeds.s3.amazonaws.com/FullStackPhotos/book_OM_p1.jpg')
 BOMbanner = open('https://openplaybill-seeds.s3.amazonaws.com/FullStackPhotos/book_OM_banner.png')
 show4.photos.attach(io: BOM3, filename: 'Book_OM_p3.jpg')
-show4.photos.attach(io: BOM1, filename: 'Book_OM_p2.jpg')
-show4.photos.attach(io: BOM2, filename: 'Book_OM_p1.jpg')
+show4.photos.attach(io: BOM2, filename: 'Book_OM_p2.jpg')
+show4.photos.attach(io: BOM1, filename: 'Book_OM_p1.jpg')
 show4.photos.attach(io: BOMbanner, filename: 'book_OM_banner.png')
 
 WAIT1 = open('https://openplaybill-seeds.s3.amazonaws.com/FullStackPhotos/wait_p1.jpg')

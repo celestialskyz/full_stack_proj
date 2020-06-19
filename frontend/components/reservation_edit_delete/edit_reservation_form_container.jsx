@@ -12,7 +12,7 @@ class EditReservationForm extends React.Component {
   }
 
   render () {
-    debugger
+    //debugger
     const { reservation, currentUserFname, currentUserEmail, submitEvent, openModal, kclass, musical} = this.props;
     if (!reservation) return null;
     return (
@@ -29,7 +29,7 @@ class EditReservationForm extends React.Component {
 }
 
 const msp = (state, ownProps) => {
-  debugger;
+  //debugger;
    return({
     reserver_id: state.session.currentUserId,
     musical: state.entities.musicals[ownProps.match.params.musicalId],

@@ -9,14 +9,14 @@ class ResForm extends React.Component{
   constructor(props){
     super(props);
     this.state = this.props.filters;
-   debugger
+   //debugger
     this.createButtons = this.createButtons.bind(this);
     this.createTimes = this.createTimes.bind(this);
     this.redirectIt = this.redirectIt.bind(this);
   }
 
 redirectIt(musical, time){
-  debugger
+  //debugger
   let mName = musical.name;
   let mPic = musical.photoUrls[musical.photoUrls.length - 1];
   let show_id = musical.id;
@@ -24,7 +24,7 @@ redirectIt(musical, time){
   this.props.handleSubmit({...this.state,time, mName, mPic, show_id});
    
   if (jQuery.isEmptyObject(this.props.reserver_id)){
-    debugger
+    //debugger
     this.props.openModal('signup');
   }
   else {
@@ -88,12 +88,12 @@ redirectIt(musical, time){
 
   render(){
     
-    debugger
+    //debugger
     const {musical, kclass} = this.props;
     const {date, party_size, time} = this.state;
     
     let timearr = [];
-    debugger
+    //debugger
     let rangestart = time-200;    
     if (time === 0){
       rangestart = 2200;
@@ -102,7 +102,7 @@ redirectIt(musical, time){
       rangestart = 2100;
     }
     let otherTime= (rangestart).toString().slice(0,-2);
-    // debugger
+    // //debugger
     let addhr = parseInt(otherTime)*100;
       for (let i = 0; i<5; i++){
          addhr = addhr + 100;
