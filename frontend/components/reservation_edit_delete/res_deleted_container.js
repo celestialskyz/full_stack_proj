@@ -11,7 +11,6 @@ const msp = (state)=>{
 
      return({
        reservation: Object.values(state.entities.resvs).find((res)=> {
-         debugger
         return ((res.date === reservationdetails.date) && (res.inputQ === reservationdetails.inputQ) && (res.party_size === reservationdetails.party_size) && (res.time === reservationdetails.time)
         )}
           ),
