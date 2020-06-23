@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class SignInForm extends React.Component{
 
   constructor(props){
@@ -7,6 +8,7 @@ class SignInForm extends React.Component{
     this.state={
       email:"",
       password:"",
+      errors: []
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
@@ -15,10 +17,14 @@ class SignInForm extends React.Component{
    
    
     handleSubmit(e){
-      //debugger
+      //debugger{[type]: e.target.value}
       e.preventDefault();
       const user= Object.assign({}, this.state); 
-      this.props.processForm(user);
+      this.props.processForm(user).then(()=>{this.setState({["errors"]:[]})
+    }).catch(()=>{
+        this.setState({errors: [...this.state.errors, "Your email and password don't match. Please try again."
+      ]}) ;
+      });
       // .then((this.props)=>{
       //   console.log("Hello");
       //   console.log(this.props);

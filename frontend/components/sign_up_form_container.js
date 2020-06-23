@@ -12,11 +12,11 @@ const msp = (state = {}) => ({
 
 const mdp = (dispatch) => ({
     processForm: (formUser) => dispatch(createNewUser(formUser)),
-    otherForm: (
-        <button onClick={() => dispatch(openModal('login'))}>
-          SignUp
-        </button>
-      ),
+    // otherForm: (
+    //     <button onClick={() => dispatch(openModal('login'))}>
+    //       SignUp
+    //     </button>
+    //   ),
       closeModal: () => dispatch(closeModal())
 });
 

@@ -12,7 +12,7 @@ Reservation.destroy_all
 
 user1 = User.create(email:'greenmachine@shiz.edu', first_name: 'Elphaba', last_name: 'Thropp', country:'United States', password:'defygravity')
 user2 = User.create(email: 'gAlinda@shiz.edu', first_name:"Glinda", last_name:'Upland', country:'United States', password:'popular')
-user3 = User.create(email: 'Nessa@shiz.edu', first_name:"Nessa", last_name:'Thropp', country:'United States', password:'time')
+user3 = User.create(email: 'Nessa@shiz.edu', first_name:"Nessa", last_name:'Thropp', country:'United States', password:'dragonclock')
 
 show1 = Musical.create({name:"Dear Evan Hansen" , description:"Sad tree boy makes a friend.", cost:162.00, website:"https://dearevanhansen.com", lottery:true, address:"239 West 45th Street", city:"New York City", state: 'NY', zip:"10036", country: 'United States', phone_n:2122396200, max_cap:1025, category:"pop-drama", lat:40.758839, lng:-73.987091})
 show2 = Musical.create({name:"Come from Away" , description:"Canadians are super nice", cost:137.00, website:"https://comefromaway.com", lottery:true, address:"236 W 45th St", city:"New York City", state: 'NY', zip:"10036", country: 'United States', phone_n:2122396200, max_cap:1079, category:"folk-pop-drama", lat:40.7586, lng:-73.9873})

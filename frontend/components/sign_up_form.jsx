@@ -40,7 +40,9 @@ class SignUpForm extends React.Component{
        switch (type) {
          case "email":
            if (!check){//debugger 
+            if (!this.state.errors.includes("Enter a valid email address.")){
             this.setState({errors: [...this.state.errors, "Enter a valid email address."]}) 
+            }
           }
           else {
             this.setState({
@@ -54,18 +56,31 @@ class SignUpForm extends React.Component{
             });
             break;
           case "password":
-           if (e.target.value.length < 8){ 
-            this.setState({errors: ["Passwords must be 8 characters or more."]}) 
-          }
+           if (e.target.value.length < 8)
+            {
+              if (!this.state.errors.includes("Passwords must be 8 characters or more.")){
+                this.setState({errors: [...this.state.errors, "Passwords must be 8 characters or more."]}) 
+                }
+            }
+            else {
+              this.state.errors.filter(words =>
+                words !== "Passwords must be 8 characters or more.")
+            }
           //   debugger
             this.setState({
               [type]: e.target.value
             });
             break;
           case "first_name":
-           if (!check){//debugger 
-            this.setState({errors: ["Please enter your first name."]}) 
-          }
+            if (!check){//debugger 
+              if (!this.state.errors.includes("Please enter your first name.")){
+              this.setState({errors: [...this.state.errors, "Please enter your first name."]}) 
+              }
+            }
+            else {
+              this.state.errors.filter(words =>
+                words !== "Please enter your first name.")
+            }
           //   debugger
             this.setState({
               [type]: e.target.value
@@ -74,8 +89,14 @@ class SignUpForm extends React.Component{
           case "last_name":
             //debugger
               if (!check){ 
-               this.setState({errors: ["Please enter your last name."]}) 
+                if (!this.state.errors.includes("Please enter your last name.")){
+               this.setState({errors: [...this.state.errors, "Please enter your last name."]}) 
+              }
              }
+             else {
+              this.state.errors.filter(words =>
+                words !== "Please enter your last name.")
+            }
              //   debugger
                this.setState({
                  [type]: e.target.value
@@ -113,15 +134,18 @@ class SignUpForm extends React.Component{
       //     <>
       //     </>
       //     );   }
+      debugger
       return(
         <ul>
-          {this.state.errors.map((error, i) => (
+          {this.state.errors.map((error, i) => { debugger 
+          return (
             <li key={`error-${i}`}>
               {error}
             </li>
-          ))}
+          )})
+          }
         </ul>
-      );
+      )
     }
 
     render(){
