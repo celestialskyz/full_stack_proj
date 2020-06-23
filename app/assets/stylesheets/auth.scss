@@ -16,11 +16,11 @@ html{
   height: 95%;
 }
 .session_form .sign_h{
-  padding-bottom: 5px;
+  padding-bottom: 3%;
   border-bottom: solid rgba(0,0,0,.12);
   border-bottom-width: 1px;
   overflow: inherit;
-
+  margin-bottom: 5%;
 }
 .session_form label{
   display: flex;
@@ -115,6 +115,11 @@ html{
   padding: 1px 6px;
   color: #FFF;
 }
+
+.login-signup button:first-of-type:hover{
+  background-color: #185468;
+}
+
 .form-control{
   position: relative;
   font-family: BrandonText,Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -149,3 +154,4 @@ html{
  .select-hide {
   display: none;
 }
+

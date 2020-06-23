@@ -24,8 +24,8 @@ class Greeting extends React.Component{
     return (
       <>
         <nav className="login-signup">
-           <button onClick={() => this.props.openModal('signup')}><div>Sign up</div></button>
-           <button onClick={() => this.props.openModal('login')}><div>Sign in</div></button>
+           <button onClick={() => this.props.openModal('signup')}><div className= "signbuttons">Sign up</div></button>
+           <button onClick={() => this.props.openModal('login')}><div className= "signbuttons" >Sign in</div></button>
         </nav>
       </>
     )
