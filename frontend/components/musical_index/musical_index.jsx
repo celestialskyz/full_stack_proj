@@ -25,6 +25,26 @@ class MusicalIndex extends React.Component{
             )})
           }
         </ul>
+        <footer>
+        <div className = "about">
+          <h3>Lianne Bisch</h3>
+          <ul className="home-social-list">
+            <li>
+                <a href="https://github.com/celestialskyz" target="_blank"> Github <i className="fa fa-github"></i></a>
+            </li>
+            <li> 
+                <a href="https://www.linkedin.com/in/lianne-bisch/" target="_blank">Linkedin <i className="fa fa-linkedin"></i></a>
+            </li>
+            <li> 
+                <a href="https://angel.co/u/lianne-bisch" target="_blank">Angellist <i className="fa fa-angellist"></i></a>
+            </li>
+            <li> 
+                <a href="mailto:lannybys@gmail.com" target="_blank">Email<i className="fa fa-envelope"></i></a>
+            </li>
+        
+          </ul>
+        </div>
+    </footer>
     </>)
   }
 

@@ -9,7 +9,7 @@ class ResForm extends React.Component{
   constructor(props){
     super(props);
     this.state = this.props.filters;
-   debugger
+   
     this.createButtons = this.createButtons.bind(this);
     this.createTimes = this.createTimes.bind(this);
     this.redirectIt = this.redirectIt.bind(this);
