@@ -50,7 +50,7 @@ class ReservationConfirmForm extends React.Component{
   render(){
   const {mName, mPic, party_size, date, time} = this.props.reservation;
   const {currentUserFname, currentUserEmail} = this.props;
-  debugger
+  // debugger
   const {reserverPhoneN, specialReq }= this.state;
    return(
     <>

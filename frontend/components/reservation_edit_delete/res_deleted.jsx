@@ -11,9 +11,7 @@ class DeleteRes extends React.Component{
   }
 
   render(){
-    debugger
     const {reservation, reservations, deleteRes} =this.props;
-    debugger
     if (reservations.length === 0 || !reservations ) {
       return (<></>)
     }

@@ -34,9 +34,9 @@ class ReservationsItem extends React.Component{
   }
 
   render (){
-    debugger
+    
     const {musical, reservation, mPic, handleSubmit, currentUser, mName} = this.props;      
-    debugger
+    
     // updateRes, deleteRes, 
     const {party_size, date, time, show_id} = reservation;
       

@@ -4,7 +4,7 @@ import DeleteRes from './res_deleted';
 
 const msp = (state)=>{
   let reservationdetails = state.ui.reservationdetails;
-  debugger
+  // debugger
   //  && (res.mName === reservationdetails.mName) && (res.occasion === reservationdetails.occasion) && (res.party_size === reservationdetails.party_size) && (state.session.currentUser === reservationdetails.reserver_id) && (res.show_id === reservationdetails.show_id) && (res.specialReq === reservationdetails.specialReq) && (res.time === reservationdetails.time
     
     

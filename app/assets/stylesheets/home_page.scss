@@ -135,7 +135,6 @@ border-radius: 0px;
   justify-content: center;
   text-align: center;
   background-color: #da3743;
-  border: #b8222d solid;
   border-radius: 3px;
   font: BrandonText;
   color: white;
@@ -145,6 +144,10 @@ border-radius: 0px;
   width: 144px;
   height: 50px;
 }
+.formFilter button:hover{
+  background-color: #b8222d;
+}
+
 .formFilter button text{
   padding-top: 5%;
 }
