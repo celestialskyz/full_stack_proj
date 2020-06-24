@@ -36,15 +36,18 @@ class MusicalShow extends React.Component {
         <div className = "inbanner">
           <nav className = "detailNav">
           <ul className = "little_tabs">
-            <li  key = "Overview" > Overview </li>
+            {/* <li><a class="smoothscroll"key = "Overview" href="#about" title="about">Overview</a></li> */}
+            <li key = "Overview" title="about">Overview</li>
+
             {/* <li key ="Specials">Specials</li> */}
-            <li key ="Photos"> Photos
+            {/* <li><a class="smoothscroll" key ="Photos" href="#photos" title="photos">Photos</a></li> */}
+
+            <li key ="Photos" title="photos">Photos</li>
             {/* <a href="#pics" className="scroll-icon smoothscroll">  */}
             {/* FIX */}
                 {/* <span>Photos</span> */}
             {/* </a> */}
             {/* <li key ="Photos">Photos */}
-            </li>
             <li key ="Reviews" >Reviews</li>
           </ul>
         </nav> 
@@ -57,6 +60,7 @@ class MusicalShow extends React.Component {
           key={musical.id}
         />
         <a name="pics">
+         
             <div className="photos">
               <h2>Photos</h2>
                 <div className="row">
@@ -73,6 +77,7 @@ class MusicalShow extends React.Component {
                     })}
                 </div>
             </div>
+          
         </a>
       </div>
         <section className="right-side">

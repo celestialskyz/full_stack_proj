@@ -5,7 +5,7 @@ import React from 'react';
 const MusicalDetail =({musical})=>{
   return(
    
-    <section className ="musical_detail">
+    <section id = "about" className ="musical_detail">
       <h1>{musical.name}</h1>
       <div className="horz">
         <ul className = "review_stats">
