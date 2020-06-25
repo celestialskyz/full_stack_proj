@@ -9,6 +9,7 @@ class ReservationsItem extends React.Component{
     super(props);
     this.state = {
       edit: false,
+      delete: false,
     };
     this.createTimes = this.createTimes.bind(this);
     this.clickButton = this.clickButton.bind(this);

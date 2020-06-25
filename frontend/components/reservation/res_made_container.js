@@ -20,7 +20,7 @@ const mdp = dispatch=>{
     requestResvs: (userId) =>dispatch(requestResvs(userId)),
     requestRes: (userId, resId) =>dispatch(requestRes(userId, resId)),
     // updateRes: (userId, res) => dispatch(updateRes(userId, res)),
-    // deleteRes: postId => dispatch(deleteRes(postId)),
+    
     openModal: (modal)=>dispatch(openModal(modal)),
     handleSubmit: (reservationDetails)=> dispatch(receivePendingRes(reservationDetails)),
   });
