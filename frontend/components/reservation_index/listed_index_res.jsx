@@ -45,7 +45,7 @@ class ReservationIndexItem extends React.Component{
         </Link>
           <div className="details-res">
             <div> Seating for {party_size} </div> 
-            <div className = "date-time-drop">{dateFormat(date, "UTC: mediumDate")}
+            <div className = "date-time-drop">{dateFormat(date, "UTC: mmm d, yyyy")}
             <div>{this.createTimes(time)}</div>
             </div> 
           </div>  

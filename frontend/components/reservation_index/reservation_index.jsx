@@ -29,7 +29,7 @@ class ReservationIndex extends React.Component{
       var empty= (<div>No Reservations Yet</div>);
     }
 
-    // 
+    debugger
     if (this.props.limit > 0 && reservations.length > 3){
     var limited = reservations.slice(0,3).map(function(res){
       
