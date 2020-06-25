@@ -22,7 +22,7 @@ debugger
       <>
         <div className = "deleteIt">
           <div className = "Sure" >Are you Sure you want to delete your reservation?</div>
-          <button  className = "deleteit" onClick = {()=>{
+          <button  className = "deleteplz" onClick = {()=>{
             deleteRes(myres.reserver_id, myres.id).then(this.props.history.push({
               pathname: `/`
             }));

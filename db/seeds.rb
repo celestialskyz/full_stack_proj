@@ -139,7 +139,7 @@ show10.photos.attach(io: MIS2, filename: 'MIS.jpg')
 show10.photos.attach(io: MIS3, filename: 'MIS.jpg')
 show10.photos.attach(io: MISbanner, filename: 'MISbanner.jpg')
 
-show11 =  Musical.create({name:"Bandstand" , description:"War sucks but PTSD is worse but when you come home you can make a band. Also Laura Osnes is the GOAT", cost:250.00, website:"https://www.lesmis.com/us-tour/tour-dates", lottery:true, address:"102 State St,", city:" Hackensack", state: "NJ", zip:"07601", country: 'United States', phone_n:2018203007, max_cap:1600, category:"drama", lat:40.8828967, lng:-74.0597564})
+show11 =  Musical.create({name:"Bandstand" , description:"War sucks & PTSD is worse but when you come home you can make a band. Also Laura Osnes is the GOAT", cost:250.00, website:"https://www.lesmis.com/us-tour/tour-dates", lottery:true, address:"102 State St,", city:" Hackensack", state: "NJ", zip:"07601", country: 'United States', phone_n:2018203007, max_cap:1600, category:"drama", lat:40.8828967, lng:-74.0597564})
 BAND1 = open('https://openplaybill-seeds.s3.amazonaws.com/FullStackPhotos/BAND1.jpg')
 BAND2 = open('https://openplaybill-seeds.s3.amazonaws.com/FullStackPhotos/BAND2.png')
 BAND3 = open('https://openplaybill-seeds.s3.amazonaws.com/FullStackPhotos/BAND3.jpeg')
