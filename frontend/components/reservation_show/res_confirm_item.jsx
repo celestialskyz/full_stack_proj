@@ -14,16 +14,18 @@ class ReservationsItem extends React.Component{
     this.clickButton = this.clickButton.bind(this);
   }
 
-  createTimes(time){
-    if (time === 0 || time === 2400){
-      return "12:00AM";
-    }
-    else if(time === 1200){
-      return '12:00PM';
-    }
-    return time > 1200 ? (time-1200).toString().slice(0, -2) +":" + (time-1200).toString().slice(-2) + "PM" :
-                (time).toString().slice(0, -2) +":" + (time).toString().slice(1)+ "AM";
+  createTimes(time){if (time === 0 || time === 2400){
+    return "12:00AM";
   }
+  else if(time === 1200){
+    return '12:00PM';
+  }
+  else if(time === 30){
+    return '12:30AM';
+  }
+  
+  return time > 1200 ? (time-1200).toString().slice(0, -2) +":" + (time-1200).toString().slice(-2) + "PM" : 
+              (time).toString().slice(0, -2) +":" + (time).toString().slice(1)+ "AM";}
 
   // componentWillUnmount(){
   //   this.props.clearPendingRes();

@@ -1,6 +1,7 @@
 import {Redirect} from 'react-router-dom';
 import React from 'react';
 var dateFormat = require('dateformat');
+var omit = require('object.omit');
 
 //this itself is an protected route obj
 class ReservationConfirmForm extends React.Component{
@@ -23,10 +24,10 @@ class ReservationConfirmForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    
     let otherprops = Object.assign(this.props.reservation,{reserver_id: this.props.reserver_id}, this.state);
+    let omitdone = omit(otherprops, ["inputQ", "mName", "mPic", "occasion"]);
     
-    this.props.submitEvent(otherprops).then(()=>
+    this.props.submitEvent(omitdone).then(()=>
       { 
       return(this.props.history.push({
       pathname: `/musicals/${this.props.reservation.show_id}/ResMade`
@@ -36,16 +37,18 @@ class ReservationConfirmForm extends React.Component{
       );
   }
   
-  createTimes(time){ 
-  if (time === 0 || time === 2400){
+  createTimes(time){ if (time === 0 || time === 2400){
     return "12:00AM";
   }
   else if(time === 1200){
     return '12:00PM';
   }
-  return time > 1200 ? (time-1200).toString().slice(0, -2) +":" + (time-1200).toString().slice(-2) + "PM" :
-              (time).toString().slice(0, -2) +":" + (time).toString().slice(1)+ "AM";
-}
+  else if(time === 30){
+    return '12:30AM';
+  }
+  
+  return time > 1200 ? (time-1200).toString().slice(0, -2) +":" + (time-1200).toString().slice(-2) + "PM" : 
+              (time).toString().slice(0, -2) +":" + (time).toString().slice(1)+ "AM";}
 
   render(){
   const {mName, mPic, party_size, date, time} = this.props.reservation;

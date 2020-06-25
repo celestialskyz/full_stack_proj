@@ -34,16 +34,18 @@ redirectIt(musical, time){
   }
 }
 
-  createTimes(time){
-    if (time === 0 || time === 2400){
-      return "12:00AM";
-    }
-    else if(time === 1200){
-      return '12:00PM';
-    }
-    return time > 1200 ? (time-1200).toString().slice(0, -2) +":" + (time-1200).toString().slice(-2) + "PM" :
-                (time).toString().slice(0, -2) +":" + (time).toString().slice(1)+ "AM";
+  createTimes(time){if (time === 0 || time === 2400){
+    return "12:00AM";
   }
+  else if(time === 1200){
+    return '12:00PM';
+  }
+  else if(time === 30){
+    return '12:30AM';
+  }
+  
+  return time > 1200 ? (time-1200).toString().slice(0, -2) +":" + (time-1200).toString().slice(-2) + "PM" : 
+              (time).toString().slice(0, -2) +":" + (time).toString().slice(1)+ "AM";}
 
   update(field){
     return e=> this.setState({[field]:e.target.value});
@@ -102,21 +104,21 @@ redirectIt(musical, time){
       rangestart = 2100;
     }
     let otherTime= (rangestart).toString().slice(0,-2);
-    // //debugger
-    let addhr = parseInt(otherTime)*100;
-      for (let i = 0; i<5; i++){
-         addhr = addhr + 100;
-         timearr.push(addhr)  
-        if (addhr >= 2400){ 
-          timearr.push('0000');
-          timearr.push('0030');
-        }
-        else{
-          timearr.push(addhr + 30);
-
-        }
-      }
-    
+// //debugger
+  let addhr = parseInt(otherTime)*100;
+  for (let i = 0; i<5; i++){
+     addhr = addhr + 100;
+     timearr.push(addhr); 
+    if (addhr >= 2400){ 
+      timearr.push(0);
+      timearr.push(30);
+      addhr = 0;
+    }
+    else{
+      timearr.push(addhr + 30);
+    }
+  }
+    debugger
     return(
       <div className = {`res-small-form ${kclass}`}>
         <div id="resform">
