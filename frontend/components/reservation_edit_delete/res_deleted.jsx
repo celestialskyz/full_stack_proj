@@ -29,12 +29,13 @@ class DeleteRes extends React.Component{
 
   render(){
     const {reservation, reservations, deleteRes, musical} =this.props;
-    const myres = reservation[0];
+    // const myres = reservation[0];
     
     if (reservations.length === 0 || !reservations ) {
       return (<></>)
     }
-    const {party_size, date, time} = myres;
+    const {party_size, date, time} = reservation;
+    // = myres;
     const mban = musical.photoUrls[musical.photoUrls.length - 1];
 
       debugger

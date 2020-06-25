@@ -55,7 +55,10 @@ class ReservationIndexItem extends React.Component{
             <Link to = {`/musicals/${show_id}/reservations/${reservation.id}/edit`}>
               <div>Modify </div>
             </Link>
-            <button onClick = {()=>{deleteRes(reservation.reserver_id, reservation.id)}}>Cancel</button>
+            <Link to = {`/musicals/${show_id}/reservations/${reservation.id}/delete`}>
+               <div>Delete</div>
+            </Link>
+            {/* <button onClick = {()=>{deleteRes(reservation.reserver_id, reservation.id)}}>Cancel</button> */}
           </div>
         </div>
       </li>

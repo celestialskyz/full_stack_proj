@@ -11,8 +11,8 @@ import indexed from './testing';
 import ResConfirmFormContainer from "./reservation/reservation_confirm_container";
 import ResEditContainer from "./reservation_edit_delete/edit_reservation_form_container";
 import Res_made_container from "./reservation/res_made_container";
-import res_deleted_container from "./reservation_edit_delete/res_deleted_container";
-
+import Res_deleted_container from "./reservation_edit_delete/res_deleted_container";
+import DeleteResIDContainer from "./reservation_edit_delete/delete_resId_container";
 const App = () =>{
     // const additionalClass = state.ui.filters.query ? "search" : "home";
 
@@ -33,7 +33,8 @@ const App = () =>{
         <Route exact path="/" component={indexed} />
         <Route exact path="/musicals/confirmRes" component={ResConfirmFormContainer} />
         <Route exact path= "/musicals/:musicalId/ResMade" component = {Res_made_container}/>
-        <ProtectedRoute exact path= "/musicals/:musicalId/reservations/delete" component = {res_deleted_container}/>
+        <ProtectedRoute exact path= "/musicals/:musicalId/reservations/delete" component = {Res_deleted_container}/>
+        <ProtectedRoute exact path= "/musicals/:musicalId/reservations/:resId/delete" component = {DeleteResIDContainer}/>
         <Route exact path="/musicals/:musicalId" component={MusicalShowContainer} />
         <Switch>
             <Route path="/reservations" component={ResIndxContainer} />
