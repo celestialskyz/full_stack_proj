@@ -46,7 +46,6 @@ class DeleteRes extends React.Component{
               <img className="picdelete"
                 src={mban}
               ></img>
-            </section>
             <section className = "detailed">
               <div> GUESTS
                 <div>{party_size} people</div>
@@ -58,14 +57,18 @@ class DeleteRes extends React.Component{
                 <div className = "timedelete">{this.createTimes(time)}</div>
               </div>
               <div> MUSICAL
-                <Link to ={`/musicals/${musical.id}`} className = "mNamedelete">{musical.name}</Link>
+                <div className = "mNamedelete">
+                  <Link to ={`/musicals/${musical.id}`}>{musical.name}</Link>
+                </div>
               </div>
             </section>
+          </section>
             <button  className = "deleteplz" onClick = {()=>{
               deleteRes(myres.reserver_id, myres.id).then(this.props.history.push({
                 pathname: `/reservations`
               }));
               }}>Cancel Reservation</button>
+             
           </section>
         </>
       )

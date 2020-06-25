@@ -3,15 +3,16 @@
 }
 .Sure{
   margin-left: 5%;
-  padding: 4%;
+  padding: 2.25rem 0;
   font-size: 2.25rem;
   font-weight: 600;
   color: #2d333f;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 .headerdelete{
+  display: flex;
   margin-left: 8%;
-  margin-top: 8%;
+  margin-top: 2%;
 }
 .deleteIt button{
   font-size: 19px;
@@ -43,14 +44,19 @@
   margin-left: 8%;
   margin-bottom: 4%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  color: #2d333f;
+  font-size: 1.3rem;
 }
 .detailed div{
   margin:3%;
 }
-.headerdelete {
-  display: flex;
-}
+
 .detailed div > div{
-  margin-top: 18%;
+  margin-top: 10px;
   font-weight: 600;
+  
+}
+
+.mNamedelete{
+  color: #237b98;
 }
