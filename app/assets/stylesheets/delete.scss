@@ -1,29 +1,56 @@
+.deleteIt{
+  background-color: white;
+}
 .Sure{
-  font-size: 25px;
   margin-left: 5%;
   padding: 4%;
-  border: grey solid 10px;
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #2d333f;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
-
+.headerdelete{
+  margin-left: 8%;
+  margin-top: 8%;
+}
 .deleteIt button{
   font-size: 19px;
-  margin-left: 10%;
-  margin-top: 4%; 
-  padding: 2%;
-  border-radius: 10%;
+  padding-top: 0.875rem;
+    padding-right: 1.75rem;
+    padding-bottom: 0.9375rem;
+    padding-left: 1.75rem;
+    font-size: 1rem;
+  border-radius: 3%;
+  background-color: #da3743;
+  text-align: center;
+  color: #fff;
+  border-color: #b8222d;
+  width: 100%;
+  margin: 1rem;
+  width: 20%;
+  margin-left: 8%;
+}
+.deleteIt button:hover{
+  background-color: #b8222d;
+}
+.deleteIt img{
+  width: 30%;
+  height: 100%;
 }
 
-.deleteplz{
-  background-color: rgb(98, 194, 98);
-  margin-right: 3%;
+.detailed{
+  display: flex;
+  margin-left: 8%;
+  margin-bottom: 4%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
-.deleteplz:hover{
-  background-color: rgba(72, 169, 72, 0.625);
+.detailed div{
+  margin:3%;
 }
-
-.dontdelete{
-  background-color: rgb(179, 28, 28);
+.headerdelete {
+  display: flex;
 }
-.dontdelete:hover{
-  background-color: rgb(128, 52, 52);
+.detailed div > div{
+  margin-top: 18%;
+  font-weight: 600;
 }

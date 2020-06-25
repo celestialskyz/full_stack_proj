@@ -33,7 +33,7 @@ class ReservationIndexItem extends React.Component{
    
     const {mName, party_size, date, time, show_id} = reservation;
       if(!reservation){
-          return(<div>No Reservations Yet</div>)
+          return(<div>You have no upcoming reservations</div>)
       }
     return(
       <>

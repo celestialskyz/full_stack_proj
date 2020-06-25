@@ -1,37 +1,74 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import musical_index_container from '../musical_index/musical_index_container';
+var dateFormat = require('dateformat');
 
 class DeleteRes extends React.Component{
   constructor(props){
     super(props);
+    this.createTimes = this.createTimes.bind(this);
   }
 
   componentDidMount(){
    this.props.requestResvs(this.props.currentUser.id);
   }
 
+  createTimes(time){
+  if (time === 0 || time === 2400){
+    return "12:00AM";
+  }
+  else if(time === 1200){
+    return '12:00PM';
+  }
+  else if(time === 30){
+    return '12:30AM';
+  }  
+  return time > 1200 ? (time-1200).toString().slice(0, -2) +":" + (time-1200).toString().slice(-2) + "PM" : 
+              (time).toString().slice(0, -2) +":" + (time).toString().slice(1)+ "AM";
+  }
+
   render(){
-    const {reservation, reservations, deleteRes} =this.props;
-    
+    const {reservation, reservations, deleteRes, musical} =this.props;
     const myres = reservation[0];
+    
     if (reservations.length === 0 || !reservations ) {
       return (<></>)
     }
-debugger
-    return (
-      <>
-        <div className = "deleteIt">
-          <div className = "Sure" >Are you Sure you want to delete your reservation?</div>
-          <button  className = "deleteplz" onClick = {()=>{
-            deleteRes(myres.reserver_id, myres.id).then(this.props.history.push({
-              pathname: `/`
-            }));
-            }}>Yes</button>
-          <button className = "dontdelete" onClick = {()=>{this.props.history.push({
-          pathname: `/musicals/${myres.reserver_id}/reservations/${myres.id}`})}}>No</button>
-        </div>
-      </>
-    )
+    const {party_size, date, time} = myres;
+    const mban = musical.photoUrls[musical.photoUrls.length - 1];
+
+      debugger
+      return(
+        <>
+          <section className = "deleteIt">
+            <div className = "Sure" >Cancel Your Reservation</div>
+            <section className = "headerdelete">
+              <img className="picdelete"
+                src={mban}
+              ></img>
+            </section>
+            <section className = "detailed">
+              <div> GUESTS
+                <div>{party_size} people</div>
+              </div>
+              <div> DATE
+                <div className = "datedelete">{dateFormat(date, "UTC: mmm d, yyyy")}</div>
+              </div>
+              <div> TIME
+                <div className = "timedelete">{this.createTimes(time)}</div>
+              </div>
+              <div> MUSICAL
+                <Link to ={`/musicals/${musical.id}`} className = "mNamedelete">{musical.name}</Link>
+              </div>
+            </section>
+            <button  className = "deleteplz" onClick = {()=>{
+              deleteRes(myres.reserver_id, myres.id).then(this.props.history.push({
+                pathname: `/reservations`
+              }));
+              }}>Cancel Reservation</button>
+          </section>
+        </>
+      )
   }
 
 }

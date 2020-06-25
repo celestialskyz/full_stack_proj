@@ -67,7 +67,7 @@ class ReservationIndex extends React.Component{
     return (
      <>
       <ul className = "dropdown-resvs">
-        <h3 className= "upcoming-list">UPCOMING</h3>
+        <h3 className= "upcoming-list">Upcoming reservations</h3>
        <div>
          {limited}
        </div>
