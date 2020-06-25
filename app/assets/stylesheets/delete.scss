@@ -1,0 +1,17 @@
+.Sure{
+  font-size: 25px;
+}
+
+.deleteit button{
+  font-size: 19px;
+  margin-left: 10%;
+  margin-top: 4%; 
+}
+
+.deleteit button:first-child{
+  background-color: rgb(98, 194, 98);
+}
+
+.deleteit button:last-child{
+  background-color: rgb(169, 25, 25);
+}

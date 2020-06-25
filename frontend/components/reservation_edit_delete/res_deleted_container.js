@@ -4,11 +4,8 @@ import DeleteRes from './res_deleted';
 
 const msp = (state)=>{
   let reservationdetails = state.ui.reservationdetails;
-  // debugger
+   
   //  && (res.mName === reservationdetails.mName) && (res.occasion === reservationdetails.occasion) && (res.party_size === reservationdetails.party_size) && (state.session.currentUser === reservationdetails.reserver_id) && (res.show_id === reservationdetails.show_id) && (res.specialReq === reservationdetails.specialReq) && (res.time === reservationdetails.time
-    
-    
-
      return({
        reservation: Object.values(state.entities.resvs).find((res)=> {
         return ((res.date === reservationdetails.date) && (res.inputQ === reservationdetails.inputQ) && (res.party_size === reservationdetails.party_size) && (res.time === reservationdetails.time)

@@ -35,7 +35,7 @@ class ReservationIndexItem extends React.Component{
       if(!reservation){
           return(<div>No Reservations Yet</div>)
       }
-    
+    debugger
     return(
       <>
       <li>
@@ -56,7 +56,7 @@ class ReservationIndexItem extends React.Component{
             <Link to = {`/musicals/${show_id}/reservations/${reservation.id}/edit`}>
               <div>Modify </div>
             </Link>
-            <button onClick = {()=>{deleteRes(reservation.id)}}>Cancel</button>
+            <button onClick = {()=>{deleteRes(reservation.reserver_id, reservation.id)}}>Cancel</button>
           </div>
         </div>
       </li>

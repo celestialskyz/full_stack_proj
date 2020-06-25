@@ -1,5 +1,5 @@
 class Api::ReservationsController < ApplicationController
-  before_action :ensure_logged_in
+  #before_action :ensure_logged_in
 
   def index 
     # byebug
@@ -55,8 +55,11 @@ class Api::ReservationsController < ApplicationController
   end
 
   def destroy 
-     reservation = current_user.reservations.find_by(id: params[:id])
-     reservation.destroy 
+    byebug
+    #  reservation = current_user.reservations.find_by(id: params[:id])
+    reservation = Reservation.find_by(id:params[:id])
+    byebug
+    reservation.destroy 
  
   end
 
