@@ -35,7 +35,6 @@ class ReservationIndexItem extends React.Component{
       if(!reservation){
           return(<div>No Reservations Yet</div>)
       }
-    debugger
     return(
       <>
       <li>

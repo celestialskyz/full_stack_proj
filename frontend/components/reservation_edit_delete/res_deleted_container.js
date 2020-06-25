@@ -4,13 +4,10 @@ import DeleteRes from './res_deleted';
 
 const msp = (state)=>{
   let reservationdetails = state.ui.reservationdetails;
-   
+   debugger
   //  && (res.mName === reservationdetails.mName) && (res.occasion === reservationdetails.occasion) && (res.party_size === reservationdetails.party_size) && (state.session.currentUser === reservationdetails.reserver_id) && (res.show_id === reservationdetails.show_id) && (res.specialReq === reservationdetails.specialReq) && (res.time === reservationdetails.time
      return({
-       reservation: Object.values(state.entities.resvs).find((res)=> {
-        return ((res.date === reservationdetails.date) && (res.inputQ === reservationdetails.inputQ) && (res.party_size === reservationdetails.party_size) && (res.time === reservationdetails.time)
-        )}
-          ),
+       reservation:Object.values(state.entities.resvs).filter((res)=>{if ((res.date == reservationdetails.date) && (res.time === reservationdetails.time) && (res.party_size === reservationdetails.party_size)) return res}),
       reservations: Object.values(state.entities.resvs).map((res)=> {
         let showinfo= state.entities.musicals[res.show_id];
         return (Object.assign({}, res, {mName: showinfo? showinfo.name : undefined}))} ),
@@ -21,7 +18,7 @@ const msp = (state)=>{
 const mdp = dispatch=>{
   return(
     {requestResvs: (userId) =>dispatch(requestResvs(userId)),
-    deleteRes: postId => dispatch(deleteRes(postId))
+      deleteRes:  (userId, resId) => dispatch(deleteRes (userId, resId))
     }
   )
 }

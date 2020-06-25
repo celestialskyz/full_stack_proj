@@ -21,7 +21,7 @@ const mdp = dispatch=>{
   return(
     {requestResvs: (userId) =>dispatch(requestResvs(userId)),
     updateRes: (userId, res) => dispatch(updateRes(userId, res)),
-    deleteRes: postId => dispatch(deleteRes(postId))
+    deleteRes:  (userId, resId) => dispatch(deleteRes (userId, resId))
     }
   )
 }

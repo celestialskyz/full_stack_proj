@@ -118,7 +118,7 @@ redirectIt(musical, time){
       timearr.push(addhr + 30);
     }
   }
-    debugger
+   // debugger
     return(
       <div className = {`res-small-form ${kclass}`}>
         <div id="resform">

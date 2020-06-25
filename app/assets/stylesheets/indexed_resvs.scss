@@ -25,21 +25,21 @@ font-size: 24px;
    display: flex;
   flex-direction: row;
   }
-// .ResDropdwn .dropdown-resvs{
-//   list-style:none;
-//   padding:0px;
-//   border-radius: 2px;
-//   margin: 0px;
-// }
-// .horizontal-greeting .header-name{
-//   padding-left: 10px;
-// }
+.ResDropdwn .dropdown-resvs{
+  list-style:none;
+  padding:0px;
+  border-radius: 2px;
+  margin: 0px;
+}
+.horizontal-greeting .header-name{
+  padding-left: 10px;
+}
 
-// .dropdown-resvs{
-//   display: none;
-//   position: absolute;
-//   min-width: 200px;
-// }
+.dropdown-resvs{
+  display: none;
+  position: absolute;
+  min-width: 200px;
+}
 
 .ResDropdwn:hover > .dropdown-resvs{
   display: block;

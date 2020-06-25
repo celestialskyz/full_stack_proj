@@ -20,7 +20,7 @@ const mdp = dispatch=>{
     fetchMusical: musicalId => dispatch(fetchMusical(musicalId)),
     openModal: (action)=>dispatch(openModal(action)),
     updateRes: (userId, res) => dispatch(updateRes(userId, res)),
-    deleteRes: postId => dispatch(deleteRes(postId))
+    deleteRes:  (userId, resId) => dispatch(deleteRes (userId, resId))
   });
 
 };

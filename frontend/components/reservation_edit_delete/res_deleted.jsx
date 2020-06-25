@@ -12,19 +12,23 @@ class DeleteRes extends React.Component{
 
   render(){
     const {reservation, reservations, deleteRes} =this.props;
-    debugger
     
+    const myres = reservation[0];
     if (reservations.length === 0 || !reservations ) {
       return (<></>)
     }
-
+debugger
     return (
       <>
         <div className = "deleteIt">
           <div className = "Sure" >Are you Sure you want to delete your reservation?</div>
-          <button  className = "deleteit" onClick = {()=>{deleteRes(reservation.id)}}>Yes</button>
+          <button  className = "deleteit" onClick = {()=>{
+            deleteRes(myres.reserver_id, myres.id).then(this.props.history.push({
+              pathname: `/`
+            }));
+            }}>Yes</button>
           <button className = "dontdelete" onClick = {()=>{this.props.history.push({
-          pathname: `/musicals/${reservation.reserver_id}/reservations/${reservation.id}`})}}>No</button>
+          pathname: `/musicals/${myres.reserver_id}/reservations/${myres.id}`})}}>No</button>
         </div>
       </>
     )

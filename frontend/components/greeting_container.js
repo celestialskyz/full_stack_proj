@@ -22,7 +22,7 @@ const mdp = (dispatch) =>({
     requestUsers: ()=> dispatch(requestUsers),
     requestResvs: (userId) =>dispatch(requestResvs(userId)),
     updateRes: (userId, res) => dispatch(updateRes(userId, res)),
-    deleteRes: postId => dispatch(deleteRes(postId)),
+    deleteRes:  (userId, resId) => dispatch(deleteRes (userId, resId)),
     initialFetchMusicals: () => dispatch(initialFetchMusicals()),
 
 });
