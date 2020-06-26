@@ -3,7 +3,7 @@ import {requestResvs, updateRes, deleteRes} from '../../actions/reservation-acti
 import DeleteRes from './res_deleted';
 
 const msp = (state, ownProps)=>{
-  debugger
+  
   return({    
     reservation: state.entities.resvs[ownProps.match.params.resId],
     musical: state.entities.musicals[ownProps.match.params.musicalId],

@@ -29,3 +29,24 @@ export const fetchMusical = (musicalId) => {
   );
   // debugger
 };
+
+export const fetchReviews = (musicalId) => {
+  // debugger
+  return(
+  $.ajax({
+    method: "GET",
+    url: `/api/musicals/${musicalId}/reviews`
+  })
+  );
+  // debugger
+};
+
+
+
+export const createReview = review => (
+  $.ajax({
+    method: 'POST',
+    url:  `/api/musicals/${musicalId}/reviews`,
+    data: { review }
+  })
+);

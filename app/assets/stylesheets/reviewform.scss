@@ -1,0 +1,22 @@
+.reviews{
+  margin-top: 15%;
+
+}
+
+.review-form {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  border-top: .0625rem solid rgba(0,0,0,.12);
+  padding: 3%;
+  margin-top: 4%;
+  background-color: ghostwhite;
+}
+
+.inputbox{
+  border: .07rem solid rgba(0,0,0,.12)
+}
+
+.textarea{
+  width: 80%;
+}

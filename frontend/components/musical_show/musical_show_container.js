@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import {fetchMusical} from '../../actions/musical_actions';
+import {fetchMusical, createReview} from '../../actions/musical_actions';
 import MusicalShow from './musical_show';
 import moment from 'moment';
 import {receivePendingRes} from '../../actions/reservation-actions';
@@ -31,7 +31,8 @@ const mdp = (dispatch)=>{
   return({
     fetchMusical: (musicalId)=>dispatch(fetchMusical(musicalId)),
     handleSubmit: (reservationDetails) => dispatch(receivePendingRes(reservationDetails)),
-    openModal: (modal)=>dispatch(openModal(modal))
+    openModal: (modal)=>dispatch(openModal(modal)),
+    createReview: review =>dispatch(createReview(review))
   });
 };
 

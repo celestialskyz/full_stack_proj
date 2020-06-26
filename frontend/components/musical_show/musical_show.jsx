@@ -3,12 +3,18 @@ import MusicalDetail from './musical_detail';
 import MusicalMap from './musical_map';
 import MusicalDetail2 from './musical_detail2';
 import { Link, animateScroll as scroll } from "react-scroll";
-
+import Lightbox from 'react-lightbox-component';
 import ResForm from '../reservation/new_reservation_form';
+import ReviewForm from "../review/review_create";
 
 class MusicalShow extends React.Component {
   constructor(props) {
     super(props);
+    this.update = this.update.bind(this);
+  }
+
+  update(){
+    return e=> this.setState({[field]:e.target.value});
   }
 
   componentDidMount() {
@@ -68,7 +74,7 @@ class MusicalShow extends React.Component {
                       return (
                         <div className="column" key={`${pic}+${idx}`}>
                           <img
-                            className="photograph"
+                            className={`photograph ${idx}`}
                             id={`pic${idx}`}
                             src={pic}
                           />
@@ -76,9 +82,16 @@ class MusicalShow extends React.Component {
                       )
                     })}
                 </div>
+                {/* <button onClick ={this.update()}> Next</button> */}
             </div>
           
         </a>
+       
+        {this.props.reserver_id? <ReviewForm
+        musical = {musical}
+        createReview = {this.props.createReview}
+        /> : <> </>}
+      
       </div>
         <section className="right-side">
           {/* <MusicalReservation> */}
@@ -97,11 +110,10 @@ class MusicalShow extends React.Component {
           <MusicalDetail2
             musical={musical}
           />
+
+      
         </section>
-      </div>
-
-        {/* <MusicalReviews> */}
-
+          </div>
       </>
     )
 
