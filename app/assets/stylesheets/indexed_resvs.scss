@@ -25,7 +25,7 @@ font-size: 24px;
    display: flex;
   flex-direction: row;
   }
-.ResDropdwn .dropdown-resvs{
+.ResDropdwnHide .dropdown-resvs{
   list-style:none;
   padding:0px;
   border-radius: 2px;
@@ -35,7 +35,7 @@ font-size: 24px;
   padding-left: 10px;
 }
 
-.dropdown-resvs{
+.ResDropdwn .dropdown-resvs{
   display: none;
   position: absolute;
   min-width: 200px;

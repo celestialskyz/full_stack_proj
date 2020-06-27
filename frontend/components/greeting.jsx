@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, Redirect} from "react-router-dom";
-// import ReservationIndex from '../components/reservation_index/reservation_index';
-import ReservationIndexContainer from '../components/reservation_index/reservation_index_container';
+import ReservationIndex from '../components/reservation_index/reservation_index';
+// import ReservationIndexContainer from '../components/reservation_index/reservation_index_container';
 class Greeting extends React.Component{
   constructor(props){
     super(props);
@@ -42,15 +42,17 @@ class Greeting extends React.Component{
                     <button className = "calendar-drop">
                       <i className="far fa-calendar fa-2x"> </i>   
                     </button>
-                    {/* <ReservationIndex
+                    {/* <div className = "ResDropdwnHide"> */}
+                    <ReservationIndex
                       reservations = {reservations}
                       currentUser = {currentUser}
                       requestResvs = {requestResvs}
                       updateRes = {updateRes}
                       deleteRes = {deleteRes}
-                      limit = {5}
-                    /> */}
-                  <ReservationIndexContainer/>
+                      limit = {3}
+                    />
+                      {/* <ReservationIndexContainer/> */}
+                    {/* </div> */}
                   </div>
               
                 <h2 className="header-name">Hi {this.props.currentUser.first_name}</h2>

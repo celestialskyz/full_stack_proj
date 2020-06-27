@@ -13,7 +13,7 @@ const msp = (state)=>{
       return (Object.assign({}, res, {mName: showinfo? showinfo.name : undefined}))} ),
     
     currentUser: state.session.currentUser,
-     limit: 3
+     limit: -1
   });
 
 };
