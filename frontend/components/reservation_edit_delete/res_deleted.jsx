@@ -37,7 +37,7 @@ class DeleteRes extends React.Component{
     const {party_size, date, time} = reservation;
     // = myres;
     const mban = musical.photoUrls[musical.photoUrls.length - 1];
-
+    
       debugger
       return(
         <>
@@ -65,8 +65,8 @@ class DeleteRes extends React.Component{
             </section>
           </section>
             <button  className = "deleteplz" onClick = {()=>{
-              deleteRes(myres.reserver_id, myres.id).then(this.props.history.push({
-                pathname: `/reservations`
+              deleteRes(reservation.reserver_id, reservation.id).then(this.props.history.push({
+                pathname: `/reservations/${reservation.reserver_id}`
               }));
               }}>Cancel Reservation</button>
              
