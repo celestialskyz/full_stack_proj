@@ -87,10 +87,10 @@ class MusicalShow extends React.Component {
           
         </a>
        
-        {this.props.reserver_id? <ReviewForm
+        {/* {this.props.reserver_id? <ReviewForm
         musical = {musical}
         createReview = {this.props.createReview}
-        /> : <> </>}
+        /> : <> </>} */}
       
       </div>
         <section className="right-side">
