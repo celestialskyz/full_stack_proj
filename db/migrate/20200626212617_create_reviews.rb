@@ -4,9 +4,10 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.string :body, default: "", null: false
       t.integer :rating, null: false
       t.integer :musical_id, null: false
-
+      t.integer :user_id, null: false
       t.timestamps
     end
     add_index :reviews, :musical_id
+    add_index :reviews, :user_id
   end
 end

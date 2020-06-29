@@ -13,6 +13,7 @@ import ResEditContainer from "./reservation_edit_delete/edit_reservation_form_co
 import Res_made_container from "./reservation/res_made_container";
 import Res_deleted_container from "./reservation_edit_delete/res_deleted_container";
 import DeleteResIDContainer from "./reservation_edit_delete/delete_resId_container";
+import Review_create_container from "./review/review_create_container";
 const App = () =>{
     // const additionalClass = state.ui.filters.query ? "search" : "home";
 
@@ -36,6 +37,8 @@ const App = () =>{
         <ProtectedRoute exact path= "/musicals/:musicalId/reservations/delete" component = {Res_deleted_container}/>
         <ProtectedRoute exact path= "/musicals/:musicalId/reservations/:resId/delete" component = {DeleteResIDContainer}/>
         <Route exact path="/musicals/:musicalId" component={MusicalShowContainer} />
+        <Route exact path= "/musicals/:musicalId/review" component = {Review_create_container}/>
+
         <Switch>
             <Route path="/reservations" component={ResIndxContainer} />
             <Route exact path= "/musicals/:musicalId/reservations/:resId" component = {ResShowContainer}/>
