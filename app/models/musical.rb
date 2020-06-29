@@ -15,6 +15,10 @@ class Musical < ApplicationRecord
   foreign_key: :show_id,
   class_name: 'Reservation'
 
+  has_many :reviews,
+  foreign_key: :musical_id,
+  class_name: 'Review'
+
   # def self.text_search(query)
   #   filtered=[]
   #   filtered.push(self.where("similarity(name, ?) > 0.3", query).order("similarity(name, #{ActiveRecord::Base.connection.quote(query)}) DESC"))
