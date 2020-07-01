@@ -28,7 +28,9 @@ class Musical < ApplicationRecord
   #   filtered.push(self.where("similarity(description, ?) > 0.3", query).order("similarity(description, #{ActiveRecord::Base.connection.quote(query)}) DESC"))
   #   filtered  
   # end
-
+  def average_rating
+    reviews.average(:rating)
+  end
 
 end
 # validates :city, uniqueness:{scope: :state}

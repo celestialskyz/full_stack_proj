@@ -3,9 +3,8 @@ import MusicalDetail from './musical_detail';
 import MusicalMap from './musical_map';
 import MusicalDetail2 from './musical_detail2';
 import { Route, Switch, Link, withRouter } from "react-router-dom";
-// import Lightbox from 'react-lightbox-component';
 import ResForm from '../reservation/new_reservation_form';
-// import ReviewForm from "../review/review_create";
+import ReviewIndex from "../review/review_index";
 
 class MusicalShow extends React.Component {
   constructor(props) {
@@ -18,12 +17,16 @@ class MusicalShow extends React.Component {
   }
 
   componentDidMount() {
+    
     this.props.fetchMusical(this.props.match.params.musicalId);
+    this.props.requestUsers();
+    
+    this.props.fetchReviews(this.props.match.params.musicalId);
   }
 
   render() {
     
-    const { musical, kclass } = this.props;
+    const { musical, kclass, reviews } = this.props;
     if (!musical) {
       return (<div></div>);
     }
@@ -88,12 +91,18 @@ class MusicalShow extends React.Component {
         </a>
        
         {/* {this.props.reserver_id? <ReviewForm
-        musical = {musical}
+        // musical = {musical}
         createReview = {this.props.createReview}
         /> : <> </>} */}
-       <Link to = {`/musicals/${musical.id}/review`}>Leave A Review</Link>
+        <Link to = {`/musicals/${musical.id}/review`}>Leave A Review</Link>
+        {reviews ?
+        <ReviewIndex
+         reviews = {reviews}
+        /> 
+        :<h4> No Reviews Yet</h4>}
       
       </div>
+
         <section className="right-side">
           {/* <MusicalReservation> */}
           
@@ -114,7 +123,7 @@ class MusicalShow extends React.Component {
 
       
         </section>
-          </div>
+        </div>
       </>
     )
 

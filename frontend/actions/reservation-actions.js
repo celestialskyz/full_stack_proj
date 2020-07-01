@@ -74,7 +74,7 @@ export const updateRes = (userId, res) => dispatch =>{
 };
 
 export const deleteRes = (userId, resId) =>dispatch=>{
-  debugger
+  
   return(
     APIres.deleteReservation(userId, resId).then(()=>{dispatch(removeRes(resId));})
   );

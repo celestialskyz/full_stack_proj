@@ -1,5 +1,12 @@
 class Api::ReviewsController < ApplicationController
-  before_action :ensure_logged_in
+  # before_action :ensure_logged_in
+
+  def index 
+    # byebug
+    @reviews=Review.where(musical_id: params[:musical_id])
+    
+    render :index
+  end
 
   def create
     @review = Review.new(review_params)
@@ -11,9 +18,10 @@ class Api::ReviewsController < ApplicationController
     end
   end
 
+
   private
 
   def review_params
-    params.require(:review).permit(:rating, :body, :bench_id)
+    params.require(:review).permit(:rating, :body, :musical_id, :user_id)
   end
 end

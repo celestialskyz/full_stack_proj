@@ -6,7 +6,7 @@ const msp = (state, ownProps)=>{
   let reservationdetails = state.ui.reservationdetails;
   let individualres = Object.values(state.entities.resvs).filter((res)=>{if ((res.date == reservationdetails.date) && (res.time === reservationdetails.time) && (res.party_size === reservationdetails.party_size)) return res});
   let last = individualres.length-1; 
-  debugger
+  
   //  && (res.mName === reservationdetails.mName) && (res.occasion === reservationdetails.occasion) && (res.party_size === reservationdetails.party_size) && (state.session.currentUser === reservationdetails.reserver_id) && (res.show_id === reservationdetails.show_id) && (res.specialReq === reservationdetails.specialReq) && (res.time === reservationdetails.time
      return({
       //  reservation:Object.values(state.entities.resvs).filter((res)=>{if ((res.date == reservationdetails.date) && (res.time === reservationdetails.time) && (res.party_size === reservationdetails.party_size)) return res}),

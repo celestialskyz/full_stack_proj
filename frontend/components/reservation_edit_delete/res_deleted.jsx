@@ -37,8 +37,7 @@ class DeleteRes extends React.Component{
     const {party_size, date, time} = reservation;
     // = myres;
     const mban = musical.photoUrls[musical.photoUrls.length - 1];
-    
-      debugger
+          
       return(
         <>
           <section className = "deleteIt">

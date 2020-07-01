@@ -1,7 +1,7 @@
 export const RECEIVE_MUSICALS = 'RECEIVE_MUSICALS';
 export const RECEIVE_MUSICAL = 'RECEIVE_MUSICAL';
 export const RECEIVE_MUSICAL_NAME = "RECEIVE_MUSICAL_NAME";
-export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
+
 import * as EventAPIUtil from '../util/musical_api_util';
 export const INITIALFETCHMUSICALS  = 'INITIALFETCHMUSICALS';
 
@@ -32,36 +32,12 @@ const intialreceiveMusicals = (musicals) =>{
     });
 };
 
-const receiveReviews =({reviews}) =>{
-  return({
-    type: RECEIVE_REVIEWS,
-    reviews,
-  });
-};
-
-
 export const fetchMusicals = (filters)=> dispatch =>{
   //debugger
   return(
     EventAPIUtil.fetchMusicals(filters).then(musicals =>{dispatch(receiveMusicals(musicals));})
     );
     //debugger
-};
-
-export const createReview = (review) => dispatch =>{
-  return(
-    EventAPIUtil.createReview(review).then(review =>{
-      dispatch(receiveReview(review));
-    })
-  );
-};
-
-export const fetchReviews = (musicalId) => dispatch =>{
-  return(
-    EventAPIUtil.fetchReviews(musicalId).then(reviews =>{
-      dispatch(receiveReviews(reviews));
-    })
-  );
 };
 
 export const initialFetchMusicals = ()=> dispatch =>{

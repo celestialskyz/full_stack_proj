@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { createReview } from '../../actions/musical_actions';
+import { createReview } from '../../actions/review_actions';
 import ReviewForm from './review_create';
 const msp = (state, ownProps)=>{
   
