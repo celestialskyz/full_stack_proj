@@ -19,6 +19,7 @@ const msp = (state, ownProps)=>{
 
      let reviewinfo =  jQuery.isEmptyObject(state.ui.reviews) ?
      {} : Object.values(state.ui.reviews).map((review)=> {
+       debugger
        let author = state.entities.users.find((user) => { return (user.id === review.user_id)});
         return (
           Object.assign({}, review, {author: author.first_name})

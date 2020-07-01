@@ -1,20 +1,16 @@
 import React from 'react';
+debugger
+const ReviewIndex = ({reviews}) =>{
+    debugger
 
-class ReviewIndex extends React.Component{
-  constructor(props){
-    super(props);
-  }
-  
-
-  render(){
-      const {reviews} = this.props.reviews;
-    if (!reviews){
+    if (!reviews || reviews === {}){
       return(<></>);
     }
-
+    debugger
     return(
       <div className= "reviewIdx">
       {reviews.map(review =>{
+        debugger
         return(
           <div className="review">
             <div className="leftsideUser">
@@ -31,7 +27,5 @@ class ReviewIndex extends React.Component{
     )
 
   }
-
-}
 
 export default ReviewIndex;

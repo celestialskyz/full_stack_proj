@@ -27,6 +27,7 @@ class MusicalShow extends React.Component {
   render() {
     
     const { musical, kclass, reviews } = this.props;
+    debugger
     if (!musical) {
       return (<div></div>);
     }
@@ -95,11 +96,10 @@ class MusicalShow extends React.Component {
         createReview = {this.props.createReview}
         /> : <> </>} */}
         <Link to = {`/musicals/${musical.id}/review`}>Leave A Review</Link>
-        {reviews ?
-        <ReviewIndex
-         reviews = {reviews}
-        /> 
-        :<h4> No Reviews Yet</h4>}
+        { jQuery.isEmptyObject(reviews) ?
+        <h4> No Reviews Yet</h4> : <ReviewIndex
+        reviews = {reviews}
+       /> }
       
       </div>
 
