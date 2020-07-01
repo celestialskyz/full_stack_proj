@@ -65,7 +65,7 @@ class ReviewForm extends React.Component {
             onChange={this.update("body")}
           />
           </div>
-          <input type="submit" />
+          <button className = "reviewSub">Submit</button>
         </form>
       
       </div>
