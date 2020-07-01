@@ -18,7 +18,7 @@ class ReviewForm extends React.Component {
   reviewSubmit(e) {
     e.preventDefault();
     let reviewdraft = Object.assign({}, this.state, {musical_id:this.props.musical.id}, {user_id:this.props.currentUser.id});
-    createReview(reviewdraft);
+    this.props.createReview(reviewdraft, this.props.musical.id);
     this.props.history.push({
       pathname: `/musicals/${this.props.musical.id}`
     });

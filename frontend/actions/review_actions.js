@@ -20,9 +20,9 @@ const receiveReview =(review) => {
   };
 
 
-export const createReview = (review) => dispatch =>{
+export const createReview = (review, musical_id) => dispatch =>{
   return(
-    EventAPIUtil.createReview(review).then(review =>{
+    EventAPIUtil.createReview(review, musical_id).then(review =>{
       dispatch(receiveReview(review));
     })
   );

@@ -11,7 +11,7 @@ export const fetchReviews = (musicalId) => {
 };
 
 
-export const createReview = musicalId => (
+export const createReview = (review, musicalId) => (
   $.ajax({
     method: 'POST',
     url:  `/api/musicals/${musicalId}/reviews`,
