@@ -4,7 +4,7 @@ export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 import * as EventAPIUtil from '../util/review_api_util';
 
 const receiveReviews =(reviews) =>{
-  debugger
+  
   return({
     type: RECEIVE_REVIEWS,
     reviews,

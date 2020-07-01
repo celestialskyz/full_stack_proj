@@ -425,3 +425,43 @@ html{
   width: 25%;
   flex-direction: inherit;
 }
+
+.reviewstuff{
+  margin-top: 18%;
+}
+
+.reviewstuff h2{
+  margin-bottom: 7%;
+  border-bottom: 1px solid #d8d9db;
+  padding-bottom: 4%;
+}
+
+.reviewstuff a{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.reviewIdx{
+  margin-top: 10%;
+}
+
+.review{
+  border-bottom: 1px solid #d8d9db;
+  display: flex;
+  margin-bottom: 10%;
+  padding-bottom: 5%;
+}
+.leftsideUser{
+  line-height: 5;
+  background-color: aqua;
+  border-radius: 100%;
+  width: 13%;
+  padding-left: 3%;
+}
+
+.reviewIdx:nth-child(even) > .leftsideUser {
+  background-color: rgb(161, 88, 221);
+}
+.rightReview{
+  padding-left: 8%;
+}

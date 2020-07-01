@@ -95,12 +95,14 @@ class MusicalShow extends React.Component {
         // musical = {musical}
         createReview = {this.props.createReview}
         /> : <> </>} */}
-        <Link to = {`/musicals/${musical.id}/review`}>Leave A Review</Link>
-        { jQuery.isEmptyObject(reviews) ?
-        <h4> No Reviews Yet</h4> : <ReviewIndex
-        reviews = {reviews}
-       /> }
-      
+        <div className="reviewstuff">
+          <h2>What Other People Are Saying</h2>
+          <Link to = {`/musicals/${musical.id}/review`}>Leave A Review</Link>
+          { jQuery.isEmptyObject(reviews) ?
+          <h4> No Reviews Yet</h4> : <ReviewIndex
+          reviews = {reviews}
+        /> }
+        </div>
       </div>
 
         <section className="right-side">

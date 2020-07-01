@@ -1,7 +1,7 @@
 import  {RECEIVE_REVIEWS, RECEIVE_REVIEW } from '../actions/review_actions';
 const reviewsReducer = (state={}, action) =>{
   const oldState = Object.freeze(state);
-  debugger
+  
   switch(action.type){
     case RECEIVE_REVIEWS:      
       return Object.assign({}, action.reviews);
