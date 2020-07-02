@@ -465,3 +465,14 @@ html{
 .rightReview{
   padding-left: 8%;
 }
+
+.reviewstuff a{
+  color: #da3743;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.reviewstuff a:hover{
+  font-weight: bold;
+  color: #b8222d;
+}

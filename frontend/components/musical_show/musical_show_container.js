@@ -15,8 +15,11 @@ const msp = (state, ownProps)=>{
      party_size: 2,
      time: 1900}  
      : state.ui.filters;
-      let authorlist = state.entities.users;
-     let reviewinfo =  jQuery.isEmptyObject(state.ui.reviews) ?
+     debugger
+    let authorlist = typeof(state.entities.users) === 'object' && state.entities.users != null ?
+       state.entities.users : {};
+     
+    let reviewinfo =  jQuery.isEmptyObject(state.ui.reviews) ?
      {} : Object.values(state.ui.reviews).map((review)=> {
        debugger
        let author = authorlist.find((user) => { return (user.id === review.user_id)});
