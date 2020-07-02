@@ -35,11 +35,12 @@ class ReviewForm extends React.Component {
     }
     return (
       <div className="reviews">
-         <h2>Review</h2>
+         <div className = "revhead"><h2>Review</h2></div>
         <form  className="review-form" onSubmit={this.reviewSubmit}>
           <h2>{this.props.currentUser.first_name} how was your experience at {this.props.musical.name}?</h2>
           <fieldset>
-            <span className="star-group">
+            <h4>Rating</h4>
+            <span className="star-group"> 
               <input type="radio" id="5-Stars" name="rating" value="5" checked="checked" onChange={this.update('rating')}/><label>5</label>
               <input type="radio" id="4-Stars" name="rating" value="4"  onChange={this.update('rating')} /><label >4</label>
               <input type="radio" id="3-Stars" name="rating" value="3" onChange={this.update('rating')} /><label>3</label>

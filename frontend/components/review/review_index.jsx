@@ -1,4 +1,6 @@
 import React from 'react';
+import StarShow from './starcomponent';
+
 const ReviewIndex = ({reviews}) =>{
   
 
@@ -16,7 +18,8 @@ const ReviewIndex = ({reviews}) =>{
               {review.author}
             </div>
             <div className = "rightReview">
-              <h4>{review.rating}</h4>
+              <StarShow
+                rating = {review.rating}/>
               <p>{review.body}</p>
             </div>
           </div>
