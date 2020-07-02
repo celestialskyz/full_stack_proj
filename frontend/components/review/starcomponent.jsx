@@ -1,7 +1,7 @@
 import React from 'react';
 
 const StarShow = ({rating}) => {
-  debugger
+  
   const starCount = rating;  
   return (
       <ul className="stars">

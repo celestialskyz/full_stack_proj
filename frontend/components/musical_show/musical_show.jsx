@@ -27,7 +27,7 @@ class MusicalShow extends React.Component {
   render() {
     
     const { musical, kclass, reviews } = this.props;
-    debugger
+    // debugger
     if (!musical) {
       return (<div></div>);
     }
