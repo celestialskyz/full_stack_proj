@@ -6,11 +6,12 @@ $checked-color:#da3743;
  /* tutorial code help from  Codepen Lenny Sirivong
 */
 
+
 .revhead h2{
   margin-bottom: 0;
 }
 
-.star-group {
+.star-group, .testingStar{
   font-size: 0;
   * {
     font-size: 1rem;
@@ -38,7 +39,7 @@ $checked-color:#da3743;
       & + label:hover ~ label:before,
       & + label:hover:before {
       content: $checked-star;
-      color: rgb(238, 190, 34);
+      color: #da3743;
       text-shadow: 0 0 1px #333;
     }
   }
@@ -70,9 +71,16 @@ h1 {
   text-align: center;
 }
 
-
 .stars { 
   display: flex;
-  margin-bottom: 6%;
+  margin-bottom: 10%;
   color:#da3743;
+}
+
+#starDescr {
+  display: none;
+}
+
+.star-group .testingStar:hover + #starDescr{
+display: block;
 }
