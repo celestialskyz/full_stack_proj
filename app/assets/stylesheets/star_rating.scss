@@ -6,22 +6,22 @@ $checked-color:#da3743;
  /* tutorial code help from  Codepen Lenny Sirivong
 */
 
-
 .revhead h2{
   margin-bottom: 0;
 }
 
-.star-group, .testingStar{
+.star-group {
   font-size: 0;
   * {
     font-size: 1rem;
   }
+  /* flip order to use the + and ~  */
   unicode-bidi: bidi-override;
   direction: rtl;
   & > input {
     display: none;
     & + label {
-     
+      /* room for star */
       display: inline-block;
       overflow: hidden;
       text-indent: 9999px;
@@ -39,12 +39,12 @@ $checked-color:#da3743;
       & + label:hover ~ label:before,
       & + label:hover:before {
       content: $checked-star;
-      color: #da3743;
+      color: #b8222d;
       text-shadow: 0 0 1px #333;
     }
   }
   
-  /* the hidden clearer */
+  /* clearer */
   & > .star-clear + label {
     text-indent: -9999px;
     width: .5em;
@@ -67,20 +67,6 @@ $checked-color:#da3743;
   }
 }
 
-h1 {
-  text-align: center;
-}
-
-.stars { 
-  display: flex;
-  margin-bottom: 10%;
-  color:#da3743;
-}
-
-#starDescr {
-  display: none;
-}
-
-.star-group .testingStar:hover + #starDescr{
-display: block;
+.reviews fieldset{
+  font-size: 2em;
 }

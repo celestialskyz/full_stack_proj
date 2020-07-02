@@ -40,23 +40,24 @@ class ReviewForm extends React.Component {
           <h2>{this.props.currentUser.first_name} how was your experience at {this.props.musical.name}?</h2>
           <fieldset>
             <h4>Rating</h4>
-            <span className="star-group"> 
-              <input type="radio" id="5-Stars" className = "fullstar" name="rating" value="5" checked="checked" onChange={this.update('rating')}/><label>5</label> <p id = "starDescr">Outstanding</p> 
-              <input type="radio" id="4-Stars" className = "fullstar" name="rating" value="4"  onChange={this.update('rating')} /><label >4</label> <p id = "starDescr">Very good</p> 
-              <input type="radio" id="3-Stars" className = "fullstar" name="rating" value="3" onChange={this.update('rating')} /><label>3</label> <p id = "starDescr">Good</p> 
-              <input type="radio" id="2-Stars" className = "fullstar" name="rating" value="2" onChange={this.update('rating')} /><label >2</label> <p id = "starDescr">Fair</p> 
-              <input type="radio" id="1-Stars" className = "fullstar" name="rating" value="1" onChange={this.update('rating')} /><label >1</label> <p id = "starDescr">Poor</p> 
-              <input type="radio" id="0-Stars" className = "fullstar" name="rating" value="0" className="star-clear" onChange={this.update('rating')} /><label>0</label> <p id = "0star"></p> 
-            </span>
-             {/* <span className="star-group">
+            <span class="star-group">
+      <input type="radio" id="rating-5" name="rating" value="5" /><label for="rating-5">5</label>
+      <input type="radio" id="rating-4" name="rating" value="4" checked="checked" /><label for="rating-4">4</label>
+      <input type="radio" id="rating-3" name="rating" value="3" /><label for="rating-3">3</label>
+      <input type="radio" id="rating-2" name="rating" value="2" /><label for="rating-2">2</label>
+      <input type="radio" id="rating-1" name="rating" value="1" /><label for="rating-1">1</label>
+      <input type="radio" id="rating-0" name="rating" value="0" class="star-clear" /><label for="rating-0">0</label>
+    </span>
+  </fieldset>
+              {/* <span className="star-group">
               <input type="radio" id="5-Stars" name="rating" value="5" checked="checked" onChange={this.update('rating')}/><label>5</label>
               <input type="radio" id="4-Stars" name="rating" value="4"  onChange={this.update('rating')} /><label >4</label>
               <input type="radio" id="3-Stars" name="rating" value="3" onChange={this.update('rating')} /><label>3</label>
               <input type="radio" id="2-Stars" name="rating" value="2" onChange={this.update('rating')} /><label >2</label>
               <input type="radio" id="1-Stars" name="rating" value="1" onChange={this.update('rating')} /><label >1</label>
               <input type="radio" id="0-Stars" name="rating" value="0" className="star-clear" onChange={this.update('rating')} /><label>0</label>
-            </span> */}
-        </fieldset>
+            </span> 
+        </fieldset>*/}
           {/* <br/>
           <input
             type="number"

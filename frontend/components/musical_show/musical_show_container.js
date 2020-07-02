@@ -8,20 +8,20 @@ import {receivePendingRes} from '../../actions/reservation-actions';
 import {openModal} from '../../actions/modal_actions';
 
 const msp = (state, ownProps)=>{
-  debugger
+  
   let filterinfo= jQuery.isEmptyObject(state.ui.filters) ? 
   {inputQ:"",
      date: moment().format("yyyy-MM-DD"),
      party_size: 2,
      time: 1900}  
      : state.ui.filters;
-     debugger
-    let authorlist = typeof(state.entities.users) === 'object' && state.entities.users != null ?
-       state.entities.users : {};
      
-    let reviewinfo =  jQuery.isEmptyObject(state.ui.reviews) ?
+    let authorlist = typeof(state.entities.users) === 'object' && state.entities.users != null ?
+       state.entities.users : null;
+     
+    let reviewinfo =  jQuery.isEmptyObject(state.ui.reviews) && typeof(authorlist) === 'object' ?
      {} : Object.values(state.ui.reviews).map((review)=> {
-       debugger
+       
        let author = authorlist.find((user) => { return (user.id === review.user_id)});
         return (
           Object.assign({}, review, {author: author.first_name})

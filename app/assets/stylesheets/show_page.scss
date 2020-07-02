@@ -105,9 +105,16 @@ html{
 }
 
 .musicalInfo a {
-  color: blue;
+  color: rgb(20, 20, 182);
   height: 40%;
+  cursor: pointer;
 }
+
+.musicalInfo a:hover{
+  font-weight: bold;
+  color: blue($color: #06085e);
+}
+
 
 .map-container{
   height: 250px;
