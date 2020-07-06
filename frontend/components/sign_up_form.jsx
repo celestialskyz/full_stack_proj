@@ -133,11 +133,11 @@ class SignUpForm extends React.Component{
       //   return (
       //     <>
       //     </>
-      //     );   }
-      debugger
+      //     );   }debugger
+      // debugger
       return(
         <ul>
-          {this.state.errors.map((error, i) => { debugger 
+          {this.state.errors.map((error, i) => {  
           return (
             <li key={`error-${i}`}>
               {error}

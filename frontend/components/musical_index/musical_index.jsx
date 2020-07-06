@@ -50,7 +50,6 @@ class MusicalIndex extends React.Component{
 
   searchIndex(){
     const {musicals, klass, time, handleSubmit, filterinfo, openModal, currentUserId} = this.props;
-    
     let timearr = [];
     let rangestart = time-200;    
     if (time === 0){
@@ -60,7 +59,7 @@ class MusicalIndex extends React.Component{
       rangestart = 2100;
     }
     let otherTime= (rangestart).toString().slice(0,-2);
-    // debugger
+     
     let addhr = parseInt(otherTime)*100;
       for (let i = 0; i<3; i++){
          addhr = addhr + 100;
@@ -72,6 +71,13 @@ class MusicalIndex extends React.Component{
         else{
           timearr.push(addhr + 30);
         }
+      }
+      
+      //debugger
+      if (jQuery.isEmptyObject(this.props.musicals)){
+        return (<>
+          <h5 className="noValuesSearch">Sorry there are no shows that match that criteria. Please try again.</h5>
+        </>)
       }
       return (
       <>

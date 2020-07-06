@@ -13,7 +13,7 @@ class IndexSearchButton  extends React.Component{
     let mName = musical.name;
     let mPic = musical.photoUrls[musical.photoUrls.length - 1];
     let show_id = musical.id;
-    debugger
+    
     this.props.handleSubmit({...filterinfo,time, mName, mPic, show_id});
     if (!this.props.reserver_id.key) 
     {this.props.openModal('signup');}

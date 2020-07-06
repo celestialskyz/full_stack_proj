@@ -5,7 +5,7 @@ import {receivePendingRes} from '../../actions/reservation-actions';
 import {openModal} from "../../actions/modal_actions";
 
 const msp = (state)=>{
-  
+  //debugger
   return({
      musicals: Object.values(state.entities.musicals),
      klass: state.ui.filters.inputQ ? "search" : "home",
