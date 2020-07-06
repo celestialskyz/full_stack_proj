@@ -13,6 +13,7 @@ class SignInForm extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
     this.handleInput = this.handleInput.bind(this);
+    this.changeModal= this.changeModal.bind(this);
   }
    
    
@@ -30,6 +31,11 @@ class SignInForm extends React.Component{
       //   console.log(this.props);
        // this.props.closeModal
       //});
+    }
+
+    changeModal(e){
+      e.preventDefault();
+      this.props.otherForm(); 
     }
 
     demoLogin(e){
@@ -81,6 +87,11 @@ class SignInForm extends React.Component{
               <button onClick={this.demoLogin}>Demo User</button>
               
              </form>
+
+             <div className="changeModal">
+                <div className="redirectModal">New to OpenPlaybill?</div>
+                <button onClick = {this.changeModal}>Create an account</button>
+             </div>
         </>
       )
     

@@ -1,17 +1,6 @@
 html{
   font-family: BrandonText,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
-
-.session_form{
-  display: flex;
-  padding: 1.875rem 1rem;
-  background-color: #FFF;
-  border-bottom: 30px;
-  border-top:20px;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 96%;
-}
 .session_form fieldset{
   height: 95%;
 }
@@ -73,8 +62,14 @@ html{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 60%;
   width: 45%;
+  display: flex;
+  padding: 1.875rem 1rem;
+  background-color: #FFF;
+  border-bottom: 30px;
+  border-top:20px;
+  flex-direction: column;
+  justify-content: space-between;  
 }
 .header{
   margin: 20px;
@@ -153,5 +148,16 @@ html{
  }
  .select-hide {
   display: none;
+}
+.changeModal{
+  display: flex;
+  margin-top: 8%;
+}
+.changeModal button{
+  color: #da3743;
+  text-decoration: none;
+  line-height: inherit;
+  font-size: 16px;
+  margin-left: 3%;
 }
 
