@@ -22,7 +22,7 @@ redirectIt(musical, time){
   let show_id = musical.id;
   
   this.props.handleSubmit({...this.state,time, mName, mPic, show_id});
-   
+   debugger
   if (jQuery.isEmptyObject(this.props.reserver_id)){
     //debugger
     this.props.openModal('signup');

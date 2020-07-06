@@ -84,6 +84,7 @@ class MusicalIndex extends React.Component{
                 musical = {musical}
               />
               <div className = {`${klass}index`}>
+                
                 <IndexSearchButton
                   timearr = {timearr}
                   musical = {musical}
