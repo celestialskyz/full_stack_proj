@@ -17,9 +17,6 @@ OpenPlaybill is a Open Table clone. One can search and look at musicals based on
 
 ![Demo3](/frontend/gifsgit/openplaybillGIF3.gif)
 Future Features:
- * Ability to make Reservation
- * * currently backend is set up but front end needs completion
- * Write Reviews
- * Favorite Musicals
+ * Ability to Favorite Musicals
  
 [Heroku Deployment](https://openplaybill.herokuapp.com/#/ "OpenPlaybill Page")
